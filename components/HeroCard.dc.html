@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<x-dc>
+<helmet>
+  <!-- الخطوط محمّلة من css/fonts.css في الصفحة الرئيسة -->
+  <style>
+    body { margin: 0; background: transparent; }
+    @keyframes muznTwinkle { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+    @keyframes muznGlowPulse { 0%,100% { transform: translate(-50%,-50%) scale(1); } 50% { transform: translate(-50%,-50%) scale(1.06); } }
+    @keyframes muznMoonFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @keyframes muznSunPulse { 0%,100% { transform: translate(-50%,-50%) scale(1); filter: brightness(1); } 50% { transform: translate(-50%,-50%) scale(1.07); filter: brightness(1.15); } }
+    @keyframes muznMoonGlow { 0%,100% { box-shadow: 0 0 34px 9px rgba(243,232,198,0.22); } 50% { box-shadow: 0 0 58px 18px rgba(243,232,198,0.5); } }
+    @keyframes muznSunBreathe { 0%,100% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.06); filter: brightness(1.12); } }
+    @keyframes muznMoonRise { from { transform: translateY(52px) scale(0.85); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
+  </style>
+</helmet>
+
+<div ref="{{ rootRef }}" dir="{{ dirVal }}" style="position: relative; min-height: 340px; font-family: 'IBM Plex Sans Arabic', 'Segoe UI', sans-serif">
+
+  <!-- ═══════════ V1 · أفق المسجد (skyline) ═══════════ -->
+  <sc-if value="{{ v1 }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute; inset:0; border-radius:20px; overflow:hidden; background:{{ th.sky }};">
+      <div style="position:absolute; inset:0; opacity:{{ th.stars }}; transition:opacity 1.2s;">
+        <div style="position:absolute; left:12%; top:14%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 3.2s infinite;"></div>
+        <div style="position:absolute; left:26%; top:30%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 2.6s .4s infinite;"></div>
+        <div style="position:absolute; left:38%; top:10%; width:3px; height:3px; border-radius:50%; background:#fff; animation:muznTwinkle 3.8s .9s infinite;"></div>
+        <div style="position:absolute; left:55%; top:22%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 2.9s .2s infinite;"></div>
+        <div style="position:absolute; left:64%; top:8%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 3.4s 1.2s infinite;"></div>
+        <div style="position:absolute; left:82%; top:34%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 2.4s .6s infinite;"></div>
+        <div style="position:absolute; left:90%; top:12%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 3s 1.6s infinite;"></div>
+        <div style="position:absolute; left:47%; top:40%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 3.6s .8s infinite;"></div>
+        <div style="position:absolute; left:8%; top:44%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 2.8s 1.4s infinite;"></div>
+      </div>
+      <div style="position:absolute; inset:0; background:radial-gradient(140px 170px at 88% -10%, rgba(215,179,106,0.30) 0%, rgba(215,179,106,0) 70%);"></div>
+      
+      <div style="position:absolute; left:71%; top:19%; display:{{ moonDisp }}; animation:muznMoonFloat 6s ease-in-out infinite;">
+        <div style="position:relative; width:52px; height:52px;">
+          <div style="position:absolute; inset:0; border-radius:50%; background:#F3E8C6; box-shadow:0 0 44px 12px rgba(243,232,198,0.28);"></div>
+          <div style="position:absolute; left:16px; top:-7px; width:42px; height:42px; border-radius:50%; background:{{ th.skyTop }};"></div>
+        </div>
+      </div>
+      <img src="{{ silSrc }}" alt="" style="position: absolute; left: 791px; transform: translateX(-50%); width: 112%; pointer-events: none; height: 496px; object-fit: scale-down; top: 102px">
+      <img src="{{ winSrc }}" alt="" style="position: absolute; left: 871px; transform: translateX(-50%); width: 112%; opacity: {{ th.win }}; transition: opacity 1.2s; pointer-events: none; top: 154px">
+      <div style="position:absolute; left:0; right:0; bottom:0; height:86px; background:linear-gradient(rgba(6,26,22,0), rgba(6,26,22,0.38));"></div>
+
+      <div style="position: absolute; inset: 0; display: flex; flex-direction: column; padding: 18px 20px 16px; height: 314px; left: 54px; top: -1px">
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 12px; position: relative">
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-start;">
+            <span style="font-size:11.5px; font-weight:500; color:{{ th.sub }}; transition:color 1.2s;">{{ L.next }}</span>
+            <span style="font-size:27px; font-weight:700; line-height:1; color:{{ th.text }}; transition:color 1.2s;">{{ nextName }}</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono', monospace; font-size:33px; font-weight:600; letter-spacing:1px; line-height:1.1; color:{{ th.text }}; transition:color 1.2s;">{{ countdown }}</span>
+            <span style="font-size:11.5px; font-weight:400; color:{{ th.sub }}; transition:color 1.2s;">{{ L.until }}</span>
+          </div>
+          <div style="display:flex; flex-direction:row; align-items:center; gap:7px; padding:6px 11px; border-radius:999px; background:{{ th.chipBg }}; border:1px solid {{ th.chipBorder }}; backdrop-filter:blur(4px); transition:all 1.2s;">
+            <span style="width:10px; height:10px; border-radius:50%; background:{{ pillDot }}; box-shadow:0 0 8px 2px {{ sun.glow }};"></span>
+            <span style="font-size:12px; font-weight:600; color:{{ th.text }}; white-space:nowrap;">{{ periodName }}</span>
+            <sc-if value="{{ hasTemp }}" hint-placeholder-val="{{ false }}">
+              <span style="font-size:12px; font-weight:600; color:{{ th.text }}; white-space:nowrap; opacity:.85;">· {{ tempTxt }}</span>
+            </sc-if>
+          </div>
+        </div>
+        <div style="flex: 1; width: 1367px; height: 30px; position: relative"><div style="position: absolute; left: 475px; top: -13px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle at 38% 32%, {{ sun.core }} 0%, {{ sun.rim }} 78%); box-shadow: 0 0 70px 22px {{ sun.glow }}; opacity: {{ sun.op }}; transition: all 1.2s ease; animation: muznGlowPulse 5s ease-in-out infinite; height: 64px; width: 64px"></div></div>
+        <sc-if value="{{ isFull }}" hint-placeholder-val="{{ true }}">
+          <div style="border-top:1px solid {{ th.sep }}; margin-bottom:12px; transition:border-color 1.2s;"></div>
+          <div style="display: flex; flex-direction: row; gap: 10px; align-items: stretch">
+            <div onClick="{{ onQibla }}" style="flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; padding:10px 6px; border-radius:14px; background:{{ th.chipBg }}; border:1px solid {{ th.chipBorder }}; backdrop-filter:blur(4px); cursor:pointer; transition:all .25s;" style-hover="transform:translateY(-2px)">
+              
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="{{ th.text }}" stroke-width="1.8" style="stroke: #FFFFFF"><circle cx="12" cy="12" r="9.2"></circle><path d="M15.5 8.5 L13.4 13.4 L8.5 15.5 L10.6 10.6 Z" fill="{{ th.text }}" stroke="#FFFFFFEB"></path></svg><span style="font-size: 11px; font-weight: 600; color: #FFFFFF">{{ L.qibla }}</span>
+            </div>
+            <div onClick="{{ onTimes }}" style="flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; padding:10px 6px; border-radius:14px; background:{{ th.chipBg }}; border:1px solid {{ th.chipBorder }}; backdrop-filter:blur(4px); cursor:pointer; transition:all .25s;" style-hover="transform:translateY(-2px)">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="{{ th.text }}" stroke-width="1.8" style="stroke: #FFFFFF"><circle cx="12" cy="12" r="9.2"></circle><path d="M12 6.8 V12 L15.4 14.4"></path></svg>
+              <span style="font-size: 11px; font-weight: 600; color: #FFFFFF">{{ L.allTimes }}</span>
+            </div>
+            <div onClick="{{ onAthan }}" style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 6px; border-radius:14px; background:{{ th.chipBg }}; border:1px solid {{ th.chipBorder }}; backdrop-filter:blur(4px); cursor:pointer; transition:all .25s;" style-hover="transform:translateY(-2px)">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="{{ th.text }}" stroke-width="1.8" style="stroke: #FFFFFF"><path d="M12 4.5 C8.8 4.5 7.2 7 7.2 10 C7.2 14 5.5 15.5 5.5 15.5 L18.5 15.5 C18.5 15.5 16.8 14 16.8 10 C16.8 7 15.2 4.5 12 4.5 Z"></path><path d="M10.3 18.5 C10.6 19.6 11.2 20.2 12 20.2 C12.8 20.2 13.4 19.6 13.7 18.5"></path></svg>
+              <span style="font-size: 11px; font-weight: 600; color: #FFFFFF">{{ L.athan }}</span>
+              <span style="font-size:9.5px; font-weight:500; color:{{ th.sub }};">{{ athanState }}</span>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ═══════════ V2 · نافذة المحراب (mihrab) ═══════════ -->
+  <sc-if value="{{ v2 }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; border-radius:20px; overflow:hidden; background:linear-gradient(168deg, #0F5D50 0%, #0B443B 100%);">
+      <div style="position:absolute; inset:0; background:radial-gradient(150px 180px at 88% -10%, rgba(215,179,106,0.35) 0%, rgba(215,179,106,0) 70%);"></div>
+      <div style="position:absolute; left:16px; top:0; bottom:0; width:1px; background:linear-gradient(rgba(215,179,106,0), rgba(215,179,106,0.45), rgba(215,179,106,0));"></div>
+      <div style="position:absolute; right:16px; top:0; bottom:0; width:1px; background:linear-gradient(rgba(215,179,106,0), rgba(215,179,106,0.45), rgba(215,179,106,0));"></div>
+
+      <div style="position:absolute; left:50%; transform:translateX(-50%); top:14px; width:47%; height:60%; border-radius:52% 52% 16px 16px / 46% 46% 14px 14px; overflow:hidden; border:1.5px solid rgba(215,179,106,0.55); box-shadow:0 0 0 5px rgba(215,179,106,0.10); background:{{ th.sky }};">
+        <div style="position:absolute; inset:0; opacity:{{ th.stars }}; transition:opacity 1.2s;">
+          <div style="position:absolute; left:22%; top:18%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 3s infinite;"></div>
+          <div style="position:absolute; left:70%; top:12%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 2.5s .5s infinite;"></div>
+          <div style="position:absolute; left:48%; top:30%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 3.5s 1s infinite;"></div>
+          <div style="position:absolute; left:82%; top:38%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 2.8s .3s infinite;"></div>
+        </div>
+        <div style="position:absolute; left:{{ sun.x }}%; top:{{ sun.y }}%; width:40px; height:40px; transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle at 38% 32%, {{ sun.core }} 0%, {{ sun.rim }} 78%); box-shadow:0 0 46px 14px {{ sun.glow }}; opacity:{{ sun.op }}; transition:all 1.2s ease;"></div>
+        <div style="position:absolute; left:60%; top:16%; display:{{ moonDisp }}; animation:muznMoonFloat 6s ease-in-out infinite;">
+          <div style="position:relative; width:36px; height:36px;">
+            <div style="position:absolute; inset:0; border-radius:50%; background:#F3E8C6; box-shadow:0 0 30px 8px rgba(243,232,198,0.28);"></div>
+            <div style="position:absolute; left:11px; top:-5px; width:29px; height:29px; border-radius:50%; background:{{ th.skyTop }};"></div>
+          </div>
+        </div>
+        <img src="{{ silSrc }}" alt="" style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:150%; pointer-events:none;">
+        <img src="{{ winSrc }}" alt="" style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:150%; opacity:{{ th.win }}; transition:opacity 1.2s; pointer-events:none;">
+      </div>
+      <div style="position:absolute; left:50%; top:11px; transform:translateX(-50%) rotate(45deg); width:7px; height:7px; background:rgba(215,179,106,0.75);"></div>
+
+      <div style="position:absolute; left:0; right:0; top:62%; bottom:0; display:flex; flex-direction:column; align-items:center; padding:6px 20px 14px;">
+        <div style="display:flex; flex-direction:row; align-items:baseline; gap:8px;">
+          <span style="font-size:12px; font-weight:500; color:rgba(255,255,255,0.72);">{{ L.next }}</span>
+          <span style="font-size:19px; font-weight:700; color:#FFFFFF;">{{ nextName }}</span>
+        </div>
+        <span dir="ltr" style="font-family:'IBM Plex Mono', monospace; font-size:30px; font-weight:600; letter-spacing:1.5px; color:#FFFFFF; line-height:1.25;">{{ countdown }}</span>
+        <div style="flex:1;"></div>
+        <sc-if value="{{ isFull }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; flex-direction:row; gap:9px; align-self:stretch;">
+            <div onClick="{{ onQibla }}" style="flex:1; display:flex; flex-direction:row; justify-content:center; align-items:center; gap:6px; padding:9px 6px; border-radius:12px; background:rgba(255,255,255,0.13); border:1px solid rgba(255,255,255,0.16); cursor:pointer;" style-hover="background:rgba(255,255,255,0.2)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><circle cx="12" cy="12" r="9.2"></circle><path d="M15.5 8.5 L13.4 13.4 L8.5 15.5 L10.6 10.6 Z" fill="#FFFFFF" stroke="none"></path></svg>
+              <span style="font-size:11px; font-weight:600; color:#FFFFFF;">{{ L.qibla }}</span>
+            </div>
+            <div onClick="{{ onTimes }}" style="flex:1; display:flex; flex-direction:row; justify-content:center; align-items:center; gap:6px; padding:9px 6px; border-radius:12px; background:rgba(255,255,255,0.13); border:1px solid rgba(255,255,255,0.16); cursor:pointer;" style-hover="background:rgba(255,255,255,0.2)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><circle cx="12" cy="12" r="9.2"></circle><path d="M12 6.8 V12 L15.4 14.4"></path></svg>
+              <span style="font-size:11px; font-weight:600; color:#FFFFFF;">{{ L.allTimes }}</span>
+            </div>
+            <div onClick="{{ onAthan }}" style="flex:1; display:flex; flex-direction:row; justify-content:center; align-items:center; gap:6px; padding:9px 6px; border-radius:12px; background:rgba(255,255,255,0.13); border:1px solid rgba(255,255,255,0.16); cursor:pointer;" style-hover="background:rgba(255,255,255,0.2)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 4.5 C8.8 4.5 7.2 7 7.2 10 C7.2 14 5.5 15.5 5.5 15.5 L18.5 15.5 C18.5 15.5 16.8 14 16.8 10 C16.8 7 15.2 4.5 12 4.5 Z"></path><path d="M10.3 18.5 C10.6 19.6 11.2 20.2 12 20.2 C12.8 20.2 13.4 19.6 13.7 18.5"></path></svg>
+              <span style="font-size:11px; font-weight:600; color:#FFFFFF;">{{ L.athan }}</span>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ═══════════ V3 · الأفق البعيد (horizon) ═══════════ -->
+  <sc-if value="{{ v3 }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; inset:0; border-radius:20px; overflow:hidden; display:flex; flex-direction:column; background:{{ th.sky }};">
+
+      <!-- ══ منطقة الصورة ══ -->
+      <div style="position:relative; flex:1; min-height:0; overflow:hidden;">
+        <div style="position:absolute; inset:0; opacity:{{ th.stars }}; transition:opacity 1.2s;">
+          <div style="position:absolute; left:14%; top:16%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 3.1s infinite;"></div>
+          <div style="position:absolute; left:30%; top:34%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 2.7s .5s infinite;"></div>
+          <div style="position:absolute; left:58%; top:12%; width:3px; height:3px; border-radius:50%; background:#fff; animation:muznTwinkle 3.7s 1s infinite;"></div>
+          <div style="position:absolute; left:76%; top:31%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 2.5s .2s infinite;"></div>
+          <div style="position:absolute; left:44%; top:46%; width:2px; height:2px; border-radius:50%; background:#fff; animation:muznTwinkle 2.9s .8s infinite;"></div>
+        </div>
+        <div style="position:absolute; left:{{ sun.x }}%; top:{{ sun.y3 }}%; width:{{ sun.size }}px; height:{{ sun.size }}px; transform:translate(-50%,-50%); opacity:{{ sun.op }}; transition:all 1.2s ease; pointer-events:none;">
+          <div style="position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle at 38% 32%, {{ sun.core }} 0%, {{ sun.rim }} 78%); box-shadow:0 0 54px 18px {{ sun.glow }}; animation:muznSunBreathe 5s ease-in-out infinite;"></div>
+        </div>
+        <div style="position:absolute; left:74%; top:12%; display:{{ moonDisp }}; animation:muznMoonRise 1.4s ease both, muznMoonFloat 6s 1.4s ease-in-out infinite;">
+          <div style="position:relative; width:40px; height:40px;">
+            <div style="position:absolute; inset:0; border-radius:50%; background:#F3E8C6; box-shadow:0 0 38px 10px rgba(243,232,198,0.28); animation:muznMoonGlow 5.5s ease-in-out infinite;"></div>
+            <div style="position:absolute; left:12px; top:-5px; width:32px; height:32px; border-radius:50%; background:{{ th.skyTop }};"></div>
+          </div>
+        </div>
+
+        <div style="position:absolute; inset:0; overflow:hidden; pointer-events:none;">
+          <sc-for list="{{ slides }}" as="sl" hint-placeholder-count="1">
+            <div style="position:absolute; inset:0; animation:{{ sl.anim }};">
+              <img src="{{ sl.src }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center bottom;">
+              <div style="position:absolute; left:10px; right:10px; bottom:7px; display:flex; justify-content:center;">
+                <span style="font-size:8.5px; font-weight:700; line-height:1.4; color:#F0C877; text-align:center; text-shadow:0 1px 3px rgba(6,26,22,0.85);">{{ sl.name }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="position:absolute; left:0; right:0; bottom:0; height:64px; background:linear-gradient(rgba(6,26,22,0), rgba(6,26,22,0.45)); pointer-events:none;"></div>
+
+        <!-- شارة المدينة -->
+        <div onClick="{{ onCity }}" style="position:absolute; inset-inline-start:11px; top:10px; display:flex; flex-direction:row; align-items:center; gap:5px; padding:4px 9px; border-radius:999px; cursor:pointer; transition:transform .2s;" style-hover="transform:scale(1.05)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#39AEC9" stroke-width="2"><path d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z"></path><circle cx="12" cy="10" r="2.2"></circle></svg>
+          <span style="font-size:11px; font-weight:700; color:#FFFFFF; white-space:nowrap;text-shadow: -1px 0px 2px #393B3D;">{{ cityTxt }}</span>
+        </div>
+
+        <!-- شارة التاريخ الهجري -->
+        <div onClick="{{ onDate }}" style="position:absolute; inset-inline-end:11px; top:10px; display:flex; flex-direction:row; align-items:center; gap:5px; padding:4px 10px; border-radius:999px; cursor:pointer; transition:transform .2s;" style-hover="transform:scale(1.05)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFBC00" stroke-width="2.2"><rect x="4" y="5.5" width="16" height="15" rx="3"></rect><path d="M4 10 H20 M9 3 V7 M15 3 V7"></path></svg>
+          <span style="font-size:11px; font-weight:700; color:#ffffff; white-space:nowrap;text-shadow: -1px 0px 2px #393B3D;">{{ hijriTxt }}</span>
+        </div>
+
+        <!-- العودة للآن -->
+        <div onClick="{{ backToNow }}" style="position:absolute; inset-inline-start:11px; bottom:24px; display:{{ backNowDisp }}; flex-direction:row; align-items:center; gap:5px; padding:4px 10px; border-radius:999px; background:#D7B36A; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.18); transition:transform .2s;" style-hover="transform:scale(1.05)">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#132321" stroke-width="2.4"><path d="M4 12 A8 8 0 1 1 6.3 17.7 M4 12 V7 M4 12 H9"></path></svg>
+          <span style="font-size:9.5px; font-weight:700; color:#132321;">{{ L.backNow }}</span>
+        </div>
+      </div>
+
+      <!-- ══ لوحة المواقيت ══ -->
+      <div style="flex-shrink:0; background: #187799;background: linear-gradient(0deg,rgba(24, 119, 153, 1) 0%, rgba(52, 140, 174, 1) 100%); padding:11px 12px 12px; display:flex; flex-direction:column;">
+
+        <div style="display:flex; flex-direction:row; justify-content:space-between; align-items:center; gap:10px; margin-bottom:7px;border-bottom: 1px solid #39AEC9;padding-bottom: 9px;">
+          <div style="display:flex; flex-direction:row; align-items:center; gap:5px;">
+            <span style="font-size:10.5px; font-weight:500; color:rgba(255,255,255,0.82);">{{ nextLabel }}</span>
+            <span style="font-size:11.5px; font-weight:700; color:#F0C877;">{{ nextName }}</span>
+          </div>
+          <div style="display:flex; flex-direction:row; align-items:center; gap:5px;">
+            <span style="font-size:10.5px; font-weight:500; color:rgba(255,255,255,0.82);">{{ untilLabel }}</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:700; letter-spacing:.5px; color:#F0C877;">{{ countdown }}</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:row; gap:6px; align-items:stretch;">
+          <sc-for list="{{ tileRows }}" as="pr" hint-placeholder-count="5">
+            <div onClick="{{ pr.pick }}" style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; padding:9px 2px; border-radius:12px; background:{{ pr.bg }}; border:1px solid {{ pr.border }}; cursor:pointer; transition:all .25s;pointer-events:none;" style-hover="transform:translateY(-2px)">
+              <img src="{{ pr.icon }}" alt="" style="width:19px; height:19px; flex-shrink:0;">
+              <span style="font-size:10px; font-weight:700; color:{{ pr.nameColor }}; white-space:nowrap;">{{ pr.name }}</span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono', monospace; font-size:9px; font-weight:600; color:{{ pr.timeColor }}; white-space:nowrap;">{{ pr.time }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div onClick="{{ onQibla }}" style="margin-top:10px; height:42px; border-radius:12px; background:#06698C; border:1px solid #39AEC9; display:flex; flex-direction:row; justify-content:center; align-items:center; gap:8px; cursor:pointer; transition:all .25s;" style-hover="background:rgba(255,255,255,0.2)">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#EA9924" stroke-width="1.8"><circle cx="12" cy="12" r="9.2"></circle><path d="M15.5 8.5 L13.4 13.4 L8.5 15.5 L10.6 10.6 Z" fill="#EA9924" stroke="#EA9924"></path></svg>
+          <span style="font-size:12.5px; font-weight:700; color:#FFFFFF;">{{ L.qiblaBtn }}</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:383,&quot;height&quot;:320},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;skyline&quot;,&quot;mihrab&quot;,&quot;horizon&quot;],&quot;default&quot;:&quot;horizon&quot;,&quot;tsType&quot;:&quot;\&quot;skyline\&quot; | \&quot;mihrab\&quot; | \&quot;horizon\&quot;&quot;,&quot;section&quot;:&quot;المظهر&quot;},&quot;prayer&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;fajr&quot;,&quot;sunrise&quot;,&quot;dhuhr&quot;,&quot;asr&quot;,&quot;maghrib&quot;,&quot;isha&quot;],&quot;default&quot;:&quot;auto&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;المظهر&quot;},&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;full&quot;,&quot;compact&quot;],&quot;default&quot;:&quot;full&quot;,&quot;tsType&quot;:&quot;\&quot;full\&quot; | \&quot;compact\&quot;&quot;,&quot;section&quot;:&quot;المظهر&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ar&quot;,&quot;en&quot;],&quot;default&quot;:&quot;ar&quot;,&quot;tsType&quot;:&quot;\&quot;ar\&quot; | \&quot;en\&quot;&quot;,&quot;section&quot;:&quot;المظهر&quot;},&quot;athanOn&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;onQibla&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;},&quot;onTimes&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;},&quot;onAthan&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;}}">
+class Component extends DCLogic {
+  state = { now: new Date(), mod: null, browse: null };
+  _reg = this.joinTicker();
+
+
+  res(u) { const r = window.__resources; return (r && r[u]) || u; }
+
+  // ساعة واحدة على مستوى الصفحة تُغذّي كل بطاقات الهيرو — لا تتأثر بإعادة تركيب المكوّن
+  joinTicker() {
+    const W = window;
+    const list = (W.__mzHeroes = W.__mzHeroes || []);
+    if (list.indexOf(this) === -1) list.push(this);
+    if (!W.__mzHeroTick) W.__mzHeroTick = setInterval(() => {
+      (W.__mzHeroes || []).forEach(h => { try { h.heroTick(); } catch (e) {} });
+    }, 1000);
+    return true;
+  }
+  heroTick() {
+    const r = this._root;
+    if (r && r.isConnected && r.offsetParent === null) return; // بطاقة مخفيّة
+    this.setState({ now: new Date() });
+  }
+  // إطارات الانزلاق تُبنى حسب عدد المساجد: تدخل من اليسار، تثبت، ثم تخرج يميناً
+  ensureHeroKF(n) {
+    const want = "n" + n;
+    let el = document.getElementById("mzHeroKF");
+    if (el && el.getAttribute("data-n") === want) return;
+    if (!el) { el = document.createElement("style"); el.id = "mzHeroKF"; document.head.appendChild(el); }
+    el.setAttribute("data-n", want);
+    const T = n * 6, pc = x => (x / T * 100).toFixed(3), ez = "animation-timing-function:cubic-bezier(.45,.05,.25,1);";
+    el.textContent = "@keyframes mzHeroSlide{"
+      + "0%{transform:translateX(-100%);" + ez + "}"
+      + pc(1.05) + "%{transform:translateX(0)}"
+      + pc(6) + "%{transform:translateX(0);" + ez + "}"
+      + pc(7.05) + "%{transform:translateX(100%)}"
+      + "100%{transform:translateX(100%)}}";
+  }
+
+  componentDidMount() {
+    const boot = mod => this.setState({ mod });
+    if (window.__MUZN_DATA) boot(window.__MUZN_DATA);
+    else Promise.resolve(window.MuznData).then(boot);
+    this.joinTicker();
+  }
+  componentDidUpdate() { this.joinTicker(); }
+  componentWillUnmount() { clearTimeout(this._st); }
+
+  // كل المساجد المتاحة — تتقلّب تلقائياً في الهيرو
+  mosqueList() {
+    const mod = this.state.mod;
+    if (!mod || !mod.MOSQUE_BY_COUNTRY) return [];
+    if (this._ml) return this._ml;
+    const out = [];
+    // كانت نسخ sm/ مطابقة للصور الأصلية، فنستخدم المسار نفسه
+    Object.keys(mod.MOSQUE_BY_COUNTRY).forEach(k => mod.MOSQUE_BY_COUNTRY[k].forEach(m =>
+      out.push({ src: String(m.src), name: m.name })));
+    this._ml = out;
+    return out;
+  }
+
+
+  themes() {
+    return {
+      fajr: {
+        sky: "linear-gradient(180deg,#93A9CC 0%,#C3CBDD 42%,#F2DFC9 78%,#FAEEDA 100%)", skyTop: "#93A9CC",
+        stars: 0.3, win: 1, text: "#233149", sub: "rgba(35,49,73,0.78)", tshadow: "0 1px 2px rgba(255,255,255,0.45)",
+        chipBg: "rgba(84,110,140,0.8)", chipText: "#FFFFFF", chipBorder: "rgba(255,255,255,0.25)", sep: "rgba(35,49,73,0.15)",
+        sun: { x: 76, y: 58, y3: 66, size: 58, core: "#FFE9BD", rim: "#F2C36B", glow: "rgba(244,197,120,0.50)", op: 1 }, moon: false,
+      },
+      sunrise: {
+        sky: "linear-gradient(180deg,#A8D4E5 0%,#C9E3E9 40%,#F1EBD6 78%,#F9F0DB 100%)", skyTop: "#A8D4E5",
+        stars: 0, win: 0, text: "#1F3044", sub: "rgba(31,48,68,0.72)", tshadow: "0 1px 2px rgba(255,255,255,0.5)",
+        chipBg: "rgba(90,119,148,0.75)", chipText: "#FFFFFF", chipBorder: "rgba(255,255,255,0.3)", sep: "rgba(31,48,68,0.14)",
+        sun: { x: 64, y: 30, y3: 40, size: 56, core: "#FFF3C9", rim: "#FFD84D", glow: "rgba(249,214,120,0.55)", op: 1 }, moon: false,
+      },
+      dhuhr: {
+        sky: "linear-gradient(180deg,#9FCFE2 0%,#C6E0E7 42%,#F2ECD8 80%,#FAF1DC 100%)", skyTop: "#9FCFE2",
+        stars: 0, win: 0, text: "#1F3044", sub: "rgba(31,48,68,0.72)", tshadow: "0 1px 2px rgba(255,255,255,0.5)",
+        chipBg: "rgba(90,119,148,0.75)", chipText: "#FFFFFF", chipBorder: "rgba(255,255,255,0.3)", sep: "rgba(31,48,68,0.14)",
+        sun: { x: 40, y: 14, y3: 16, size: 58, core: "#FFF6CE", rim: "#FFD84D", glow: "rgba(255,213,92,0.60)", op: 1 }, moon: false,
+      },
+      asr: {
+        sky: "linear-gradient(180deg,#9BBFD3 0%,#CFD9CF 45%,#F4E2BE 82%,#F9EAC9 100%)", skyTop: "#9BBFD3",
+        stars: 0, win: 0, text: "#2C3140", sub: "rgba(44,49,64,0.75)", tshadow: "0 1px 2px rgba(255,244,214,0.55)",
+        chipBg: "rgba(96,116,138,0.78)", chipText: "#FFFFFF", chipBorder: "rgba(255,255,255,0.3)", sep: "rgba(44,49,64,0.15)",
+        sun: { x: 29, y: 32, y3: 38, size: 58, core: "#FFE3A6", rim: "#F5A83C", glow: "rgba(245,168,60,0.50)", op: 1 }, moon: false,
+      },
+      maghrib: {
+        sky: "linear-gradient(180deg,#8393B4 0%,#C9A791 52%,#F2CFA0 82%,#F8E3C2 100%)", skyTop: "#8393B4",
+        stars: 0.22, win: 1, text: "#FFFFFF", sub: "rgba(255,255,255,0.92)", tshadow: "0 1px 4px rgba(70,50,60,0.5)",
+        chipBg: "rgba(255,255,255,0.22)", chipText: "#FFFFFF", chipBorder: "rgba(255,255,255,0.3)", sep: "rgba(255,255,255,0.25)",
+        sun: { x: 16, y: 54, y3: 64, size: 62, core: "#FFCE8A", rim: "#FF7E3D", glow: "rgba(255,150,70,0.50)", op: 1 }, moon: false,
+      },
+      isha: {
+        sky: "linear-gradient(180deg,#22344E 0%,#33475F 55%,#54626F 88%,#6E7A80 100%)", skyTop: "#22344E",
+        stars: 1, win: 1, text: "#FFFFFF", sub: "rgba(255,255,255,0.88)", tshadow: "0 1px 4px rgba(0,10,20,0.55)",
+        chipBg: "rgba(255,255,255,0.16)", chipText: "#FFFFFF", chipBorder: "rgba(255,255,255,0.22)", sep: "rgba(255,255,255,0.20)",
+        sun: { x: 70, y: 120, y3: 124, size: 40, core: "#F7EBC8", rim: "#F3E8C6", glow: "rgba(243,232,198,0.40)", op: 0 }, moon: true,
+      },
+    };
+  }
+
+  renderVals() {
+    const p = this.props;
+    const lang = p.lang ?? "ar";
+    const variant = p.variant ?? "horizon";
+    const mod = this.state.mod;
+    const themes = this.themes();
+    const ORDER = ["fajr", "dhuhr", "asr", "maghrib", "isha"];
+    const browse = this.state.browse;
+
+    let periodKey = "dhuhr", nextKey = "asr", countdown = "—", nextName = "", athanTime = "";
+    let nextAthanKey = "dhuhr";
+    if (mod) {
+      const PT = this.props.times || mod.PRAYER_TIMES;
+      const st = mod.getPrayerState(this.state.now, PT);
+      periodKey = st.currentKey;
+      // العد التنازلي دائمًا لأذانٍ (نتجاوز الشروق)
+      let nk = st.nextKey, rem = st.remaining;
+      if (nk === "sunrise") {
+        nk = "dhuhr";
+        rem = Math.max(0, Math.round((mod.toMin(PT.dhuhr) - st.nowMin) * 60));
+      }
+      nextAthanKey = nk;
+      // وضع الاستعراض: الموعد والمتبقي للصلاة المُستعرضة
+      if (browse) {
+        nk = browse;
+        rem = Math.max(0, Math.round((((mod.toMin(PT[browse]) - st.nowMin) % 1440 + 1440) % 1440) * 60));
+        periodKey = browse;
+      }
+      nextKey = nk;
+      countdown = mod.fmtCountdown(rem, "en");
+      const meta = mod.PRAYER_META.find(m => m.key === nk);
+      nextName = lang === "en" ? meta.en : meta.ar;
+      athanTime = mod.fmt12(PT[nk], "en") + " " + mod.ampm(PT[nk], lang);
+    }
+    // معاينة يدوية تتجاوز الوقت الفعلي (ما لم يكن هناك استعراض)
+    const ov = p.prayer ?? "auto";
+    if (ov !== "auto" && !browse) periodKey = ov;
+    const th = themes[periodKey] || themes.dhuhr;
+
+    const browseStep = dir => {
+      this.setState(s => {
+        const cur = s.browse || nextAthanKey;
+        let i = ORDER.indexOf(cur);
+        if (s.browse) i = (i + dir + ORDER.length) % ORDER.length;
+        return { browse: ORDER[i] };
+      });
+    };
+    const dotItems = ORDER.map(k => {
+      const meta2 = mod ? mod.PRAYER_META.find(m => m.key === k) : null;
+      const active = browse ? k === browse : k === nextAthanKey;
+      return {
+        w: active ? 20 : 6,
+        bg: active ? th.text : th.sub,
+        op: active ? 1 : 0.45,
+        pick: () => this.setState({ browse: k }),
+        name: meta2 ? (lang === "en" ? meta2.en : meta2.ar) : "",
+      };
+    });
+
+    const periodNames = {
+      fajr: ["الفجر", "Fajr"], sunrise: ["الضحى", "Morning"], dhuhr: ["الظهر", "Dhuhr"],
+      asr: ["العصر", "Asr"], maghrib: ["المغرب", "Maghrib"], isha: ["العشاء", "Isha"],
+    };
+    const L = lang === "en"
+      ? { next: browse ? "Prayer" : "Next Prayer", until: browse ? "Remaining" : "Until Athan", qibla: "Qibla", qiblaBtn: "Find Qibla direction", allTimes: "All Times", athan: "Athan Alert", backNow: "Back to now", athanAt: "Athan at" }
+      : { next: browse ? "صلاة" : "الصلاة القادمة", until: browse ? "متبقٍ عليها" : "متبقٍ على الأذان", qibla: "اتجاه القبلة", qiblaBtn: "تحديد إتجاه القبلة", allTimes: "جميع المواقيت", athan: "تنبيه الأذان", backNow: "العودة للآن", athanAt: "الأذان" };
+
+
+    // ── بلاطات الصلوات الخمس ──
+    const PR_ICONS = {
+      fajr: "images/prayer-fajr.svg",
+      dhuhr: "images/prayer-dhuhr.svg",
+      asr: "images/prayer-asr.svg",
+      maghrib: "images/prayer-maghrib.svg",
+      isha: "images/prayer-isha.svg",
+    };
+    const tileRows = ORDER.map(k => {
+      const meta3 = mod ? mod.PRAYER_META.find(m => m.key === k) : null;
+      const on = browse ? k === browse : k === nextAthanKey;
+      const PT2 = mod ? (this.props.times || mod.PRAYER_TIMES) : null;
+      return {
+        name: meta3 ? (lang === "en" ? meta3.en : meta3.ar) : "",
+        time: PT2 ? mod.fmt12(PT2[k], "en") + " " + mod.ampm(PT2[k], lang) : "—",
+        icon: PR_ICONS[k],
+        ico: on ? "#EA9924" : "#F0C877",
+        bg: on ? "rgba(255,255,255,0.94)" : "#06698C",
+        border: on ? "#1589BC" : "#39AEC9",
+        nameColor: on ? "#0E4A5C" : "#FFFFFF",
+        timeColor: on ? "#1589BC" : "rgba(255,255,255,0.75)",
+        pick: () => this.setState({ browse: k }),
+      };
+    });
+    const athanOn = p.athanOn ?? true;
+    const noop = () => {};
+    return {
+      rootRef: el => { this._root = el; },
+      dirVal: lang === "en" ? "ltr" : "rtl",
+      v1: variant === "skyline", v2: variant === "mihrab", v3: variant === "horizon",
+      isFull: (p.mode ?? "full") === "full",
+      th, sun: th.sun,
+      moonDisp: th.moon ? "block" : "none",
+      pillDot: th.moon ? "#F3E8C6" : th.sun.rim,
+      periodName: periodNames[periodKey][lang === "en" ? 1 : 0],
+      nextName, countdown, L, athanTime, tileRows,
+      nextLabel: L.next + ":", untilLabel: L.until + ":",
+      cityTxt: p.city || "",
+      onCity: p.onCity || (() => {}),
+      hijriTxt: p.hijri || "",
+      onDate: p.onDate || (() => {}),
+      browsing: !!browse,
+      browseNext: () => browseStep(1),
+      browsePrev: () => browseStep(-1),
+      backToNow: () => this.setState({ browse: null }),
+      backNowDisp: browse ? "flex" : "none",
+      dotItems,
+      slides: (() => {
+        const list = this.mosqueList();
+        if (list.length < 2) return [{ src: this.res(p.mosqueSrc || "images/mosque-haram-t.png"), name: p.mosqueName || "", anim: "none" }];
+        this.ensureHeroKF(list.length);
+        const dur = list.length * 6;
+        return list.map((m, i) => ({ src: this.res(m.src), name: m.name, anim: "mzHeroSlide " + dur + "s linear -" + (i * 6) + "s infinite" }));
+      })(),
+      mosqueSrc: this.res(p.mosqueSrc || "images/mosque-haram-t.png"),
+      silSrc: this.res("images/mosque-sil.svg"),
+      winSrc: this.res("images/mosque-windows.svg"),
+      mosqueName: p.mosqueName || "المسجد الحرام - مكة المكرمة - المملكة العربية السعودية",
+      athanState: lang === "en" ? (athanOn ? "On" : "Off") : (athanOn ? "مفعّل" : "متوقف"),
+      hasTemp: p.temp != null && p.temp !== "",
+      tempTxt: String(p.temp) + "°",
+      onQibla: p.onQibla ?? noop, onTimes: p.onTimes ?? noop, onAthan: p.onAthan ?? noop,
+      true: true, false: false,
+    };
+  }
+}
+</script>
+</body>
+</html>

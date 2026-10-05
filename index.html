@@ -1,0 +1,2738 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>فذَكِّر</title>
+
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/components.css">
+
+<script src="js/vendor/react.production.min.js"></script>
+<script src="js/vendor/react-dom.production.min.js"></script>
+<script src="js/resources.js"></script>
+<!-- نسخة جاهزة من المكوّن، تعمل فقط عند الفتح المباشر file:// -->
+<script src="components/HeroCard.offline.js"></script>
+<script src="js/muzn-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dc-runtime.js"></script>
+</head>
+<body>
+
+<x-dc>
+<div dir="rtl" style="{{ rootStyle }}; font-family:'IBM Plex Sans Arabic','Segoe UI',sans-serif; -webkit-font-smoothing:antialiased;">
+
+  <!-- ═════════════ المجموعة ١ · التهيئة والإعداد ═════════════ -->
+  <div style="{{ grpSty }}">
+    <div style="{{ grpLbl }}">١ · التهيئة والإعداد الأولي</div>
+    <div style="{{ rowSty }}">
+
+      <!-- ─── الترحيب ─── -->
+      <div data-screen-label="شاشة الترحيب" dir="{{ dirA }}" style="{{ sty.welcome }}">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; padding:40px 34px; {{ T.page }};">
+          <img src="images/logo-fadhakkir.svg" alt="شعار فذَكِّر" class="fd-1">
+          <div class="fd-2">
+            <!-- <span class="fd-3">ف<span class="fd-4">َ</span>ذ<span class="fd-4">َ</span>ك<span class="fd-4">ِّ</span>ر<span class="fd-4">ْ</span></span> -->
+          </div>
+          <!-- <span class="fd-5">Fadhakkir</span> -->
+          <!-- <span class="fd-6">{{ X.tagline }}</span> -->
+          <!-- <div class="fd-7"></div> -->
+          <!-- <div sc-camel-on-click="{{ goLanguage }}" class="fd-8" style-hover="transform:translateY(-2px)">
+            <span class="fd-9">{{ X.startJourney }}</span>
+          </div> -->
+          <!-- <div class="fd-10"></div> -->
+        </div>
+      </div>
+
+      <!-- ─── اختيار اللغة ─── -->
+      <div data-screen-label="اختيار اللغة" dir="{{ dirA }}" style="{{ sty.language }}">
+        <div class="fd-11" style="background:{{ T.page }}">
+          <img src="images/logo-fadhakkir.svg" alt="" class="fd-12">
+          <span class="fd-13">اللغة / Language</span>
+          <span class="fd-14" style="color:{{ T.sub }}">اختر لغة التطبيق · Choose app language</span>
+          <div sc-camel-on-click="{{ pickArabic }}" class="fd-15" style-hover="transform:translateY(-2px)">
+            <span class="fd-16">العربية</span>
+          </div>
+          <div sc-camel-on-click="{{ pickEnglish }}" class="fd-17" style="background:{{ T.card }}" style-hover="transform:translateY(-2px)">
+            <span class="fd-18">English</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── إذن الموقع ─── -->
+      <div data-screen-label="السماح بالموقع" dir="{{ dirA }}" style="{{ sty.location }}">
+        <div class="fd-19" style="background:{{ T.page }}">
+          <div class="fd-20" style="background:{{ T.mint }}">
+            <svg width="52" height="52" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.7"><path d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+          </div>
+          <span class="fd-21" style="color:{{ T.text }}">{{ X.locTitle }}</span>
+          <span class="fd-22" style="color:{{ T.sub }}">{{ X.locBody }}</span>
+          <div sc-camel-on-click="{{ allowLocation }}" class="fd-23" style-hover="transform:translateY(-2px)">
+            <span class="fd-16">{{ X.locAllow }}</span>
+          </div>
+          <div sc-camel-on-click="{{ rejectLocation }}" class="fd-24">
+            <span class="fd-25">{{ X.locManual }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── اختيار الموقع يدوياً ─── -->
+      <div data-screen-label="اختيار الموقع يدوياً" dir="{{ dirA }}" style="{{ sty.locationManual }}">
+
+        <!-- ── الهوية ── -->
+        <div class="fd-26" style="background:url(images/bg.png), {{ T.page }}">
+          <img src="images/logo-fadhakkir.svg" alt="شعار فذَكِّر" class="fd-27">
+          <!-- <span class="fd-28">ف<span class="fd-4">َ</span>ذ<span class="fd-4">َ</span>ك<span class="fd-4">ِّ</span>ر<span class="fd-4">ْ</span></span> -->
+          <!-- <span class="fd-29">{{ X.tagline }}</span> -->
+        </div>
+
+        <sc-if value="{{ obStep1 }}" hint-placeholder-val="{{ true }}">
+        <!-- ── المحتوى ── -->
+        <div class="fd-30" style="">
+
+          <!-- عنوان القسم -->
+          <div class="fd-31">
+            <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.8"><path d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z"></path><circle cx="12" cy="10" r="2.4"></circle></svg>
+            <span class="fd-32" style="color:{{ T.sub }}">{{ X.lmSection }}</span>
+          </div>
+
+          <!-- بطاقة الموقع -->
+          <div style="border-radius:16px; background:{{ T.card }}; box-shadow:{{ T.shadow }}; border:1px solid {{ T.border }}; padding:14px;">
+
+            <!-- تحديد تلقائي -->
+            <div sc-camel-on-click="{{ lmAutoDetect }}" style="height:44px; border-radius:11px; background:{{ T.mint }}; border:1px solid {{ T.border }}; display:flex; flex-direction:row-reverse; justify-content:center; align-items:center; gap:8px; cursor:pointer; transition:transform .2s;" style-hover="transform:scale(1.01)">
+              <span class="fd-33" style="color:{{ T.text }}">{{ X.lmAutoBtn }}</span>
+              <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="#EA9924" stroke="#EA9924" stroke-width="1.9"><path d="M21 3 L10.5 21 L9 13.5 L1.5 12 Z"></path></svg>
+            </div>
+
+            <sc-if value="{{ lmAutoOn }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-34">
+                <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="2.6" class="fd-35"><path d="M5 12.5 L10 17.5 L19 7.5"></path></svg>
+                <span class="fd-36">{{ lmAutoText }}</span>
+              </div>
+            </sc-if>
+
+            <!-- المدينة -->
+            <span class="fd-37" style="color:{{ T.sub }}">{{ X.lmCityL }}</span>
+
+            <div class="fd-38">
+              <input value="{{ lmSearch }}" sc-camel-on-change="{{ setLmSearch }}" placeholder="{{ X.lmSearchPh }}" style="width:100%; box-sizing:border-box; height:44px; border-radius:11px; background:{{ T.soft }}; border:1px solid #8A9EB2; outline:none; padding:0 14px; font-family:inherit; font-size:14px; font-weight:600; color:{{ T.text }};">
+
+              <sc-if value="{{ lmListOn }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute; top:calc(100% + 6px); inset-inline-start:0; inset-inline-end:0; z-index:30; border-radius:14px; background:{{ T.card }}; border:1px solid {{ T.border }}; box-shadow:0 12px 32px rgba(0,0,0,0.14); overflow:hidden; display:flex; flex-direction:column; animation:muznFadeUp .2s ease;">
+                  <div class="fd-39">
+                    <sc-for list="{{ lmResults }}" as="r" hint-placeholder-count="4">
+                      <div sc-camel-on-click="{{ r.pick }}" class="fd-40" style="background:{{ r.bg }}; border-bottom:1px solid {{ T.navBorder }}" style-hover="background:#F8FAFC">
+                        <span class="fd-41" style="color:{{ T.text }}">{{ r.name }}</span>
+                        <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="2.6" class="fd-35" style="display:{{ r.check }}"><path d="M5 12.5 L10 17.5 L19 7.5"></path></svg>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ lmEmptyOn }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute; top:calc(100% + 6px); inset-inline-start:0; inset-inline-end:0; z-index:30; border-radius:14px; background:{{ T.card }}; border:1px solid {{ T.border }}; box-shadow:0 12px 32px rgba(0,0,0,0.14); padding:16px; animation:muznFadeUp .2s ease;">
+                  <span class="fd-42" style="color:{{ T.faint }}">{{ X.lmNoCity }}</span>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+
+          <!-- طريقة حساب وقت العصر -->
+          <span class="fd-43" style="color:{{ T.sub }}">{{ X.lmAsrTitle }}</span>
+          <div class="fd-38">
+            <!-- <div sc-camel-on-click="{{ toggleAsrDrop }}" style="height:48px; border-radius:13px; background:{{ T.card }}; border:1px solid {{ T.border }}; box-shadow:{{ T.shadow }}; display:flex; flex-direction:row; justify-content:space-between; align-items:center; padding:0 15px; cursor:pointer;">
+              <span class="fd-33" style="color:{{ T.text }}">{{ asrLabel }}</span>
+              <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.sub }}" stroke-width="2" class="fd-44" style="transform:rotate({{ asrRot }}deg)"><path d="M6 9 L12 15 L18 9"></path></svg>
+            </div> -->
+            <div class="fd-st-ro"><span class="fd-st-ro-t">{{ stAsrName }}</span></div>
+            <sc-if value="{{ asrDropOn }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute; top:calc(100% + 6px); inset-inline-start:0; inset-inline-end:0; z-index:25; border-radius:14px; background:{{ T.card }}; border:1px solid {{ T.border }}; box-shadow:0 12px 32px rgba(0,0,0,0.14); overflow:hidden; display:flex; flex-direction:column; animation:muznFadeUp .2s ease;">
+                <sc-for list="{{ asrRows }}" as="a" hint-placeholder-count="2">
+                  <div sc-camel-on-click="{{ a.pick }}" class="fd-40" style="background:{{ a.bg }}; border-bottom:1px solid {{ T.navBorder }}" style-hover="background:#F8FAFC">
+                    <span class="fd-41" style="color:{{ T.text }}">{{ a.name }}</span>
+                    <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="2.6" class="fd-35" style="display:{{ a.check }}"><path d="M5 12.5 L10 17.5 L19 7.5"></path></svg>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+
+          <!-- خطوط العرض العليا -->
+          <div style="border-radius:16px; background:{{ T.card }}; box-shadow:{{ T.shadow }}; border:1px solid {{ T.border }}; padding:14px 15px; margin-top:14px; display:flex; flex-direction:row; justify-content:space-between; align-items:center; gap:12px;">
+            <div class="fd-45">
+              <span class="fd-46" style="color:{{ T.text }}">{{ X.psHighLat }}</span>
+              <span class="fd-47" style="color:{{ T.sub }}">{{ X.psHighLatSub }}</span>
+            </div>
+            <div sc-camel-on-click="{{ toggleHighLat }}" class="fd-48" style="background:{{ highLatBg }}; justify-content:{{ highLatJustify }}">
+              <span class="fd-49"></span>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ── الخطوة الثانية: القرآن والتفسير ── -->
+        <sc-if value="{{ obStep2 }}" hint-placeholder-val="{{ false }}">
+          <div class="fd-30">
+            <div class="fd-31">
+              <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.8" stroke-linejoin="round"><path d="M12 6.4 C10.2 5 7.6 4.5 5.2 4.9 V17.6 C7.6 17.2 10.2 17.7 12 19.1 C13.8 17.7 16.4 17.2 18.8 17.6 V4.9 C16.4 4.5 13.8 5 12 6.4 Z"></path><path d="M12 6.4 V19.1"></path></svg>
+              <span class="fd-32" style="color:{{ T.sub }}">{{ X.obQuranSec }}</span>
+            </div>
+
+            <span class="fd-37" style="color:{{ T.sub }}">{{ X.obRecL }}</span>
+            <div class="fd-qs-wrap">
+              <div sc-camel-on-click="{{ qsToggleRec }}" class="fd-qs-trig" style-hover="border-color:#1589BC">
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2" stroke-linecap="round" style="transform:rotate({{ qsRecRot }}deg); transition:transform .25s;"><path d="M6 9 L12 15 L18 9"></path></svg>
+                <span class="fd-qs-val">{{ qsRecName }}</span>
+              </div>
+              <sc-if value="{{ qsRecOn }}" hint-placeholder-val="{{ false }}">
+                <div class="fd-qs-list">
+                  <sc-for list="{{ qsRecRows }}" as="rc" hint-placeholder-count="5">
+                    <div sc-camel-on-click="{{ rc.pick }}" class="fd-qs-row" style="background:{{ rc.bg }}; border-inline-start-color:{{ rc.bar }}" style-hover="background:#F5F8FB">
+                      <span class="fd-qs-row-t">{{ rc.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+
+            <span class="fd-37" style="color:{{ T.sub }}">{{ X.obTafL }}</span>
+            <div class="fd-qs-wrap">
+              <div sc-camel-on-click="{{ qsToggleTaf }}" class="fd-qs-trig" style-hover="border-color:#1589BC">
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2" stroke-linecap="round" style="transform:rotate({{ qsTafRot }}deg); transition:transform .25s;"><path d="M6 9 L12 15 L18 9"></path></svg>
+                <span class="fd-qs-val">{{ qsTafName }}</span>
+              </div>
+              <sc-if value="{{ qsTafOn }}" hint-placeholder-val="{{ false }}">
+                <div class="fd-qs-list">
+                  <sc-for list="{{ qsTafRows }}" as="tf" hint-placeholder-count="5">
+                    <div sc-camel-on-click="{{ tf.pick }}" class="fd-qs-row" style="background:{{ tf.bg }}; border-inline-start-color:{{ tf.bar }}" style-hover="background:#F5F8FB">
+                      <span class="fd-qs-row-t">{{ tf.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ── النقاط وزر الانتقال ── -->
+        <div class="fd-50" style="background:{{ T.page }}">
+          <div class="fd-ob-dots">
+            <span class="fd-ob-dot" style="background:{{ obDot1 }}"></span>
+            <span class="fd-ob-dot" style="background:{{ obDot2 }}"></span>
+          </div>
+          <div sc-camel-on-click="{{ obNext }}" class="fd-51" style-hover="transform:scale(1.01)">
+            <span class="fd-52">{{ obBtnLabel }}</span>
+            <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4"><path d="M14 6 L8 12 L14 18"></path></svg>
+          </div>
+        </div>
+      <sc-if value="{{ langAskOn }}" hint-placeholder-val="{{ false }}">
+          <div class="fd-53">
+            <div class="fd-54" style="background:{{ T.sheet }}">
+              <span dir="rtl" class="fd-55" style="color:{{ T.text }}">هل ترغب بتغيير لغة التطبيق إلى الإنجليزية؟</span>
+              <span dir="ltr" class="fd-56" style="color:{{ T.sub }}">Would you like to switch the app language to English?</span>
+              <div dir="ltr" class="fd-57">
+                <div sc-camel-on-click="{{ langYes }}" class="fd-58" style-hover="opacity:.92">
+                  <span class="fd-59">Yes</span>
+                </div>
+                <div sc-camel-on-click="{{ langNo }}" style="flex:1; height:46px; border-radius:12px; background:{{ T.soft }}; border:1px solid {{ T.border }}; display:flex; justify-content:center; align-items:center; cursor:pointer;" style-hover="opacity:.85">
+                  <span class="fd-46" style="color:{{ T.text }}">No</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <!-- ─── إعدادات مواقيت الصلاة ─── -->
+      <div data-screen-label="إعدادات مواقيت الصلاة" dir="{{ dirA }}" style="{{ sty.prayerSettings }}">
+        <div class="fd-60">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-61" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <div class="fd-62">
+            <span class="fd-63">{{ X.psTitle }}</span>
+            <span class="fd-64">{{ X.psSub }}</span>
+          </div>
+        </div>
+        <div class="fd-65">
+          <div class="fd-66" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <span class="fd-67" style="color:{{ T.text }}">{{ X.psAthanPref }}</span>
+            <div class="fd-68">
+              <sc-for list="{{ athanPrefRows }}" as="r" hint-placeholder-count="3">
+                <div sc-camel-on-click="{{ r.pick }}" class="fd-69" style-hover="background:#F8FAFC">
+                  <span style="width:19px; height:19px; border-radius:50%; border:2px solid {{ r.ring }}; display:flex; justify-content:center; align-items:center;"><span class="fd-70" style="background:{{ r.dot }}"></span></span>
+                  <span class="fd-71" style="color:{{ T.text }}">{{ r.label }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div class="fd-66" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <span class="fd-67" style="color:{{ T.text }}">{{ X.psAsrTitle }}</span>
+            <div class="fd-72">
+              <div sc-camel-on-click="{{ pickAsrJomhor }}" style="flex:1; height:42px; border-radius:11px; background:{{ asrJomhorBg }}; border:1.5px solid {{ asrJomhorBorder }}; display:flex; justify-content:center; align-items:center; cursor:pointer; transition:all .2s;">
+                <span class="fd-73" style="color:{{ asrJomhorColor }}">{{ X.asrJomhor }}</span>
+              </div>
+              <div sc-camel-on-click="{{ pickAsrHanafi }}" style="flex:1; height:42px; border-radius:11px; background:{{ asrHanafiBg }}; border:1.5px solid {{ asrHanafiBorder }}; display:flex; justify-content:center; align-items:center; cursor:pointer; transition:all .2s;">
+                <span class="fd-73" style="color:{{ asrHanafiColor }}">{{ X.asrHanafi }}</span>
+              </div>
+            </div>
+            <span class="fd-74" style="color:{{ T.sub }}">{{ X.psAsrNote }}</span>
+          </div>
+          
+          <div class="fd-75" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <div class="fd-45">
+              <span class="fd-67" style="color:{{ T.text }}">{{ X.psHighLat }}</span>
+              <span class="fd-47" style="color:{{ T.sub }}">{{ X.psHighLatSub }}</span>
+            </div>
+            <div sc-camel-on-click="{{ toggleHighLat }}" class="fd-76" style="background:{{ highLatBg }}; justify-content:{{ highLatJustify }}">
+              
+            <span class="fd-77"></span></div>
+          </div><div sc-camel-on-click="{{ goKhatmahSetup }}" class="fd-78" style-hover="transform:translateY(-2px)">
+            <span class="fd-16">{{ X.continueBtn }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── إعداد خطة الختمة ─── -->
+      <div data-screen-label="إعداد خطة الختمة" dir="{{ dirA }}" style="{{ sty.khatmahSetup }}">
+        <div class="fd-79" style="background:{{ T.page }}">
+          <div class="fd-80" style="background:{{ T.mint }}">
+            <svg width="46" height="46" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.7">
+              <path d="M12 6 C10 4.6 7.2 4.1 4.8 4.5 V17.8 C7.2 17.4 10 17.9 12 19.3 C14 17.9 16.8 17.4 19.2 17.8 V4.5 C16.8 4.1 14 4.6 12 6 Z"></path><path d="M12 6 V19.3"></path></svg>
+          </div>
+          <span class="fd-81" style="color:{{ T.text }}">{{ X.khPlanTitle }}</span>
+          <span class="fd-82" style="color:{{ T.sub }}">{{ X.ksQ }}</span>
+          <div class="fd-83">
+            <span dir="ltr" class="fd-84" style="color:{{ T.green }}">{{ khatmahPagesTxt }}</span>
+            <span class="fd-85" style="color:{{ T.sub }}">{{ X.ksPerDay }}</span>
+          </div>
+          <input type="range" min="1" max="20" value="{{ khatmahPages }}" sc-camel-on-change="{{ setKhatmahPages }}" class="fd-86">
+          <div class="fd-87">
+            <span class="fd-88" style="color:{{ T.faint }}">{{ X.ksMin }}</span>
+            <span class="fd-88" style="color:{{ T.faint }}">{{ X.ksMax }}</span>
+          </div>
+          <div class="fd-89" style="background:{{ T.mint }}">
+            <span class="fd-73" style="color:{{ T.green }}">{{ X.ksEstimate }}</span>
+            <span class="fd-90" style="color:{{ T.green }}">{{ khatmahEstimate }}</span>
+          </div>
+          <div sc-camel-on-click="{{ finishOnboarding }}" class="fd-91" style-hover="transform:translateY(-2px)">
+            <span class="fd-16">{{ X.ksStart }}</span>
+          </div>
+          <div sc-camel-on-click="{{ finishOnboarding }}" class="fd-92"><span class="fd-73" style="color:{{ T.sub }}">{{ X.ksSkip }}</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═════════════ شريط التنقل السفلي ═════════════ -->
+  <div data-screen-label="شريط التنقل السفلي" dir="{{ dirA }}" style="{{ navSty }}">
+    
+    <div sc-camel-on-click="{{ tabQuran }}" style="{{ navItem.quran }}">
+      <div style="{{ navBtn.quran }}" style-hover="transform:scale(1.06)">
+        <!-- <svg width="{{ navSz.quran }}" height="{{ navSz.quran }}" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ navC.quran }}" stroke-width="1.9"><path d="M12 6 C10 4.6 7.2 4.1 4.8 4.5 V17.8 C7.2 17.4 10 17.9 12 19.3 C14 17.9 16.8 17.4 19.2 17.8 V4.5 C16.8 4.1 14 4.6 12 6 Z"></path><path d="M12 6 V19.3"></path></svg> -->
+      <svg width="{{ navSz.quran }}" height="{{ navSz.quran }}" viewBox="0 0 18.84 16.34" fill="{{ navC.quran }}" stroke="none" stroke-width="1.9">
+        <g id="Navigator">
+          <path d="M18.26,1.78c-.21-.06-.44-.1-.67-.12V.72c0-.29-.21-.54-.49-.59-1.18-.21-5.12-.6-7.68,2.94C6.87-.47,2.92-.08,1.75,.13c-.28,.05-.49,.3-.49,.59v.94c-.24,.03-.46,.07-.67,.12-.34,.1-.58,.41-.58,.77V14.19c0,.23,.1,.46,.28,.61,.18,.15,.41,.21,.64,.17,4.83-.82,7.44,.74,8.12,1.24,.11,.08,.25,.12,.38,.12,.13,0,.27-.04,.38-.12,.68-.5,3.29-2.06,8.12-1.24,.23,.04,.46-.02,.64-.17,.18-.15,.28-.37,.28-.61V2.54c0-.36-.24-.67-.58-.77h0Zm-1.3-1.03V12.48c-1.16-.18-4.74-.44-7.22,2.56V3.72C12.05,.21,15.81,.54,16.96,.74h0Zm-15.07,0c1.15-.2,4.91-.53,7.22,2.98V15.04c-1.84-2.22-4.28-2.66-5.89-2.66-.56,0-1.03,.05-1.33,.1V.74ZM.82,14.35c-.1,.01-.19-.06-.19-.16V2.54c0-.08,.05-.14,.12-.16,.12-.03,.29-.07,.5-.1V12.52c0,.18,.08,.34,.21,.46,.13,.11,.31,.16,.48,.13,.98-.16,4.05-.42,6.33,1.94-1.38-.64-3.83-1.32-7.46-.7h0Zm17.4-.16c0,.1-.09,.18-.19,.16-3.62-.62-6.07,.06-7.45,.7,2.28-2.36,5.35-2.1,6.33-1.94,.17,.03,.35-.02,.48-.13,.13-.11,.21-.28,.21-.46V2.28c.21,.03,.39,.07,.5,.1,.07,.02,.12,.09,.12,.16V14.19h0Z"/>
+        </g>
+      </svg>
+      </div>
+      <span style="{{ navTxt.quran }}">{{ navL.quran }}</span>
+    </div>
+    <div sc-camel-on-click="{{ tabPray }}" style="{{ navItem.prayer }}">
+      <div style="{{ navBtn.prayer }}" style-hover="transform:scale(1.06)">
+        <svg width="{{ navSz.prayer }}" height="{{ navSz.prayer }}" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ navC.prayer }}" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="8.6"></circle><path d="M12 7.2 V12 L15.4 14.3"></path></svg>
+      </div>
+      <span style="{{ navTxt.prayer }}">{{ navL.pray }}</span>
+    </div>
+    <div sc-camel-on-click="{{ tabHome }}" style="{{ navItem.home }}">
+      <div style="{{ navBtn.home }}" style-hover="transform:scale(1.06)">
+        <svg width="{{ navSz.home }}" height="{{ navSz.home }}" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ navC.home }}" stroke-width="2"><path d="M4.5 10.8 L12 4.4 L19.5 10.8 V19.6 H14.4 V14.6 H9.6 V19.6 H4.5 Z"></path></svg>
+      </div>
+      <span style="{{ navTxt.home }}">{{ navL.home }}</span>
+    </div>
+    <div sc-camel-on-click="{{ tabAdhkar }}" style="{{ navItem.adhkar }}">
+      <div style="{{ navBtn.adhkar }}" style-hover="transform:scale(1.06)">
+        <svg width="{{ navSz.adhkar }}" height="{{ navSz.adhkar }}" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ navC.adhkar }}" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="12.00" cy="2.10" r="0.82"></circle><circle cx="14.64" cy="2.63" r="0.82"></circle><circle cx="16.88" cy="4.12" r="0.82"></circle><circle cx="18.37" cy="6.36" r="0.82"></circle><circle cx="18.90" cy="9.00" r="0.82"></circle><circle cx="18.37" cy="11.64" r="0.82"></circle><circle cx="16.88" cy="13.88" r="0.82"></circle><circle cx="14.64" cy="15.37" r="0.82"></circle><circle cx="9.36" cy="15.37" r="0.82"></circle><circle cx="7.12" cy="13.88" r="0.82"></circle><circle cx="5.63" cy="11.64" r="0.82"></circle><circle cx="5.10" cy="9.00" r="0.82"></circle><circle cx="5.63" cy="6.36" r="0.82"></circle><circle cx="7.12" cy="4.12" r="0.82"></circle><circle cx="9.36" cy="2.63" r="0.82"></circle><path d="M12 14.1 C13.35 15.6 13.85 16.95 13.85 17.6 L10.15 17.6 C10.15 16.95 10.65 15.6 12 14.1 Z"></path><path d="M10.45 18.9 H13.55 L14.35 22.1 H9.65 Z"></path></svg>
+      </div>
+      <span style="{{ navTxt.adhkar }}">{{ navL.adhkar }}</span>
+    </div>
+    <div sc-camel-on-click="{{ tabMore }}" style="{{ navItem.more }}">
+      <div style="{{ navBtn.more }}" style-hover="transform:scale(1.06)">
+        <svg width="{{ navSz.more }}" height="{{ navSz.more }}" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ navC.more }}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.1"></circle><path d="M19.1 14.4 A1.7 1.7 0 0 0 19.5 16.2 L19.6 16.3 A2 2 0 1 1 16.8 19.1 L16.7 19 A1.7 1.7 0 0 0 14.9 18.6 A1.7 1.7 0 0 0 13.8 20.2 V20.4 A2 2 0 1 1 9.8 20.4 V20.3 A1.7 1.7 0 0 0 8.6 18.7 A1.7 1.7 0 0 0 6.8 19.1 L6.7 19.2 A2 2 0 1 1 3.9 16.4 L4 16.3 A1.7 1.7 0 0 0 4.4 14.5 A1.7 1.7 0 0 0 2.8 13.4 H2.6 A2 2 0 1 1 2.6 9.4 H2.7 A1.7 1.7 0 0 0 4.3 8.2 A1.7 1.7 0 0 0 3.9 6.4 L3.8 6.3 A2 2 0 1 1 6.6 3.5 L6.7 3.6 A1.7 1.7 0 0 0 8.5 4 H8.6 A1.7 1.7 0 0 0 9.7 2.4 V2.2 A2 2 0 1 1 13.7 2.2 V2.3 A1.7 1.7 0 0 0 14.8 3.9 A1.7 1.7 0 0 0 16.6 3.5 L16.7 3.4 A2 2 0 1 1 19.5 6.2 L19.4 6.3 A1.7 1.7 0 0 0 19 8.1 V8.2 A1.7 1.7 0 0 0 20.6 9.3 H20.8 A2 2 0 1 1 20.8 13.3 H20.7 A1.7 1.7 0 0 0 19.1 14.4 Z"></path></svg>
+      </div>
+      <span style="{{ navTxt.more }}">{{ navL.more }}</span>
+    </div>
+  </div>
+
+  <!-- ═════════════ الاستماع (شريط الأدوات) ═════════════ -->
+  <sc-if value="{{ lnOn }}" hint-placeholder-val="{{ false }}">
+    <div class="fd-qs-scrim">
+      <div sc-camel-on-click="{{ lnClose }}" class="fd-qs-gap"></div>
+      <div dir="{{ dirA }}" class="fd-qs-card">
+
+        <div class="fd-qs-head">
+          <div class="fd-qs-htxt">
+            <span class="fd-qs-title">{{ X.lnTitle }}</span>
+            <svg width="16" height="16" sc-camel-view-box="0 0 36.3 39.56" fill="#1589BC"><path d="M1,6.49v26.58c0,4.2,4.52,6.84,8.17,4.78l23.34-13.16c3.7-2.09,3.72-7.41,.04-9.53L9.21,1.74C5.56-.36,1,2.27,1,6.49Z"></path></svg>
+          </div>
+          <div sc-camel-on-click="{{ lnClose }}" class="fd-qs-x" style-hover="background:#F1F5F9">
+            <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2.2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+          </div>
+        </div>
+
+        <span class="fd-ln-sub">{{ X.lnSub }}</span>
+
+        <div class="fd-qs-wrap">
+          <div sc-camel-on-click="{{ lnToggleDrop }}" class="fd-qs-trig" style-hover="border-color:#1589BC">
+            <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2" stroke-linecap="round" style="transform:rotate({{ lnRot }}deg); transition:transform .25s;"><path d="M6 9 L12 15 L18 9"></path></svg>
+            <span class="fd-qs-val">{{ lnModeName }}</span>
+          </div>
+          <sc-if value="{{ lnDropOn }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-qs-list">
+              <sc-for list="{{ lnRows }}" as="ln" hint-placeholder-count="3">
+                <div sc-camel-on-click="{{ ln.pick }}" class="fd-qs-row" style="background:{{ ln.bg }}; border-inline-start-color:{{ ln.bar }}" style-hover="background:#F5F8FB">
+                  <span class="fd-qs-row-t">{{ ln.name }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+
+        <div sc-camel-on-click="{{ lnStart }}" class="fd-ln-btn" style-hover="opacity:.9">
+          <span class="fd-ln-btn-t">{{ X.lnBtn }}</span>
+          <svg width="15" height="15" sc-camel-view-box="0 0 36.3 39.56" fill="#FFFFFF"><path d="M1,6.49v26.58c0,4.2,4.52,6.84,8.17,4.78l23.34-13.16c3.7-2.09,3.72-7.41,.04-9.53L9.21,1.74C5.56-.36,1,2.27,1,6.49Z"></path></svg>
+        </div>
+      </div>
+      <div sc-camel-on-click="{{ lnClose }}" class="fd-qs-gap2"></div>
+    </div>
+  </sc-if>
+
+  <!-- ═════════════ إعدادات القرآن والتفسير ═════════════ -->
+  <sc-if value="{{ qsOn }}" hint-placeholder-val="{{ false }}">
+    <div class="fd-qs-scrim">
+      <div sc-camel-on-click="{{ qsClose }}" class="fd-qs-gap"></div>
+      <div dir="{{ dirA }}" class="fd-qs-card">
+
+        <div class="fd-qs-head">
+          <div class="fd-qs-htxt">
+            <span class="fd-qs-title">{{ X.qsTitle }}</span>
+            <svg data-dc-tpl="654" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle data-dc-tpl="655" cx="12" cy="12" r="3.1"></circle><path data-dc-tpl="656" d="M19.1 14.4 A1.7 1.7 0 0 0 19.5 16.2 L19.6 16.3 A2 2 0 1 1 16.8 19.1 L16.7 19 A1.7 1.7 0 0 0 14.9 18.6 A1.7 1.7 0 0 0 13.8 20.2 V20.4 A2 2 0 1 1 9.8 20.4 V20.3 A1.7 1.7 0 0 0 8.6 18.7 A1.7 1.7 0 0 0 6.8 19.1 L6.7 19.2 A2 2 0 1 1 3.9 16.4 L4 16.3 A1.7 1.7 0 0 0 4.4 14.5 A1.7 1.7 0 0 0 2.8 13.4 H2.6 A2 2 0 1 1 2.6 9.4 H2.7 A1.7 1.7 0 0 0 4.3 8.2 A1.7 1.7 0 0 0 3.9 6.4 L3.8 6.3 A2 2 0 1 1 6.6 3.5 L6.7 3.6 A1.7 1.7 0 0 0 8.5 4 H8.6 A1.7 1.7 0 0 0 9.7 2.4 V2.2 A2 2 0 1 1 13.7 2.2 V2.3 A1.7 1.7 0 0 0 14.8 3.9 A1.7 1.7 0 0 0 16.6 3.5 L16.7 3.4 A2 2 0 1 1 19.5 6.2 L19.4 6.3 A1.7 1.7 0 0 0 19 8.1 V8.2 A1.7 1.7 0 0 0 20.6 9.3 H20.8 A2 2 0 1 1 20.8 13.3 H20.7 A1.7 1.7 0 0 0 19.1 14.4 Z"></path></svg>
+          </div>
+          <div sc-camel-on-click="{{ qsClose }}" class="fd-qs-x" style-hover="background:#F1F5F9">
+            <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2.2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+          </div>
+        </div>
+
+          <span class="fd-qs-l">{{ X.qsRecL }}</span>
+          <div class="fd-qs-wrap">
+            <div sc-camel-on-click="{{ qsToggleRec }}" class="fd-qs-trig" style-hover="border-color:#1589BC">
+              <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2" stroke-linecap="round" style="transform:rotate({{ qsRecRot }}deg); transition:transform .25s;"><path d="M6 9 L12 15 L18 9"></path></svg>
+              <span class="fd-qs-val">{{ qsRecName }}</span>
+            </div>
+            <sc-if value="{{ qsRecOn }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-qs-list">
+                <sc-for list="{{ qsRecRows }}" as="rc" hint-placeholder-count="5">
+                  <div sc-camel-on-click="{{ rc.pick }}" class="fd-qs-row" style="background:{{ rc.bg }}; border-inline-start-color:{{ rc.bar }}" style-hover="background:#F5F8FB">
+                    <span class="fd-qs-row-t">{{ rc.name }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+          <span class="fd-qs-l">{{ X.qsTafL }}</span>
+          <div class="fd-qs-wrap">
+            <div sc-camel-on-click="{{ qsToggleTaf }}" class="fd-qs-trig" style-hover="border-color:#1589BC">
+              <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2" stroke-linecap="round" style="transform:rotate({{ qsTafRot }}deg); transition:transform .25s;"><path d="M6 9 L12 15 L18 9"></path></svg>
+              <span class="fd-qs-val">{{ qsTafName }}</span>
+            </div>
+            <sc-if value="{{ qsTafOn }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-qs-list">
+                <sc-for list="{{ qsTafRows }}" as="tf" hint-placeholder-count="5">
+                  <div sc-camel-on-click="{{ tf.pick }}" class="fd-qs-row" style="background:{{ tf.bg }}; border-inline-start-color:{{ tf.bar }}" style-hover="background:#F5F8FB">
+                    <span class="fd-qs-row-t">{{ tf.name }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+      </div>
+      <div sc-camel-on-click="{{ qsClose }}" class="fd-qs-gap2"></div>
+    </div>
+  </sc-if>
+
+  <!-- ═════════════ قائمة السور المنزّلة ═════════════ -->
+  <sc-if value="{{ dlOn }}" hint-placeholder-val="{{ false }}">
+    <div class="fd-sv-scrim">
+      <div sc-camel-on-click="{{ dlClose }}" class="fd-sv-gap"></div>
+      <div dir="{{ dirA }}" class="fd-sv-card">
+
+        <div class="fd-sv-head">
+          <div class="fd-sv-htxt">
+            <span class="fd-sv-title">{{ X.dlListTitle }}</span>
+            <svg data-dc-tpl="649" width="19" height="19" viewBox="0 0 24 24" fill="#1589BC" stroke="none" preserveAspectRatio="xMidYMid meet"><g data-dc-tpl="650" transform="translate(3.6279 3.0000) scale(0.418605)">
+                    <path data-dc-tpl="651" fill-rule="evenodd" clip-rule="evenodd" d="M 24 23 L 24 42 L 26 42 L 28 41 L 30 39 L 32 39 L 37 42 L 39 42 L 39 23 Z M 27 25 L 37 26 L 35 38 L 32 36 L 30 36 L 27 38 Z M 8 14 L 8 27 L 10 29 L 12 29 L 14 28 L 18 25 L 19 25 L 21 24 L 21 18 L 20 18 L 18 16 L 12 13 Z M 11 15 L 17 18 L 20 21 L 18 23 L 15 24 L 13 26 L 11 27 Z M 2 0 L 0 2 L 1 41 L 3 42 L 17 42 L 17 40 L 4 40 L 2 38 L 2 4 L 4 2 L 24 3 L 24 14 L 32 15 L 32 19 L 34 19 L 34 11 L 33 9 L 28 2 L 26 0 Z M 27 6 L 29 8 L 29 9 L 31 11 L 26 11 Z"></path>
+                  </g>
+                </svg>
+          </div>
+          <div sc-camel-on-click="{{ dlClose }}" class="fd-sv-x" style-hover="background:#F1F5F9">
+            <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2.2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+          </div>
+        </div>
+
+        <sc-if value="{{ dlEmpty }}" hint-placeholder-val="{{ false }}">
+          <span class="fd-sv-none">{{ X.dlListNone }}</span>
+        </sc-if>
+
+        <div class="fd-sv-list">
+          <sc-for list="{{ dlRows }}" as="d" hint-placeholder-count="2">
+            <div class="fd-sv-wrap-container">
+            <div class="fd-sv-wrap">
+              <div sc-camel-on-click="{{ d.del }}" class="fd-sv-del" style-hover="opacity:.9">
+                <span class="fd-sv-del-t">{{ X.savedDel }}</span>
+              </div>
+              <div sc-camel-on-click="{{ d.play }}" sc-camel-on-pointer-down="{{ d.down }}" sc-camel-on-pointer-up="{{ d.up }}" class="fd-sv-row" style="transform:translateX({{ d.shift }})">
+                <div class="fd-dl-play">
+                  <svg width="12" height="12" sc-camel-view-box="0 0 36.3 39.56" fill="#FFFFFF"><path d="M1,6.49v26.58c0,4.2,4.52,6.84,8.17,4.78l23.34-13.16c3.7-2.09,3.72-7.41,.04-9.53L9.21,1.74C5.56-.36,1,2.27,1,6.49Z"></path></svg>
+                </div>
+                <div class="fd-sv-txt">
+                  <span class="fd-sv-name">{{ d.name }}</span>
+                  <span class="fd-sv-page">{{ d.reciter }}</span>
+                </div>
+              </div>
+            </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div sc-camel-on-click="{{ dlClose }}" class="fd-sv-gap2"></div>
+    </div>
+  </sc-if>
+
+  <!-- ═════════════ نافذة الموقع ═════════════ -->
+  <sc-if value="{{ locOn }}" hint-placeholder-val="{{ false }}">
+    <div class="fd-loc-scrim">
+      <div sc-camel-on-click="{{ locClose }}" class="fd-loc-gap"></div>
+      <div dir="{{ dirA }}" class="fd-loc-card">
+
+        <div class="fd-loc-head">
+          <div class="fd-loc-htxt">
+            <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.9" stroke-linejoin="round"><path d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z"></path><circle cx="12" cy="10" r="2.3"></circle></svg>
+            <span class="fd-loc-title">{{ X.stLocSec }}</span>
+          </div>
+          <div sc-camel-on-click="{{ locClose }}" class="fd-qs-x" style-hover="background:#F1F5F9">
+            <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2.2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+          </div>
+        </div>
+
+        <div sc-camel-on-click="{{ locAuto }}" class="fd-loc-auto" style-hover="border-color:#1589BC">
+          <span class="fd-loc-auto-t">{{ X.lmAutoBtn }}</span>
+          <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="#EA9924" stroke-width="1.9"><path d="M21 3 L10.5 21 L9 13.5 L1.5 12 Z"></path></svg>
+        </div>
+
+        <sc-if value="{{ lmAutoOn }}" hint-placeholder-val="{{ false }}">
+          <span class="fd-loc-note">{{ lmAutoText }}</span>
+        </sc-if>
+
+        <span class="fd-loc-l">{{ X.lmCityL }}</span>
+        <div class="fd-qs-wrap">
+          <input value="{{ lmSearch }}" sc-camel-on-change="{{ setLmSearch }}" placeholder="{{ X.lmSearchPh }}" class="fd-loc-inp">
+          <sc-if value="{{ lmListOn }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-qs-list">
+              <sc-for list="{{ lmResults }}" as="r" hint-placeholder-count="4">
+                <div sc-camel-on-click="{{ r.pickNow }}" class="fd-qs-row" style="background:{{ r.bg }}" style-hover="background:#F5F8FB">
+                  <span class="fd-qs-row-t">{{ r.name }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+      <div sc-camel-on-click="{{ locClose }}" class="fd-loc-gap2"></div>
+    </div>
+  </sc-if>
+
+  <!-- ═════════════ قائمة المحفوظات ═════════════ -->
+  <sc-if value="{{ savedOn }}" hint-placeholder-val="{{ false }}">
+    <div class="fd-sv-scrim">
+      <div sc-camel-on-click="{{ savedClose }}" class="fd-sv-gap"></div>
+      <div dir="{{ dirA }}" class="fd-sv-card">
+
+        <div class="fd-sv-head">
+          <div class="fd-sv-htxt">
+            <span class="fd-sv-title">{{ X.savedTitle }}</span>
+            <!-- <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5 H14 L18.5 8 V20.5 H6.5 Z"></path><path d="M14 3.5 V8 H18.5 M9.5 12.5 H15 M9.5 16 H13"></path></svg> -->
+            <svg width="16" height="16" sc-camel-view-box="0 0 35.65 43.2">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <path d="M28.75,17.57l-4.29-3.83c-.17-.15-.42-.16-.61-.02l-5.26,3.98c-.31,.24-.77,.01-.77-.38V1.48c0-.26,.21-.48,.48-.48h10.76c.26,0,.48,.21,.48,.48v15.74c0,.41-.49,.63-.8,.36Z" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+        <rect x="1" y="1" width="33.65" height="41.2" rx="4.05" ry="4.05" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+      </g>
+      <line x1="5.73" y1="33.91" x2="26.36" y2="33.91" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="5.73" y1="26.2" x2="26.36" y2="26.2" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
+          </div>
+          <div sc-camel-on-click="{{ savedClose }}" class="fd-sv-x" style-hover="background:#F1F5F9">
+            <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2.2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+          </div>
+        </div>
+
+        <sc-if value="{{ savedEmpty }}" hint-placeholder-val="{{ false }}">
+          <span class="fd-sv-none">{{ X.savedNone }}</span>
+        </sc-if>
+
+        <div class="fd-sv-list">
+          <sc-for list="{{ savedRows }}" as="r" hint-placeholder-count="2">
+            <div class="fd-sv-wrap-container">
+              <div class="fd-sv-wrap">
+                <div sc-camel-on-click="{{ r.del }}" class="fd-sv-del" style-hover="opacity:.9">
+                  <span class="fd-sv-del-t">{{ X.savedDel }}</span>
+                </div>
+                <div sc-camel-on-click="{{ r.open }}" sc-camel-on-pointer-down="{{ r.down }}" sc-camel-on-pointer-up="{{ r.up }}" class="fd-sv-row" style="transform:translateX({{ r.shift }})">
+                  <div class="fd-sv-ico">
+                    <svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"><path d="M12 6.4 C10.2 5 7.6 4.5 5.2 4.9 V17.6 C7.6 17.2 10.2 17.7 12 19.1 C13.8 17.7 16.4 17.2 18.8 17.6 V4.9 C16.4 4.5 13.8 5 12 6.4 Z"></path><path d="M12 6.4 V19.1"></path></svg>
+                  </div>
+                  <div class="fd-sv-txt">
+                    <span class="fd-sv-name">{{ r.name }}</span>
+                    <span class="fd-sv-page">{{ r.page }}</span>
+                  </div>
+                  <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="fd-sv-chev"><path d="M15 6 L9 12 L15 18"></path></svg>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div sc-camel-on-click="{{ savedClose }}" class="fd-sv-gap2"></div>
+    </div>
+  </sc-if>
+
+  <!-- ═════════════ تفسير الآية ═════════════ -->
+  <sc-if value="{{ tafOn }}" hint-placeholder-val="{{ false }}">
+    <div class="fd-tf-scrim">
+      <div sc-camel-on-click="{{ tafClose }}" class="fd-tf-gap"></div>
+      <div dir="{{ dirA }}" class="fd-tf-card">
+
+        <div class="fd-tf-head">
+          <div class="fd-tf-titles">
+            <span class="fd-tf-title">{{ tafHead }}</span>
+            <span class="fd-tf-book">{{ tafBookName }}</span>
+          </div>
+          <div sc-camel-on-click="{{ tafClose }}" class="fd-tf-x" style-hover="background:#F1F5F9">
+            <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2.2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+          </div>
+        </div>
+
+        <div class="fd-tf-body">
+          <span class="fd-tf-text">{{ tafsirText }}</span>
+        </div>
+
+        <div class="fd-tf-foot">
+          <div sc-camel-on-click="{{ amShare }}" class="fd-tf-share">
+            <span class="fd-tf-share-t">{{ X.tafShare }}</span>
+            <div class="fd-tf-share-btn">
+            <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.5" cy="6" r="2.4"></circle><circle cx="6.5" cy="12" r="2.4"></circle><circle cx="17.5" cy="18" r="2.4"></circle><path d="M8.8 10.9 L15.2 7.4 M8.8 13.1 L15.2 16.6"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ═════════════ الاستماع للآية ═════════════ -->
+  <sc-if value="{{ lisOn }}" hint-placeholder-val="{{ false }}">
+    <div class="fd-ls-scrim">
+      <div sc-camel-on-click="{{ lisClose }}" class="fd-ls-gap"></div>
+      <div dir="{{ dirA }}" class="fd-ls-card">
+        <div class="fd-ls-head">
+          <div class="fd-ls-side">
+            <svg width="12" height="12" sc-camel-view-box="0 0 36.3 39.56" fill="#1589BC" class="fd-ls-ico"><path d="M1,6.49v26.58c0,4.2,4.52,6.84,8.17,4.78l23.34-13.16c3.7-2.09,3.72-7.41,.04-9.53L9.21,1.74C5.56-.36,1,2.27,1,6.49Z"></path></svg>
+            <span class="fd-ls-title">{{ X.lsTitle }}</span>
+          </div>
+          <div sc-camel-on-click="{{ lisClose }}" class="fd-ls-x" style-hover="background:#F1F5F9">
+            <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2.2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+          </div>
+        </div>
+        <span class="fd-ls-msg">{{ X.lsMsg }}</span>
+        <div class="fd-ls-btns">
+          <div sc-camel-on-click="{{ amDlConfirm }}" class="fd-ls-yes" style-hover="opacity:.9">
+            <span class="fd-ls-yes-t">{{ X.lsYes }}</span>
+          </div>
+          <div sc-camel-on-click="{{ lisClose }}" class="fd-ls-no" style-hover="background:#E9ECEF">
+            <span class="fd-ls-no-t">{{ X.lsNo }}</span>
+          </div>
+        </div>
+      </div>
+      <div sc-camel-on-click="{{ lisClose }}" class="fd-ls-gap"></div>
+    </div>
+  </sc-if>
+
+  <!-- توست -->
+  <div style="{{ toastSty }}">
+    <span class="fd-73" style="color:{{ T.toastText }}">{{ toastMsg }}</span>
+  </div>
+
+  <!-- ═════════════ المجموعة ٢ · الرئيسية ═════════════ -->
+  <div style="{{ grpSty }}">
+    <div style="{{ grpLbl }}">٢ · الصفحة الرئيسية والرزنامة والإشعارات</div>
+    <div style="{{ rowSty }}">
+
+      <!-- ─── الرئيسية ─── -->
+      <div data-screen-label="الصفحة الرئيسية" style="{{ sty.home }}">
+
+        <!-- ── الهيدر ── -->
+        <div class="fd-93">
+          <img src="images/logo-fadhakkir-icon.svg" alt="" class="fd-94">
+          <!-- <span class="fd-95">فَذَكِّرْ</span> -->
+        </div>
+
+        <!-- ── المحتوى ── -->
+        <div class="fd-96">
+
+          <div sc-camel-on-click="{{ goCalendar }}" class="fd-97" style="background:{{ T.card }};" style-hover="transform:translateY(-2px)">
+            <div class="fd-98">
+              <svg width="40" height="42" sc-camel-view-box="0 0 40 42" fill="none">
+                <rect x="1" y="5" width="38" height="36" rx="9" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="1.6"></rect>
+                <path d="M1 14 C1 9 5 5 10 5 H30 C35 5 39 9 39 14 V17 H1 Z" fill="{{ T.green }}"></path>
+                <rect x="11" y="1" width="4" height="9" rx="2" fill="#D7B36A"></rect>
+                <rect x="25" y="1" width="4" height="9" rx="2" fill="#D7B36A"></rect>
+              </svg>
+              <span dir="ltr" class="fd-99" style="color:{{ T.green }}">{{ dayNum }}</span>
+            </div>
+            <div class="fd-100">
+              <span class="fd-101" style="color:{{ T.text }}">{{ hijriToday }}</span>
+              <span class="fd-102" style="color:{{ T.sub }}">{{ gregToday }}</span>
+            </div>
+            <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2"><path d="{{ chevMore }}"></path></svg>
+          </div>
+
+          <dc-import name="HeroCard" variant="{{ heroVariant }}" prayer="{{ previewPrayer }}" times="{{ heroTimes }}" temp="{{ heroTemp }}" mosque-src="{{ heroMosqueSrc }}" mosque-name="{{ heroMosqueName }}" athan-on="{{ athanOn }}" city="{{ cityShort }}" hijri="{{ heroDateTxt }}" on-date="{{ toggleHeroDate }}" on-city="{{ openLocPop }}" on-qibla="{{ goQibla }}" on-times="{{ goPrayerTab }}" on-athan="{{ toggleAthan }}" hint-size="363px,372px" style="width:100%; height:372px; flex-shrink:0;" mode="full" lang="ar"></dc-import>
+
+          <!-- ── متابعة القراءة ── -->
+          <div class="fd-103">
+            <span class="fd-104" style="color:{{ T.text }}">{{ X.homeContinue }}</span>
+            <div sc-camel-on-click="{{ goLastPage }}" class="fd-105" style="background:{{ T.card }}; style-hover="transform:translateY(-2px)">
+              <div class="fd-106">
+                <!-- <svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8"><path d="M12 6 C10 4.6 7.2 4.1 4.8 4.5 V17.8 C7.2 17.4 10 17.9 12 19.3 C14 17.9 16.8 17.4 19.2 17.8 V4.5 C16.8 4.1 14 4.6 12 6 Z"></path><path d="M12 6 V19.3"></path></svg> -->
+                <svg data-dc-tpl="154" width="22" height="22" viewBox="0 0 18.84 16.34" fill="#FFFFFF" stroke="none" stroke-width="1.8">
+                  <g data-dc-tpl="155" id="Navigator">
+                    <path data-dc-tpl="156" d="M18.26,1.78c-.21-.06-.44-.1-.67-.12V.72c0-.29-.21-.54-.49-.59-1.18-.21-5.12-.6-7.68,2.94C6.87-.47,2.92-.08,1.75,.13c-.28,.05-.49,.3-.49,.59v.94c-.24,.03-.46,.07-.67,.12-.34,.1-.58,.41-.58,.77V14.19c0,.23,.1,.46,.28,.61,.18,.15,.41,.21,.64,.17,4.83-.82,7.44,.74,8.12,1.24,.11,.08,.25,.12,.38,.12,.13,0,.27-.04,.38-.12,.68-.5,3.29-2.06,8.12-1.24,.23,.04,.46-.02,.64-.17,.18-.15,.28-.37,.28-.61V2.54c0-.36-.24-.67-.58-.77h0Zm-1.3-1.03V12.48c-1.16-.18-4.74-.44-7.22,2.56V3.72C12.05,.21,15.81,.54,16.96,.74h0Zm-15.07,0c1.15-.2,4.91-.53,7.22,2.98V15.04c-1.84-2.22-4.28-2.66-5.89-2.66-.56,0-1.03,.05-1.33,.1V.74ZM.82,14.35c-.1,.01-.19-.06-.19-.16V2.54c0-.08,.05-.14,.12-.16,.12-.03,.29-.07,.5-.1V12.52c0,.18,.08,.34,.21,.46,.13,.11,.31,.16,.48,.13,.98-.16,4.05-.42,6.33,1.94-1.38-.64-3.83-1.32-7.46-.7h0Zm17.4-.16c0,.1-.09,.18-.19,.16-3.62-.62-6.07,.06-7.45,.7,2.28-2.36,5.35-2.1,6.33-1.94,.17,.03,.35-.02,.48-.13,.13-.11,.21-.28,.21-.46V2.28c.21,.03,.39,.07,.5,.1,.07,.02,.12,.09,.12,.16V14.19h0Z"></path>
+                  </g>
+              </svg>
+              </div>
+              <div class="fd-100">
+                <span class="fd-107" style="color:{{ T.text }}">{{ homeLastSurah }}</span>
+                <span class="fd-102" style="color:{{ T.sub }}">{{ homeLastPage }}</span>
+              </div>
+              <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2"><path d="{{ chevMore }}"></path></svg>
+            </div>
+          </div>
+
+          <!-- ── أذكار الصباح / المساء ── -->
+          <div class="fd-108" style="background:{{ T.card }}; ">
+            <div sc-camel-on-click="{{ goAdhkarCat }}" class="fd-ha-head" style-hover="opacity:.85">
+              <div class="fd-ha-ico">
+                <svg width="26" height="26" sc-camel-view-box="0 0 24 21" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <circle data-dc-tpl="203" cx="12.00" cy="2.10" r="0.82"></circle>
+                  <circle data-dc-tpl="204" cx="14.64" cy="2.63" r="0.82"></circle>
+                  <circle data-dc-tpl="205" cx="16.88" cy="4.12" r="0.82"></circle>
+                  <circle data-dc-tpl="206" cx="18.37" cy="6.36" r="0.82"></circle>
+                  <circle data-dc-tpl="207" cx="18.90" cy="9.00" r="0.82"></circle>
+                  <circle data-dc-tpl="208" cx="18.37" cy="11.64" r="0.82"></circle>
+                  <circle data-dc-tpl="209" cx="16.88" cy="13.88" r="0.82"></circle>
+                  <circle data-dc-tpl="210" cx="14.64" cy="15.37" r="0.82"></circle>
+                  <circle data-dc-tpl="211" cx="9.36" cy="15.37" r="0.82"></circle>
+                  <circle data-dc-tpl="212" cx="7.12" cy="13.88" r="0.82"></circle>
+                  <circle data-dc-tpl="213" cx="5.63" cy="11.64" r="0.82"></circle>
+                  <circle data-dc-tpl="214" cx="5.10" cy="9.00" r="0.82"></circle>
+                  <circle data-dc-tpl="215" cx="5.63" cy="6.36" r="0.82"></circle>
+                  <circle data-dc-tpl="216" cx="7.12" cy="4.12" r="0.82"></circle>
+                  <circle data-dc-tpl="217" cx="9.36" cy="2.63" r="0.82"></circle>
+                  <path data-dc-tpl="218" d="M12 14.1 C13.35 15.6 13.85 16.95 13.85 17.6 L10.15 17.6 C10.15 16.95 10.65 15.6 12 14.1 Z"></path>
+                  <path data-dc-tpl="219" d="M10.45 18.9 H13.55 L14.35 22.１ H9.65 Z"></path>
+                </svg>
+              </div>
+              <div class="fd-111">
+                <span class="fd-112" style="color:{{ T.text }}">{{ homeAdhTitle }}</span>
+                <span class="fd-113" style="color:{{ T.sub }}">{{ homeAdhBook }}</span>
+              </div>
+            </div>
+
+            <span class="fd-ha-txt">{{ homeAdhText }}</span>
+
+            <!-- ── متابعة الورد ── -->
+          <!-- <div sc-camel-on-click="{{ goLastPage }}" class="fd-119" style-hover="transform:scale(1.01)">
+            <svg width="18" height="18" sc-camel-view-box="0 0 39.26 34.03" fill="none" stroke="#FFFFFF" stroke-width="1"> -->
+              <!-- <path d="M12 6 C10 4.6 7.2 4.1 4.8 4.5 V17.8 C7.2 17.4 10 17.9 12 19.3 C14 17.9 16.8 17.4 19.2 17.8 V4.5 C16.8 4.1 14 4.6 12 6 Z"></path> -->
+              <!-- <g>
+              <path d="M38.05,3.7c-.43-.12-.91-.2-1.4-.26V1.49c0-.6-.43-1.12-1.02-1.22-2.46-.44-10.67-1.24-15.99,6.12C14.31-.97,6.09-.17,3.64,.27c-.59,.1-1.02,.62-1.02,1.22v1.95c-.49,.06-.97,.14-1.4,.26-.72,.2-1.21,.86-1.21,1.6V29.56c0,.49,.21,.95,.59,1.27,.37,.31,.86,.45,1.33,.36,10.05-1.71,15.49,1.54,16.92,2.58,.24,.17,.51,.26,.79,.26,.28,0,.55-.09,.79-.26,1.43-1.04,6.86-4.3,16.92-2.58,.48,.08,.96-.05,1.33-.36,.37-.32,.59-.78,.59-1.27V5.29c0-.74-.5-1.4-1.21-1.6h0Zm-2.71-2.15V26.01c-2.42-.38-9.87-.93-15.05,5.33V7.74C25.11,.44,32.93,1.13,35.33,1.54h0Zm-31.41,0c2.4-.42,10.23-1.11,15.05,6.2V31.34c-3.83-4.63-8.92-5.54-12.28-5.54-1.18,0-2.14,.11-2.77,.21V1.55ZM1.7,29.9c-.21,.03-.39-.13-.39-.34V5.29c0-.16,.1-.29,.26-.34,.24-.07,.6-.15,1.05-.21V26.09c0,.37,.16,.71,.44,.95,.28,.23,.64,.34,1,.28,2.04-.33,8.44-.88,13.19,4.05-2.87-1.33-7.98-2.75-15.54-1.46h0Zm36.25-.34c0,.21-.19,.37-.39,.34-7.54-1.29-12.65,.13-15.53,1.45,4.75-4.91,11.14-4.37,13.18-4.04,.36,.06,.72-.04,1-.28,.28-.24,.44-.58,.44-.95V4.75c.45,.06,.81,.14,1.05,.21,.15,.04,.26,.18,.26,.34V29.56h0Z" fill="#feffff"/>
+              </g>
+            </svg> -->
+            <!-- <span class="fd-120">{{ X.homeWirdBtn }}</span> -->
+            <!-- <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4"><path d="M14 6 L8 12 L14 18"></path></svg> -->
+          <!-- </div> -->
+          </div>
+
+          
+        </div>
+      </div>
+
+      <!-- ─── الإشعارات ─── -->
+      <div data-screen-label="الإشعارات" dir="{{ dirA }}" style="{{ sty.notifications }}">
+        <div class="fd-121">
+          <div class="fd-122">
+            <div sc-camel-on-click="{{ backFn }}" class="fd-61" style-hover="background:rgba(255,255,255,0.25)">
+              <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+            </div>
+            <span class="fd-63">{{ X.notifTitle }}</span>
+          </div>
+          <div sc-camel-on-click="{{ markAllRead }}" class="fd-123"><span class="fd-124">{{ X.markAll }}</span></div>
+        </div>
+        <div class="fd-125">
+          <sc-for list="{{ notifRows }}" as="n" hint-placeholder-count="4">
+            <div class="fd-126" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+              <div class="fd-127" style="background:{{ T.mint }}">
+                <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.9"><path d="{{ n.iconPath }}"></path></svg>
+              </div>
+              <div class="fd-128">
+                <span class="fd-129" style="color:{{ T.text }}">{{ n.t }}</span>
+                <span class="fd-130" style="color:{{ T.sub }}">{{ n.s }}</span>
+              </div>
+              <span class="fd-131" style="color:{{ T.faint }}">{{ n.time }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- ─── الرزنامة ─── -->
+      <div data-screen-label="الرزنامة" dir="{{ dirA }}" style="{{ sty.calendar }}">
+        <div class="fd-60">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-61" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <span class="fd-63">{{ X.calScreen }}</span>
+        </div>
+        <div class="fd-65">
+          <div class="fd-132">
+            <span class="fd-133">{{ X.calSelected }}</span>
+            <span class="fd-134">{{ calSelHijri }}</span>
+            <span class="fd-135">{{ calSelGreg }}</span>
+          </div>
+          <div class="fd-136">
+            <div sc-camel-on-click="{{ calModeHijri }}" style="flex:1; height:40px; border-radius:11px; background:{{ calHijriBg }}; border:1.5px solid {{ calHijriBorder }}; display:flex; justify-content:center; align-items:center; cursor:pointer; transition:all .2s;">
+              <span class="fd-73" style="color:{{ calHijriColor }}">{{ X.calHijriBtn }}</span>
+            </div>
+            <div sc-camel-on-click="{{ calModeGreg }}" style="flex:1; height:40px; border-radius:11px; background:{{ calGregBg }}; border:1.5px solid {{ calGregBorder }}; display:flex; justify-content:center; align-items:center; cursor:pointer; transition:all .2s;">
+              <span class="fd-73" style="color:{{ calGregColor }}">{{ X.calGregBtn }}</span>
+            </div>
+          </div>
+          <div class="fd-137" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <div class="fd-138">
+              <div sc-camel-on-click="{{ calPrev }}" class="fd-139" style="background:{{ T.soft }}" style-hover="background:{{ T.mint }}">
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+              </div>
+              <span class="fd-67" style="color:{{ T.text }}">{{ calTitle }}</span>
+              <div sc-camel-on-click="{{ calNext }}" class="fd-140" style="background:{{ T.soft }}" style-hover="background:{{ T.mint }}">
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.2"><path d="{{ chevMore }}"></path></svg>
+              </div>
+            </div>
+            <div class="fd-141">
+              <sc-for list="{{ calWd }}" as="w" hint-placeholder-count="7">
+                <span class="fd-142" style="color:{{ T.faint }}">{{ w.n }}</span>
+              </sc-for>
+            </div>
+            <div class="fd-143">
+              <sc-for list="{{ calCells }}" as="c" hint-placeholder-count="35">
+                <div sc-camel-on-click="{{ c.pick }}" style="height:46px; border-radius:10px; background:{{ c.bg }}; border:1.5px solid {{ c.border }}; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:1px; cursor:pointer; transition:all .15s;" style-hover="background:#EEF4F0">
+                  <span class="fd-144" style="color:{{ c.mainColor }}">{{ c.main }}</span>
+                  <span class="fd-145" style="color:{{ c.subColor }}">{{ c.sub }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <span class="fd-146" style="color:{{ T.faint }}">{{ X.calNote }}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═════════════ المجموعة ٣ · الصلاة ═════════════ -->
+  <div style="{{ grpSty }}">
+    <div style="{{ grpLbl }}">٣ · أوقات الصلاة والقبلة</div>
+    <div style="{{ rowSty }}">
+
+      <!-- ─── أوقات الصلاة (تبويب) ─── -->
+      <div data-screen-label="أوقات الصلاة" style="{{ sty.prayer }}">
+        <div class="fd-147">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-61" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <span class="fd-148">{{ X.prayerTimes }}</span>
+          <!-- <div sc-camel-on-click="{{ goManualLoc }}" class="fd-149" style-hover="background:rgba(47,118,158,0.24)">
+            <svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+            <span class="fd-150">{{ cityName }}</span>
+          </div> -->
+        </div>
+        <div class="fd-151">
+          <!-- <dc-import name="HeroCard" variant="{{ heroVariant }}" prayer="{{ previewPrayer }}" times="{{ heroTimes }}" temp="{{ heroTemp }}" mosque-src="{{ heroMosqueSrc }}" mosque-name="{{ heroMosqueName }}" mode="compact" hint-size="363px,248px" style="width:100%; height:248px; flex-shrink:0;"></dc-import> -->
+           <div class="fd-152">
+            <div sc-camel-on-click="{{ openLocPop }}" class="fd-153" style-hover="transform:translateY(-1px)">
+              <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#EA9924" stroke-width="1.9"><path d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z"></path><circle cx="12" cy="10" r="2.3"></circle></svg>
+              <span class="fd-154">{{ cityShort }}</span>
+            </div>
+            <div sc-camel-on-click="{{ goCalendar }}" class="fd-153" style-hover="transform:translateY(-1px)">
+              <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#EA9924" stroke-width="1.9"><rect x="4" y="5.5" width="16" height="15" rx="3"></rect><path d="M4 10 H20 M9 3 V7 M15 3 V7"></path></svg>
+              <span class="fd-154">{{ hijriToday }}</span>
+            </div>
+          </div>
+
+          <div class="fd-155">
+            <div sc-camel-on-click="{{ goMonthTable }}" class="fd-156" style-hover="transform:translateY(-2px)">
+              <svg data-dc-tpl="1256" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.9"><path data-dc-tpl="1257" d="M5 6.5 H19 A1.5 1.5 0 0 1 20.5 8 V19 A1.5 1.5 0 0 1 19 20.5 H5 A1.5 1.5 0 0 1 3.5 19 V8 A1.5 1.5 0 0 1 5 6.5 Z M3.5 10.5 H20.5 M8 3.8 V7 M16 3.8 V7"></path></svg>
+              <span class="fd-157">{{ X.viewMonth }}</span>
+            </div>
+            <div sc-camel-on-click="{{ goQibla }}" class="fd-158" style-hover="transform:translateY(-2px)">
+              <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.9"><circle cx="12" cy="12" r="9.2"></circle><path d="M15.5 8.5 L13.4 13.4 L8.5 15.5 L10.6 10.6 Z" fill="#FFFFFF" stroke="none"></path></svg>
+              <span class="fd-159">{{ X.qibla }}</span>
+            </div>
+            
+          </div>
+          <span class="fd-160">مواقيت الصلاة وإعدادات الأذان</span>
+          <div class="fd-35">
+            
+            <sc-for list="{{ timesRows }}" as="r" hint-placeholder-count="6">
+              <div sc-camel-on-click="{{ r.openSheet }}" class="fd-161" style="background:{{ r.bg }}; cursor:{{ r.cursor }}">
+                <div class="fd-162" style="">
+                  <img src="{{ r.iconSrc }}" alt="" class="fd-pr-ico">
+                </div>
+                <div class="fd-163">
+                  <span style="font-size:14.5px; font-weight:{{ r.fw }}; color:{{ T.text }};">{{ r.name }}</span>
+                  <span class="fd-164" style="color:{{ T.green }}; display:{{ r.nextDisp }}">{{ r.nextTxt }}</span>
+                </div>
+                <div class="fd-165">
+                  <span dir="ltr" class="fd-166" style="color:{{ T.text }}">{{ r.time }}</span>
+                  <span class="fd-167" style="color:{{ T.sub }}">{{ r.ap }}</span>
+                </div>
+                <div sc-camel-on-click="{{ r.cycle }}" class="fd-168" style="background:{{ r.alertBg }}" style-hover="transform:scale(1.08)">
+                  <!-- <svg width="21" height="21" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ r.alertC }}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="{{ r.alertIcon }}"></path></svg> -->
+                  <span style="background-image: url('{{ r.alertIcon }}');width:14px;height:12px;background-size: 100% 100%;background-position: center;"></span>
+                </div>
+                <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2" class="fd-35" style="display:{{ r.chevDisp }}"><path d="{{ chevMore }}"></path></svg>
+              </div>
+            </sc-for>
+          </div>
+
+          <!-- <span class="fd-169" style="color:{{ T.faint }}">{{ X.rowHint }}</span> -->
+
+          
+        </div>
+
+        <!-- ورقة إعدادات كل صلاة -->
+        <div sc-camel-on-click="{{ closePrayerSheet }}" style="{{ pScrimSty }}"></div>
+        <div style="{{ pSheetSty }}">
+          <div class="fd-170" style="background:{{ T.track }}"></div>
+          <div class="fd-171">
+            <div class="fd-172">
+              <img src="{{ pSheetIconSrc }}" alt="" class="fd-pr-ico">
+            </div>
+            <div class="fd-128">
+              <span class="fd-173" style="color:{{ T.text }}">{{ pSheetTitle }}</span>
+              <span class="fd-174" style="color:{{ T.sub }}">{{ pSheetSub }}</span>
+            </div>
+          </div>
+          <sc-if value="{{ pIsFajr }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-175" style="background:{{ T.hint }}">
+              <div class="fd-62">
+                <span class="fd-90" style="color:{{ T.text }}">{{ X.sunriseAlertT }}</span>
+                <span class="fd-176" style="color:{{ T.srcText }}">{{ X.sunriseAlertSub }}</span>
+              </div>
+              <div sc-camel-on-click="{{ toggleSunrise }}" class="fd-177" style="background:{{ sunriseBg }}; justify-content:{{ sunriseJustify }}">
+                <span class="fd-77"></span>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ pIsIsha }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-178" style="background:{{ T.hint }}">
+              <div class="fd-179">
+                <div class="fd-62">
+                  <span class="fd-90" style="color:{{ T.text }}">{{ X.nightTitle }}</span>
+                  <span class="fd-176" style="color:{{ T.srcText }}">{{ X.qiyamSub }}</span>
+                </div>
+                <div sc-camel-on-click="{{ toggleNight }}" class="fd-177" style="background:{{ nightBg }}; justify-content:{{ qiyamJustify }}">
+                  <span class="fd-77"></span>
+                </div>
+              </div>
+              <sc-if value="{{ nightOn }}" hint-placeholder-val="{{ false }}">
+                <div class="fd-180">
+                  <sc-for list="{{ qiyamRows }}" as="q" hint-placeholder-count="5">
+                    <div sc-camel-on-click="{{ q.pick }}" style="padding:7px 12px; border-radius:999px; background:{{ q.bg }}; border:1.5px solid {{ q.border }}; cursor:pointer; transition:all .2s;">
+                      <span dir="ltr" class="fd-181" style="color:{{ q.color }}">{{ q.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </sc-if>
+          <span class="fd-182" style="color:{{ T.sub }}">{{ X.muezzinPick }}</span>
+          <sc-for list="{{ pSoundRows }}" as="r" hint-placeholder-count="5">
+            <div sc-camel-on-click="{{ r.pick }}" class="fd-183" style="background:{{ r.bg }}" style-hover="">
+              <div class="fd-184" style="background:{{ T.green }}">
+                <svg width="13" height="13" sc-camel-view-box="0 0 27.3 39.56" fill="{{ T.mint }}">
+                  <!-- <path d="M8 5.5 V18.5 L19 12 Z"></path> -->
+                  <path data-dc-tpl="666" d="M1,6.49v26.58c0,4.2,4.52,6.84,8.17,4.78l23.34-13.16c3.7-2.09,3.72-7.41,.04-9.53L9.21,1.74C5.56-.36,1,2.27,1,6.49Z"></path>
+                </svg>
+              </div>
+              <span class="fd-185" style="color:{{ T.text }}">{{ r.name }}</span>
+              <span style="width:20px; height:20px; border-radius:50%; border:2px solid {{ r.ring }}; display:flex; justify-content:center; align-items:center;"><span class="fd-186" style="background:{{ r.dot }}"></span></span>
+            </div>
+          </sc-for>
+          <div class="fd-187">
+            <div sc-camel-on-click="{{ closePrayerSheet }}" class="fd-188" style-hover="transform:scale(1.01)">
+              <span class="fd-189">{{ X.ptSaveSettings }}</span>
+            </div>
+            <div sc-camel-on-click="{{ closePrayerSheet }}" class="fd-190" style-hover="transform:scale(1.01)">
+              <span class="fd-33" style="color:#393B3D">{{ X.ptCancel }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── جدول الشهر ─── -->
+      <div data-screen-label="جدول مواقيت الشهر" dir="{{ dirA }}" style="{{ sty.monthTable }}">
+        <div class="fd-60">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-191" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <div class="fd-62">
+            <span class="fd-63">{{ X.mtTitle }}</span>
+            <span class="fd-192">{{ monthTitle }}</span>
+          </div>
+        </div>
+        <div class="fd-193">
+          <div class="fd-194" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <div class="fd-195">
+              <span class="fd-196">{{ X.mtDay }}</span>
+              <span class="fd-197">{{ X.fajr }}</span>
+              <span class="fd-197">{{ X.dhuhr }}</span>
+              <span class="fd-197">{{ X.asr }}</span>
+              <span class="fd-197">{{ X.maghrib }}</span>
+              <span class="fd-197">{{ X.isha }}</span>
+            </div>
+            <sc-for list="{{ monthRows }}" as="r" hint-placeholder-count="30">
+              <div class="fd-198" style="background:{{ r.bg }}; border-bottom:1px solid {{ T.navBorder }}">
+                <span style="font-size:11px; font-weight:{{ r.fw }}; color:{{ T.text }};">{{ r.d }}</span>
+                <span dir="ltr" class="fd-199" style="color:{{ T.sub }}">{{ r.f }}</span>
+                <span dir="ltr" class="fd-199" style="color:{{ T.sub }}">{{ r.dh }}</span>
+                <span dir="ltr" class="fd-199" style="color:{{ T.sub }}">{{ r.a }}</span>
+                <span dir="ltr" class="fd-199" style="color:{{ T.sub }}">{{ r.m }}</span>
+                <span dir="ltr" class="fd-199" style="color:{{ T.sub }}">{{ r.i }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── اتجاه القبلة ─── -->
+      <div data-screen-label="اتجاه القبلة" dir="{{ dirA }}" style="{{ sty.qibla }}">
+        <div class="fd-60">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-61" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <span class="fd-63">{{ X.qibla }}</span>
+        </div>
+        <div class="fd-200">
+          <div sc-camel-on-click="{{ openLocPop }}" class="fd-201" style="cursor:pointer;" style-hover="border-color:#1589BC">
+            <svg data-dc-tpl="1255" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.9"><path data-dc-tpl="1256" d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z M12 12.6 A2.6 2.6 0 1 0 12 7.4 A2.6 2.6 0 1 0 12 12.6"></path></svg>
+            <div>
+              <span class="fd-202" style="color:{{ T.sub }}">موقعك الحالي:</span>
+              <span class="fd-202" style="color:{{ T.green }}"> {{ cityName }}</span>
+            </div>
+          </div>
+          <div class="fd-203" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <div style="position:absolute; inset:14px; border-radius:50%; border:1.5px dashed {{ T.border }};"></div>
+            <span class="fd-204">{{ X.qN }}</span>
+            <span class="fd-205" style="color:{{ T.faint }}">{{ X.qS }}</span>
+            <span class="fd-206" style="color:{{ T.faint }}">{{ X.qW }}</span>
+            <span class="fd-207" style="color:{{ T.faint }}">{{ X.qE }}</span>
+            <div class="fd-208">
+              <div class="fd-209">
+                <div class="fd-210">
+                  <div class="fd-211">
+                    <div class="fd-212"></div>
+                  </div>
+                  <svg width="26" height="30" sc-camel-view-box="0 0 26 30" fill="#EA9924"><path d="M13 0 L24 28 L13 21 L2 28 Z"></path></svg>
+                </div>
+                <div class="fd-213"></div>
+                <div class="fd-214"></div>
+              </div>
+            </div>
+          </div>
+          <div class="fd-215">
+            <span dir="ltr" class="fd-216" style="color:{{ T.green }}">21°</span>
+            <span class="fd-73" style="color:{{ T.sub }}">{{ X.qNE }}</span>
+          </div>
+          <!-- <span class="fd-217" style="color:{{ T.sub }}">{{ qDistTxt }}</span> -->
+          <div style="border-radius:14px; padding:12px 18px; margin-top:0; display:flex; flex-direction:row; align-items:center; gap:9px;>
+            <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.9"><circle cx="12" cy="12" r="9"></circle><path d="M12 8 V12.5 M12 15.8 V16"></path></svg>
+            <span class="fd-218" style="color:{{ T.sub }}">{{ X.qTip }}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═════════════ المجموعة ٤ · القرآن والحديث وتبيان ═════════════ -->
+  <div style="{{ grpSty }}">
+    <div style="{{ grpLbl }}">٤ · القرآن الكريم والحديث وتبيان</div>
+    <div style="{{ rowSty }}">
+
+      <!-- ─── القرآن: الفهرس ─── -->
+      <!-- ─── المصحف ─── -->
+      <div data-screen-label="المصحف" dir="{{ dirA }}" style="{{ sty.mushaf }}">
+
+        <div class="fd-219">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-220">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <div class="fd-221">
+            <span class="fd-148">{{ X.quranTitle }}</span>
+            <!-- <span class="fd-222">{{ mWhere }}</span> -->
+          </div>
+        </div>
+
+        <div class="fd-223">
+
+          <!-- شريط الأدوات -->
+          <div class="fd-224">
+            <div class="fd-225">
+              <div sc-camel-on-click="{{ toggleMBm }}" class="fd-226" style-hover="opacity:.7">
+                <svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="{{ mBmFill }}" stroke="#1589BC" stroke-width="1.9" stroke-linejoin="round"><path d="M6.5 3.8 H17.5 A1 1 0 0 1 18.5 4.8 V20.4 L12 16.3 L5.5 20.4 V4.8 A1 1 0 0 1 6.5 3.8 Z"></path></svg>
+              </div>
+              <div sc-camel-on-click="{{ openSaved }}" class="fd-226" style-hover="opacity:.7">
+                <!-- <svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5 H14 L18.5 8 V20.5 H6.5 Z"></path><path d="M14 3.5 V8 H18.5 M9.5 12.5 H15 M9.5 16 H13"></path></svg> -->
+              <svg width="16" height="16" sc-camel-view-box="0 0 35.65 43.2">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <path d="M28.75,17.57l-4.29-3.83c-.17-.15-.42-.16-.61-.02l-5.26,3.98c-.31,.24-.77,.01-.77-.38V1.48c0-.26,.21-.48,.48-.48h10.76c.26,0,.48,.21,.48,.48v15.74c0,.41-.49,.63-.8,.36Z" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+        <rect x="1" y="1" width="33.65" height="41.2" rx="4.05" ry="4.05" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+      </g>
+      <line x1="5.73" y1="33.91" x2="26.36" y2="33.91" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="5.73" y1="26.2" x2="26.36" y2="26.2" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
+              </div>
+              <div sc-camel-on-click="{{ toggleMSearch }}" class="fd-226" style-hover="opacity:.7">
+                <svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="{{mSearchF}}" stroke="{{ mSearchC }}" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.6"></circle><path d="M16 16 L20.5 20.5"></path></svg>
+              </div>
+              <div sc-camel-on-click="{{ goIndex }}" class="fd-226" style-hover="opacity:.7">
+                <!-- <svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.9" stroke-linecap="round">
+                  <path d="M4 6.5 H20 M4 12 H20 M4 17.5 H20"></path>
+                </svg> -->
+                <svg width="15" height="15" data-name="Layer 2" viewBox="0 0 35.31 27.25"fill="none" stroke="#1589BC" stroke-width="1.9" >
+                  <g id="Layer_1-2" data-name="Layer 1">
+                    <g>
+                      <line x1="35.31" y1="1" x2="9.66" y2="1" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+                      <line x1="3.46" y1="1" y2="1" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+                      <line x1="35.31" y1="13.62" x2="9.66" y2="13.62" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+                      <line x1="3.46" y1="13.62" y2="13.62" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+                      <line x1="35.31" y1="26.25" x2="9.66" y2="26.25" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+                      <line x1="3.46" y1="26.25" y2="26.25" fill="none" stroke="#1589bc" stroke-miterlimit="10" stroke-width="2"/>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <div sc-camel-on-click="{{ lnToolbarTap }}" class="fd-226" style-hover="opacity:.7">
+                <sc-if value="{{ lnPlayIcon }}" hint-placeholder-val="{{ true }}">
+                  <svg width="16" height="16" sc-camel-view-box="0 0 36.3 39.56" fill="none" stroke="#1589BC" stroke-width="1.8" stroke-linejoin="round"><path d="M1,6.49v26.58c0,4.2,4.52,6.84,8.17,4.78l23.34-13.16c3.7-2.09,3.72-7.41,.04-9.53L9.21,1.74C5.56-.36,1,2.27,1,6.49Z"></path></svg>
+                </sc-if>
+                <sc-if value="{{ lnPauseIcon }}" hint-placeholder-val="{{ false }}">
+                  <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="2.8" stroke-linecap="round"><path d="M9.2 5.6 V18.4 M14.8 5.6 V18.4"></path></svg>
+                </sc-if>
+              </div>
+              <div sc-camel-on-click="{{ openDownloads }}"  class="fd-226" style-hover="opacity:.7">
+              <svg  data-dc-tpl="489" width="21" height="21" viewBox="0 0 24 24" fill="#1589BC" stroke="none" preserveAspectRatio="xMidYMid meet"><g transform="translate(3.6279 3.0000) scale(0.418605)">
+                    <path data-dc-tpl="490" fill-rule="evenodd" clip-rule="evenodd" d="M 24 23 L 24 42 L 26 42 L 28 41 L 30 39 L 32 39 L 37 42 L 39 42 L 39 23 Z M 27 25 L 37 26 L 35 38 L 32 36 L 30 36 L 27 38 Z M 8 14 L 8 27 L 10 29 L 12 29 L 14 28 L 18 25 L 19 25 L 21 24 L 21 18 L 20 18 L 18 16 L 12 13 Z M 11 15 L 17 18 L 20 21 L 18 23 L 15 24 L 13 26 L 11 27 Z M 2 0 L 0 2 L 1 41 L 3 42 L 17 42 L 17 40 L 4 40 L 2 38 L 2 4 L 4 2 L 24 3 L 24 14 L 32 15 L 32 19 L 34 19 L 34 11 L 33 9 L 28 2 L 26 0 Z M 27 6 L 29 8 L 29 9 L 31 11 L 26 11 Z"/>
+                  </g>
+                </svg>
+              </div>
+              <!-- <div sc-camel-on-click="{{ openQSettings }}" class="fd-226" style-hover="opacity:.7">
+                <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.1"></circle><path d="M19.1 14.4 A1.7 1.7 0 0 0 19.5 16.2 L19.6 16.3 A2 2 0 1 1 16.8 19.1 L16.7 19 A1.7 1.7 0 0 0 14.9 18.6 A1.7 1.7 0 0 0 13.8 20.2 V20.4 A2 2 0 1 1 9.8 20.4 V20.3 A1.7 1.7 0 0 0 8.6 18.7 A1.7 1.7 0 0 0 6.8 19.1 L6.7 19.2 A2 2 0 1 1 3.9 16.4 L4 16.3 A1.7 1.7 0 0 0 4.4 14.5 A1.7 1.7 0 0 0 2.8 13.4 H2.6 A2 2 0 1 1 2.6 9.4 H2.7 A1.7 1.7 0 0 0 4.3 8.2 A1.7 1.7 0 0 0 3.9 6.4 L3.8 6.3 A2 2 0 1 1 6.6 3.5 L6.7 3.6 A1.7 1.7 0 0 0 8.5 4 H8.6 A1.7 1.7 0 0 0 9.7 2.4 V2.2 A2 2 0 1 1 13.7 2.2 V2.3 A1.7 1.7 0 0 0 14.8 3.9 A1.7 1.7 0 0 0 16.6 3.5 L16.7 3.4 A2 2 0 1 1 19.5 6.2 L19.4 6.3 A1.7 1.7 0 0 0 19 8.1 V8.2 A1.7 1.7 0 0 0 20.6 9.3 H20.8 A2 2 0 1 1 20.8 13.3 H20.7 A1.7 1.7 0 0 0 19.1 14.4 Z"></path></svg>
+              </div> -->
+            </div>
+
+            <sc-if value="{{ mSearchOn }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-227">
+                <input value="{{ mSearchVal }}" sc-camel-on-change="{{ setMSearch }}" sc-camel-on-key-down="{{ mSearchKey }}" placeholder="{{ X.mSearchPh }}" class="fd-228" style="color:{{ T.text }}">
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" class="fd-35"><circle cx="11" cy="11" r="6.6"></circle><path d="M16 16 L20.5 20.5"></path></svg>
+              </div>
+            </sc-if>
+          </div>
+
+          <!-- الصفحة -->
+          <div class="fd-229">
+            <sc-if value="{{ mHasPage }}" hint-placeholder-val="{{ true }}">
+              <div class="fd-230">
+                <img src="{{ mPageSrc }}" alt="" class="fd-231">
+                <div class="fd-232">
+                  <sc-for list="{{ mSpots }}" as="sp" hint-placeholder-count="7">
+                    <div sc-camel-on-click="{{ sp.pick }}" style="{{ sp.sty }}"></div>
+                  </sc-for>
+                </div>
+
+
+                <sc-if value="{{ amOn }}" hint-placeholder-val="{{ false }}">
+                  <div dir="{{ dirA }}" class="fd-am2-wrap" style="{{ amPos }}">
+
+
+                <div class="fd-252" style="background:{{ T.soft }}">
+                  <sc-if value="{{ amIsMenu }}" hint-placeholder-val="{{ true }}">
+                    <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2"><path d="M6 3.5 H15 A3 3 0 0 1 18 6.5 V20.5 L12 17 L6 20.5 Z"></path></svg>
+                  </sc-if>
+                  <span class="fd-253" style="color:{{ T.green }}">{{ amNumTxt }}</span>
+                  <div sc-camel-on-click="{{ amClose }}" class="fd-241" style="background:{{ T.card }}" style-hover="opacity:.75">
+                    <svg width="11" height="11" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.sub }}" stroke-width="2.6"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+                  </div>
+                </div>
+                <sc-if value="{{ amShowAyah }}" hint-placeholder-val="{{ false }}">
+                  <div class="fd-254" style="border-bottom:1px solid {{ T.paperBorder }}">
+                    <span class="fd-255" style="color:{{ T.text }}">﴿ {{ amAyahTxt }} ﴾</span>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ amIsMenu }}" hint-placeholder-val="{{ true }}">
+                  <div class="fd-256">
+                    <div sc-camel-on-click="{{ amGoTafsir }}" class="fd-257" style-hover="background:{{ T.soft }}">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.9"><path d="M4 5 H20 M4 10 H20 M4 15 H15 M4 20 H11"></path></svg>
+                      <span class="fd-258" style="color:{{ T.text }}">{{ X.amTafsirL }}</span>
+                      <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2.2"><path d="M15 6 L9 12 L15 18"></path></svg>
+                    </div>
+                    <div sc-camel-on-click="{{ amGoListen }}" class="fd-257" style="border-top:1px solid {{ T.paperBorder }}" style-hover="background:{{ T.soft }}">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.9"><path d="M4 14 V11 A8 8 0 0 1 20 11 V14 M4 14 H7 V20 H4 Z M20 14 H17 V20 H20 Z"></path></svg>
+                      <span class="fd-258" style="color:{{ T.text }}">{{ X.amListenL }}</span>
+                      <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2.2"><path d="M15 6 L9 12 L15 18"></path></svg>
+                    </div>
+                    <!-- <div sc-camel-on-click="{{ amShare }}" class="fd-257" style="border-top:1px solid {{ T.paperBorder }}" style-hover="background:{{ T.soft }}">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2"><path d="M7 17 L17 7 M9 7 H17 V15"></path></svg>
+                      <span class="fd-258" style="color:{{ T.text }}">{{ X.amShareL }}</span>
+                    </div> -->
+                    <div sc-camel-on-click="{{ amGoMaani }}" class="fd-257" style="border-top:1px solid {{ T.paperBorder }}" style-hover="background:{{ T.soft }}">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.9"><path d="M5 6 H19 M8 11 H16 M6 16 H18"></path><circle cx="12" cy="21" r="1.4" fill="{{ T.green }}"></circle></svg>
+                      <span class="fd-258" style="color:{{ T.text }}">{{ X.amMaaniL }}</span>
+                      <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2.2"><path d="M15 6 L9 12 L15 18"></path></svg>
+                    </div>
+                    <div sc-camel-on-click="{{ amGoAsbab }}" class="fd-257" style="border-top:1px solid {{ T.paperBorder }}" style-hover="background:{{ T.soft }}">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.9"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 11 V17 M12 7.6 V8.6"></path></svg>
+                      <span class="fd-258" style="color:{{ T.text }}">{{ X.amAsbabL }}</span>
+                      <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2.2"><path d="M15 6 L9 12 L15 18"></path></svg>
+                    </div>
+                    <!-- <div sc-camel-on-click="{{ amSave }}" class="fd-257" style="border-top:1px solid {{ T.paperBorder }}" style-hover="background:{{ T.soft }}">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.9"><path d="M6 3.5 H15 A3 3 0 0 1 18 6.5 V20.5 L12 17 L6 20.5 Z"></path></svg>
+                      <span class="fd-258" style="color:{{ T.text }}">{{ X.amSaveL }}</span>
+                    </div> -->
+                  </div>
+                </sc-if>
+                
+                
+                <sc-if value="{{ amIsAsk }}" hint-placeholder-val="{{ false }}">
+                  <div class="fd-264">
+                    <span class="fd-265" style="color:{{ T.text }}">{{ amAskTxt }}</span>
+                    <div class="fd-136">
+                      <div sc-camel-on-click="{{ amDlConfirm }}" class="fd-266" style-hover="opacity:.9">
+                        <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 4 V15 M7 10.5 L12 15.5 L17 10.5 M5 19.5 H19"></path></svg>
+                        <span class="fd-267">{{ X.amDlBtn }}</span>
+                      </div>
+                      <div sc-camel-on-click="{{ amGoListen }}" class="fd-268" style="background:{{ T.soft }}" style-hover="opacity:.8">
+                        <span class="fd-269" style="color:{{ T.sub }}">{{ X.amCancelL }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ amIsMaani }}" hint-placeholder-val="{{ false }}">
+                  <div class="fd-270">
+                    <div sc-camel-on-click="{{ amBack }}" class="fd-260" style-hover="opacity:.7">
+                      <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.4"><path d="M9 6 L15 12 L9 18"></path></svg>
+                      <span class="fd-261" style="color:{{ T.green }}">{{ X.amMaaniL }}</span>
+                    </div>
+                    <sc-if value="{{ gtNoMaani }}" hint-placeholder-val="{{ false }}">
+                      <span class="fd-271" style="color:{{ T.faint }}">{{ X.amNoMaani }}</span>
+                    </sc-if>
+                    <sc-for list="{{ gtMaani }}" as="m" hint-placeholder-count="2">
+                      <div class="fd-272" style="background:{{ T.soft }}">
+                        <span class="fd-273" style="color:{{ T.green }}">{{ m.w }}</span>
+                        <span class="fd-274" style="color:{{ T.text }}">{{ m.m }}</span>
+                      </div>
+                    </sc-for>
+                    <sc-if value="{{ gtHasQiraat }}" hint-placeholder-val="{{ false }}">
+                      <span class="fd-275" style="color:{{ T.sub }}">{{ gtQiraatLabel }}</span>
+                      <sc-for list="{{ gtQiraat }}" as="q" hint-placeholder-count="2">
+                        <div class="fd-272" style="background:{{ T.soft }}">
+                          <span class="fd-273" style="color:{{ T.green }}">{{ q.w }}</span>
+                          <span class="fd-274" style="color:{{ T.text }}">{{ q.m }}</span>
+                        </div>
+                      </sc-for>
+                    </sc-if>
+                    
+                  </div>
+                </sc-if>
+                <sc-if value="{{ amIsAsbab }}" hint-placeholder-val="{{ false }}">
+                  <div class="fd-270">
+                    <div sc-camel-on-click="{{ amBack }}" class="fd-260" style-hover="opacity:.7">
+                      <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.4"><path d="M9 6 L15 12 L9 18"></path></svg>
+                      <span class="fd-261" style="color:{{ T.green }}">{{ X.amAsbabL }}</span>
+                    </div>
+                    <span class="fd-277" style="color:{{ T.text }}">{{ amAsbabTxt }}</span>
+                  </div>
+                </sc-if>
+                                      </div>
+                </sc-if>
+                <sc-if value="{{ ayOn }}" hint-placeholder-val="{{ false }}">
+                  <div class="fd-ay-bar" style="top:{{ ayTop }}">
+                    
+                    <div sc-camel-on-click="{{ ayToggle }}" class="fd-ay-btn" style-hover="opacity:.75">
+                      <svg width="{{ayPauseWidth}}" height="{{ayPauseHeight}}" sc-camel-view-box="{{ayPausebox}}" fill="none" stroke="#1589BC" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="{{ ayPauseIcon }}"></path></svg>
+                    </div>
+                    <div sc-camel-on-click="{{ ayStop }}" class="fd-ay-btn" style-hover="opacity:.75">
+                      <svg  width="20" height="20" sc-camel-view-box="0 0 24 24" fill="#1589BC"><rect x="6.5" y="6.5" width="11" height="11" rx="1.6"></rect></svg>
+                    </div>
+                    <div class="fd-ay-track">
+                      <div class="fd-ay-fill" style="width:{{ ayProgW }}"></div>
+                      <div class="fd-ay-dot" style="inset-inline-start:{{ ayProgW }}"></div>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+            <sc-if value="{{ mNoPage }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-233">
+                <svg width="34" height="34" sc-camel-view-box="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.6"><path d="M6.5 3.5 H14 L18.5 8 V20.5 H6.5 Z"></path><path d="M14 3.5 V8 H18.5"></path></svg>
+                <span class="fd-234" style="color:{{ T.faint }}">{{ mNoPageTxt }}</span>
+              </div>
+            </sc-if>
+            <div class="fd-235" style="display:{{ mRibbonDisp }}">
+              <svg width="18" height="34" viewBox="0 0 18 34" fill="none"><path d="M0 0 H18 V34 L9 27 L0 34 Z" fill="#EA9924"></path></svg>
+            </div>
+            
+            
+            
+            
+          </div>
+
+          <!-- رقم الصفحة -->
+          <div class="fd-278">
+            <div sc-camel-on-click="{{ mPrev }}" class="fd-279" style-hover="opacity:.75">
+              <svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.4" stroke-linecap="round"><path d="M9 6 L15 12 L9 18"></path></svg>
+            </div>
+            <span class="fd-269" style="color:{{ T.sub }}">{{ X.mPageWord }}</span>
+            <input value="{{ mPageVal }}" sc-camel-on-change="{{ setMPage }}" dir="ltr" class="fd-280" style="color:{{ T.text }}">
+            <span class="fd-269" style="color:{{ T.sub }}">{{ X.mOfWord }} {{ mTotal }}</span>
+            <div sc-camel-on-click="{{ mNext }}" class="fd-279" style-hover="opacity:.75">
+              <svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.4" stroke-linecap="round"><path d="M15 6 L9 12 L15 18"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-screen-label="فهرس القرآن" dir="{{ dirA }}" style="{{ sty.quran }}">
+        <div class="fd-281">
+          <div class="fd-225">
+            <div sc-camel-on-click="{{ backFn }}" style="display:flex; justify-content:center; align-items:center; cursor:pointer;">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; gap:4px; min-width:0;">
+              <span class="fd-148">{{ X.quranTitle }}</span>
+          </div>
+            
+            <!-- <div sc-camel-on-click="{{ goReader }}" class="fd-282" style-hover="background:rgba(47,118,158,0.24)">
+              <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#D7B36A" stroke-width="2"><path d="M6 3.5 H15 A3 3 0 0 1 18 6.5 V20.5 L12 17 L6 20.5 Z"></path></svg>
+              <span class="fd-150">{{ X.lastRead }} · {{ lastReadTxt }}</span>
+            </div> -->
+          </div>
+          <!-- <div class="fd-283">
+            <div sc-camel-on-click="{{ qTabSurah }}" class="fd-284" style="border-bottom:3px solid {{ qSurahBorder }}">
+              <span class="fd-46" style="color:{{ qSurahColor }}">{{ X.surahsTab }}</span>
+            </div>
+            <div sc-camel-on-click="{{ qTabJuz }}" class="fd-284" style="border-bottom:3px solid {{ qJuzBorder }}">
+              <span class="fd-46" style="color:{{ qJuzColor }}">{{ X.juzTab }}</span>
+            </div>
+            <div sc-camel-on-click="{{ qTabSaved }}" class="fd-284" style="border-bottom:3px solid {{ qSavedBorder }}">
+              <span class="fd-46" style="color:{{ qSavedColor }}">{{ X.savedTab }}</span>
+            </div>
+            <div sc-camel-on-click="{{ qTabDl }}" class="fd-284" style="border-bottom:3px solid {{ qDlBorder }}">
+              <span class="fd-46" style="color:{{ qDlColor }}">{{ X.dlTab }}</span>
+            </div>
+          </div> -->
+        </div>
+        <div class="fd-285">
+          <sc-if value="{{ qIsSurah }}" hint-placeholder-val="{{ true }}">
+            <div class="fd-286">
+              <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.sub }}" stroke-width="2"><circle cx="11" cy="11" r="6.5"></circle><path d="M15.8 15.8 L20 20"></path></svg>
+              <input value="{{ qSearch }}" sc-camel-on-change="{{ setQSearch }}" placeholder="{{ X.qSearchPh }}" class="fd-287" style="color:{{ T.text }}">
+              <sc-if value="{{ qHasSearch }}" hint-placeholder-val="{{ false }}">
+                <div sc-camel-on-click="{{ clearQSearch }}" class="fd-288" style="background:{{ T.soft }}" style-hover="opacity:.8">
+                  <svg width="10" height="10" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.sub }}" stroke-width="2.6"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+                </div>
+              </sc-if>
+            </div>
+            <sc-if value="{{ qNoResults }}" hint-placeholder-val="{{ false }}">
+              <span class="fd-289" style="color:{{ T.sub }}">{{ X.qNoResults }}</span>
+            </sc-if>
+            <span class="fd-qlist-h">{{ X.qListTitle }}</span>
+            <sc-for list="{{ surahRows }}" as="r" hint-placeholder-count="12">
+              <div sc-camel-on-click="{{ r.open }}" class="fd-290" style-hover="border-color:#1589BC">
+                <div class="fd-291">
+                  <!-- <svg width="38" height="38" sc-camel-view-box="0 0 38 38" fill="none" stroke="#D7B36A" stroke-width="1.3"><path d="M19 2 L23.2 6.2 L29 6.2 L29 12 L33.2 16.2 L29 20.4 L29 26.2 L23.2 26.2 L19 30.4 L14.8 26.2 L9 26.2 L9 20.4 L4.8 16.2 L9 12 L9 6.2 L14.8 6.2 Z" transform="translate(0,3)"></path></svg> -->
+                  <span dir="ltr" class="fd-292" >{{ r.n }}</span>
+                </div>
+                <div class="fd-293">
+                  <span class="fd-294" style="color:{{ T.text }}">{{ r.name }}</span>
+                  <!-- <span class="fd-88" style="color:{{ T.sub }}">{{ r.meta }}</span> -->
+                </div>
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2"><path d="{{ chevMore }}"></path></svg>
+              </div>
+            </sc-for>
+            <sc-if value="{{ qWordLoading }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-295">
+                <div style="width:18px; height:18px; border-radius:50%; border:2.5px solid {{ T.mint }}; border-top-color:#1589BC; animation:muznSpin .8s linear infinite; flex-shrink:0;"></div>
+                <span class="fd-296" style="color:{{ T.sub }}">{{ X.qWordLoading }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ qHasWordResults }}" hint-placeholder-val="{{ false }}">
+              <span class="fd-297" style="color:{{ T.sub }}">{{ qWordCountTxt }}</span>
+            </sc-if>
+            <sc-for list="{{ qWordRows }}" as="w" hint-placeholder-count="2">
+              <div sc-camel-on-click="{{ w.open }}" class="fd-298" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-1px)">
+                <div class="fd-116">
+                  <span class="fd-32" style="color:{{ T.green }}">{{ w.title }}</span>
+                  <span class="fd-299">{{ w.word }}</span>
+                </div>
+                <span class="fd-300" style="color:{{ T.text }}">{{ w.t }}</span>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ qIsJuz }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-301">
+              <sc-for list="{{ juzRows }}" as="j" hint-placeholder-count="30">
+                <div sc-camel-on-click="{{ j.open }}" class="fd-302" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-2px)">
+                  <span class="fd-46" style="color:{{ T.green }}">{{ j.name }}</span>
+                  <span class="fd-303" style="color:{{ T.sub }}">{{ X.pageWord }} {{ j.page }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ qIsSaved }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-304" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+              <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="#D7B36A"><path d="M6 3.5 H15 A3 3 0 0 1 18 6.5 V20.5 L12 17 L6 20.5 Z"></path></svg>
+              <div sc-camel-on-click="{{ openBookmark }}" class="fd-305">
+                <span class="fd-67" style="color:{{ T.text }}">{{ savedPosTxt }}</span>
+                <span class="fd-174" style="color:{{ T.sub }}">{{ X.savedPosSub }}</span>
+              </div>
+              <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2"><path d="{{ chevMore }}"></path></svg>
+            </div>
+            <span class="fd-306" style="color:{{ T.sub }}">{{ X.savedAyahsT }} · {{ savedAyahCount }}</span>
+            <sc-if value="{{ savedAyahsEmpty }}" hint-placeholder-val="{{ false }}">
+              <span class="fd-307" style="color:{{ T.faint }}">{{ X.noSavedAyahs }}</span>
+            </sc-if>
+            <sc-for list="{{ savedAyahRows }}" as="v" hint-placeholder-count="2">
+              <div class="fd-308" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+                <div sc-camel-on-click="{{ v.open }}" class="fd-309">
+                  <span class="fd-32" style="color:{{ T.green }}">{{ v.title }}</span>
+                  <sc-if value="{{ v.hasT }}" hint-placeholder-val="{{ false }}">
+                    <span class="fd-310" style="color:{{ T.text }}">{{ v.t }}</span>
+                  </sc-if>
+                </div>
+                <div sc-camel-on-click="{{ v.del }}" class="fd-311" style-hover="background:rgba(234,153,36,0.18)">
+                  <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="#EA9924" stroke-width="1.9"><path d="M4.5 6.5 H19.5 M9 6.5 V4.8 A1.3 1.3 0 0 1 10.3 3.5 H13.7 A1.3 1.3 0 0 1 15 4.8 V6.5 M6.3 6.5 L7 19 A1.5 1.5 0 0 0 8.5 20.5 H15.5 A1.5 1.5 0 0 0 17 19 L17.7 6.5 M10 10 V16.5 M14 10 V16.5"></path></svg>
+                </div>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ qIsDl }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-312" style="background:{{ T.hint }}">
+              <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2" class="fd-313"><path d="M12 4 V15 M7 10.5 L12 15.5 L17 10.5 M5 19.5 H19"></path></svg>
+              <span class="fd-314" style="color:{{ T.srcText }}">{{ X.dlHint }}</span>
+            </div>
+            <sc-if value="{{ dlEmpty }}" hint-placeholder-val="{{ false }}">
+              <span class="fd-315" style="color:{{ T.faint }}">{{ X.dlEmptyTxt }}</span>
+            </sc-if>
+            <sc-for list="{{ dlRows }}" as="d" hint-placeholder-count="2">
+              <div class="fd-316" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+                <div sc-camel-on-click="{{ d.play }}" class="fd-317" style-hover="opacity:.9">
+                  <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="#FFFFFF"><path d="M8 5.5 V18.5 L19 12 Z"></path></svg>
+                </div>
+                <div sc-camel-on-click="{{ d.open }}" class="fd-305">
+                  <span class="fd-318" style="color:{{ T.text }}">{{ d.name }}</span>
+                  <span class="fd-88" style="color:{{ T.sub }}">{{ d.meta }} · {{ X.dlOpenRead }}</span>
+                </div>
+                <span class="fd-319" style="background:{{ T.mint }}; color:{{ T.green }}">{{ X.offlineBadge }}</span>
+                <div sc-camel-on-click="{{ d.del }}" class="fd-311" style-hover="background:rgba(234,153,36,0.18)">
+                  <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="#EA9924" stroke-width="1.9"><path d="M4.5 6.5 H19.5 M9 6.5 V4.8 A1.3 1.3 0 0 1 10.3 3.5 H13.7 A1.3 1.3 0 0 1 15 4.8 V6.5 M6.3 6.5 L7 19 A1.5 1.5 0 0 0 8.5 20.5 H15.5 A1.5 1.5 0 0 0 17 19 L17.7 6.5 M10 10 V16.5 M14 10 V16.5"></path></svg>
+                </div>
+              </div>
+            </sc-for>
+          </sc-if>
+        </div>
+      </div>
+
+      <!-- ─── المصحف (القارئ) ─── -->
+      <div data-screen-label="قارئ المصحف" dir="{{ dirA }}" style="{{ sty.quranReader }}">
+        <div class="fd-320">
+          <div class="fd-321">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-61" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <div class="fd-322">
+            <span class="fd-323">{{ readerSurahLabel }}</span>
+            <div sc-camel-on-click="{{ playSurahHdr }}" class="fd-324" style-hover="transform:scale(1.1)">
+              <sc-if value="{{ notPlaying }}" hint-placeholder-val="{{ true }}"><svg width="23" height="27" sc-camel-view-box="0 0 24 24" fill="#FEFFFF" class="fd-325"><path d="M8 5.5 V18.5 L19 12 Z"></path></svg></sc-if>
+              <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}"><svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="#1589BC"><path d="M7.5 5.5 H10.5 V18.5 H7.5 Z M13.5 5.5 H16.5 V18.5 H13.5 Z"></path></svg></sc-if>
+            </div>
+          </div>
+          <div sc-camel-on-click="{{ openDlSheet }}" class="fd-326" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2"><path d="M12 4 V15 M7 10.5 L12 15.5 L17 10.5 M5 19.5 H19"></path></svg>
+          </div>
+          <div sc-camel-on-click="{{ toggleBookmark }}" class="fd-326" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="{{ bmFill }}" stroke="#EA9924" stroke-width="2"><path d="M6 3.5 H15 A3 3 0 0 1 18 6.5 V20.5 L12 17 L6 20.5 Z"></path></svg>
+          </div>
+          <div sc-camel-on-click="{{ openReaderSettings }}" class="fd-326" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="1.9"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </div>
+          </div>
+          <div class="fd-327">
+            <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2" class="fd-35"><circle cx="11" cy="11" r="6.5"></circle><path d="M15.8 15.8 L20 20"></path></svg>
+            <input id="mzRSearch" value="{{ rSearch }}" sc-camel-on-change="{{ setRSearch }}" placeholder="{{ X.rSearchPh }}" class="fd-328">
+            <sc-if value="{{ rHasSearch }}" hint-placeholder-val="{{ false }}">
+              <div sc-camel-on-click="{{ clearRSearch }}" class="fd-329" style-hover="background:rgba(255,255,255,0.34)">
+                <svg width="10" height="10" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.8"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+
+        <sc-if value="{{ rSearchOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute; top:151px; left:14px; right:14px; z-index:45; max-height:322px; overflow-y:auto; border-radius:16px; background:{{ T.card }}; border:1px solid {{ T.border }}; box-shadow:0 18px 44px rgba(0,0,0,0.24); display:flex; flex-direction:column; animation:muznFadeUp .18s ease;">
+            <sc-if value="{{ rLoading }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-330">
+                <div style="width:16px; height:16px; border-radius:50%; border:2.4px solid {{ T.mint }}; border-top-color:#1589BC; animation:muznSpin .8s linear infinite; flex-shrink:0;"></div>
+                <span class="fd-296" style="color:{{ T.sub }}">{{ X.rSearching }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ rNoRes }}" hint-placeholder-val="{{ false }}">
+              <span class="fd-331" style="color:{{ T.faint }}">{{ X.qNoResults }}</span>
+            </sc-if>
+            <sc-for list="{{ rSearchRows }}" as="r" hint-placeholder-count="3">
+              <div sc-camel-on-click="{{ r.open }}" class="fd-332" style="border-bottom:1px solid {{ T.navBorder }}" style-hover="background:{{ T.soft }}">
+                <span class="fd-32" style="color:{{ T.green }}">{{ r.title }}</span>
+                <span class="fd-333" style="color:{{ T.text }}">{{ r.sub }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <div class="fd-334">
+          <div id="mzPageWrap" sc-camel-on-pointer-down="{{ flipDown }}" sc-camel-on-pointer-move="{{ flipMove }}" sc-camel-on-pointer-up="{{ flipUp }}" sc-camel-on-pointer-cancel="{{ flipUp }}" class="fd-335">
+            <div id="mzSlide" data-mzscroll="1" style="{{ slideSty }}">
+            <sc-if value="{{ showBasmala }}" hint-placeholder-val="{{ true }}">
+            <div class="fd-336">
+              <div class="fd-337"></div>
+              <span style="font-family:{{ qFontFam }}; font-size:17px; font-weight:700; color:{{ T.green }};">﴿ {{ readerBasmala }} ﴾</span>
+              <div class="fd-337"></div>
+            </div>
+            </sc-if>
+            <sc-if value="{{ qLoading }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-338">
+                <div style="width:30px; height:30px; border-radius:50%; border:3px solid {{ T.mint }}; border-top-color:#1589BC; animation:muznSpin .8s linear infinite;"></div>
+                <span class="fd-339" style="color:{{ T.sub }}">{{ X.qLoadingTxt }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ qErr }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-340">
+                <span class="fd-341" style="color:{{ T.sub }}">{{ X.qErrTxt }}</span>
+                <div sc-camel-on-click="{{ retryLoad }}" class="fd-342" style-hover="opacity:.9">
+                  <span class="fd-343">{{ X.qRetry }}</span>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ isFatihaPg }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-344">
+                <img src="images/fatiha-page-t.png" alt="سورة الفاتحة" class="fd-345">
+                <div class="fd-232">
+                  <div sc-camel-on-click="{{ fa1.pick }}" class="fd-346" style="background:{{ fa1.bg }}"></div>
+                  <div sc-camel-on-click="{{ fa2.pick }}" class="fd-347" style="background:{{ fa2.bg }}"></div>
+                  <div sc-camel-on-click="{{ fa3.pick }}" class="fd-348" style="background:{{ fa3.bg }}"></div>
+                  <div sc-camel-on-click="{{ fa4.pick }}" class="fd-349" style="background:{{ fa4.bg }}"></div>
+                  <div sc-camel-on-click="{{ fa5.pick }}" class="fd-350" style="background:{{ fa5.bg }}"></div>
+                  <div sc-camel-on-click="{{ fa6.pick }}" class="fd-351" style="background:{{ fa6.bg }}"></div>
+                  <div sc-camel-on-click="{{ fa6.pick }}" class="fd-352" style="background:{{ fa6.bg }}"></div>
+                  <div sc-camel-on-click="{{ fa7.pick }}" class="fd-353" style="background:{{ fa7.bg }}"></div>
+                  <div sc-camel-on-click="{{ fa7.pick }}" class="fd-354" style="background:{{ fa7.bg }}"></div>
+                  <div sc-camel-on-click="{{ fa7.pick }}" class="fd-355" style="background:{{ fa7.bg }}"></div>
+                </div>
+              </div>
+            </sc-if>
+<sc-if value="{{ isBaqPg }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-344">
+                <img src="images/baqarah-page1-t.png" alt="سورة البقرة" class="fd-345">
+                <div class="fd-232">
+                  <div sc-camel-on-click="{{ ba1.pick }}" class="fd-356" style="background:{{ ba1.bg }}"></div>
+                  <div sc-camel-on-click="{{ ba2.pick }}" class="fd-357" style="background:{{ ba2.bg }}"></div>
+                  <div sc-camel-on-click="{{ ba2.pick }}" class="fd-358" style="background:{{ ba2.bg }}"></div>
+                  <div sc-camel-on-click="{{ ba3.pick }}" class="fd-359" style="background:{{ ba3.bg }}"></div>
+                  <div sc-camel-on-click="{{ ba3.pick }}" class="fd-360" style="background:{{ ba3.bg }}"></div>
+                  <div sc-camel-on-click="{{ ba4.pick }}" class="fd-361" style="background:{{ ba4.bg }}"></div>
+                  <div sc-camel-on-click="{{ ba4.pick }}" class="fd-362" style="background:{{ ba4.bg }}"></div>
+                  <div sc-camel-on-click="{{ ba5.pick }}" class="fd-363" style="background:{{ ba5.bg }}"></div>
+                  <div sc-camel-on-click="{{ ba5.pick }}" class="fd-364" style="background:{{ ba5.bg }}"></div>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ isBaqPg2 }}" hint-placeholder-val="{{ false }}">
+              <div class="fd-344">
+                <img src="images/baqarah-page2-t.png" alt="سورة البقرة" class="fd-345">
+                <div class="fd-232">
+                  <div sc-camel-on-click="{{ bq6.pick }}" class="fd-365" style="background:{{ bq6.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq6.pick }}" class="fd-366" style="background:{{ bq6.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq7.pick }}" class="fd-367" style="background:{{ bq7.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq7.pick }}" class="fd-368" style="background:{{ bq7.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq8.pick }}" class="fd-369" style="background:{{ bq8.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq8.pick }}" class="fd-370" style="background:{{ bq8.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq9.pick }}" class="fd-371" style="background:{{ bq9.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq9.pick }}" class="fd-372" style="background:{{ bq9.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq10.pick }}" class="fd-373" style="background:{{ bq10.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq10.pick }}" class="fd-374" style="background:{{ bq10.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq11.pick }}" class="fd-375" style="background:{{ bq11.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq11.pick }}" class="fd-376" style="background:{{ bq11.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq12.pick }}" class="fd-377" style="background:{{ bq12.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq12.pick }}" class="fd-378" style="background:{{ bq12.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq13.pick }}" class="fd-379" style="background:{{ bq13.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq13.pick }}" class="fd-380" style="background:{{ bq13.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq13.pick }}" class="fd-381" style="background:{{ bq13.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq14.pick }}" class="fd-382" style="background:{{ bq14.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq14.pick }}" class="fd-383" style="background:{{ bq14.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq14.pick }}" class="fd-384" style="background:{{ bq14.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq15.pick }}" class="fd-385" style="background:{{ bq15.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq15.pick }}" class="fd-386" style="background:{{ bq15.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq16.pick }}" class="fd-387" style="background:{{ bq16.bg }}"></div>
+                  <div sc-camel-on-click="{{ bq16.pick }}" class="fd-388" style="background:{{ bq16.bg }}"></div>
+                </div>
+              </div>
+            </sc-if>
+                        <div id="mzTextBox" dir="rtl" class="fd-389" style="line-height:{{ qLh }}; font-size:{{ qFs }}px">
+              <sc-for list="{{ pageAyahRows }}" as="a" hint-placeholder-count="6">
+                <sc-if value="{{ a.showText }}" hint-placeholder-val="{{ true }}"><span id="mzAyah-{{ a.i }}" sc-camel-on-click="{{ a.pick }}" class="fd-390" style="background:{{ a.bg }}"><sc-for list="{{ a.words }}" as="w" hint-placeholder-count="8"><span style="font-family:{{ qFontFam }}; font-size:1em; color:{{ T.text }}; background:{{ w.bg }}; border-radius:6px; padding:0 1px; transition:background .15s;">{{ w.t }} </span></sc-for><span class="fd-391">﴿{{ a.nAr }}﴾</span> </span></sc-if>
+                <sc-if value="{{ a.showTafsir }}" hint-placeholder-val="{{ false }}">
+                  <div style="text-align:right; text-align-last:auto; border-radius:14px; background:{{ T.card }}; border:1px solid {{ T.paperBorder }}; box-shadow:0 6px 22px rgba(0,0,0,0.10); padding:13px 14px; margin:10px 0 14px; display:flex; flex-direction:column; gap:9px; animation:muznFadeUp .25s ease; line-height:normal;">
+                    <div class="fd-225">
+                      <span class="fd-32" style="color:{{ T.green }}">{{ tafsirTitle }}</span>
+                      <div sc-camel-on-click="{{ closeTafsir }}" class="fd-392" style="background:{{ T.soft }}">
+                        <svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.sub }}" stroke-width="2.4"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+                      </div>
+                    </div>
+                    <span class="fd-393" style="color:{{ T.text }}">{{ tafsirText }}</span>
+                    <sc-if value="{{ gtHasMaani }}" hint-placeholder-val="{{ false }}">
+                      <div class="fd-394">
+                        <span class="fd-275" style="color:{{ T.sub }}">{{ gtMaaniLabel }}</span>
+                        <sc-if value="{{ gtNoMaani }}" hint-placeholder-val="{{ false }}">
+                      <span class="fd-271" style="color:{{ T.faint }}">{{ X.amNoMaani }}</span>
+                    </sc-if>
+                    <sc-for list="{{ gtMaani }}" as="m" hint-placeholder-count="2">
+                          <div class="fd-272" style="background:{{ T.soft }}">
+                            <span class="fd-273" style="color:{{ T.green }}">{{ m.w }}</span>
+                            <span class="fd-274" style="color:{{ T.text }}">{{ m.m }}</span>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                    <sc-if value="{{ gtHasQiraat }}" hint-placeholder-val="{{ false }}">
+                      <div class="fd-394">
+                        <span class="fd-275" style="color:{{ T.sub }}">{{ gtQiraatLabel }}</span>
+                        <sc-for list="{{ gtQiraat }}" as="q" hint-placeholder-count="2">
+                          <div class="fd-272" style="background:{{ T.soft }}">
+                            <span class="fd-273" style="color:{{ T.green }}">{{ q.w }}</span>
+                            <span class="fd-274" style="color:{{ T.text }}">{{ q.m }}</span>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                    <sc-if value="{{ gtHasAny }}" hint-placeholder-val="{{ false }}">
+                      <span class="fd-276" style="color:{{ T.faint }}">{{ gtSrc }}</span>
+                    </sc-if>
+                    <span class="fd-275" style="color:{{ T.sub }}">{{ X.rsTafsir }}</span>
+                    <div class="fd-395">
+                      <sc-for list="{{ tafsirRows }}" as="r" hint-placeholder-count="4">
+                        <div sc-camel-on-click="{{ r.pick }}" style="padding:6px 12px; border-radius:999px; background:{{ r.bg }}; border:1.5px solid {{ r.border }}; cursor:pointer; flex-shrink:0;">
+                          <span class="fd-396" style="color:{{ r.color }}">{{ r.name }}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                    <span class="fd-275" style="color:{{ T.sub }}">{{ X.rsReciter }}</span>
+                    <div class="fd-395">
+                      <sc-for list="{{ reciterRows }}" as="r" hint-placeholder-count="5">
+                        <div sc-camel-on-click="{{ r.pick }}" style="padding:6px 12px; border-radius:999px; background:{{ r.bg }}; border:1.5px solid {{ r.border }}; cursor:pointer; flex-shrink:0;">
+                          <span class="fd-396" style="color:{{ r.color }}">{{ r.name }}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                    <div class="fd-397">
+                      <div sc-camel-on-click="{{ playAyah }}" class="fd-398" style-hover="opacity:.9">
+                        <svg width="11" height="11" sc-camel-view-box="0 0 24 24" fill="#FFFFFF"><path d="M8 5.5 V18.5 L19 12 Z"></path></svg>
+                        <span class="fd-399">{{ X.listenWord }} · {{ reciterName }}</span>
+                      </div>
+                      <div sc-camel-on-click="{{ saveAyahFn }}" class="fd-400" style="background:{{ T.mint }}" style-hover="opacity:.85">
+                        <svg width="11" height="11" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2"><path d="M6 3.5 H15 A3 3 0 0 1 18 6.5 V20.5 L12 17 L6 20.5 Z"></path></svg>
+                        <span class="fd-401" style="color:{{ T.green }}">{{ X.saveAyahT }}</span>
+                      </div>
+                      <div sc-camel-on-click="{{ shareAyah }}" class="fd-400" style="background:{{ T.mint }}" style-hover="opacity:.85">
+                        <svg width="11" height="11" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.2"><path d="M7 17 L17 7 M9 7 H17 V15"></path></svg>
+                        <span class="fd-401" style="color:{{ T.green }}">{{ X.share }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </sc-if>
+              </sc-for>
+            </div>
+                <sc-if value="{{ showPageFoot }}" hint-placeholder-val="{{ true }}">
+                <div class="fd-402"><span class="fd-403" style="color:{{ T.faint }}">﴿ {{ pageNumFoot }} ﴾</span></div>
+                </sc-if>
+              </div>
+            <sc-if value="{{ bmRibbonOn }}" hint-placeholder-val="{{ false }}">
+              <div sc-camel-on-click="{{ bmRibbonOff }}" class="fd-404" style-hover="transform:translateY(3px)"></div>
+            </sc-if>
+            <sc-if value="{{ showMushafTip }}" hint-placeholder-val="{{ false }}">
+              <div sc-camel-on-click="{{ dismissTip }}" class="fd-405">
+                <div class="fd-406">
+                  <svg class="fd-407" width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.6"><path d="M15 6 L9 12 L15 18"></path></svg>
+                  <svg class="fd-408" width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.6"><path d="M9 6 L15 12 L9 18"></path></svg>
+                  <div class="fd-409">
+                    <div class="fd-410"></div>
+                    <div class="fd-410"></div>
+                    <div class="fd-410"></div>
+                    <div class="fd-410"></div>
+                    <div class="fd-411"></div>
+                  </div>
+                </div>
+                <div class="fd-412">
+                  <span class="fd-413">{{ X.tipTitle }}</span>
+                  <span class="fd-414">{{ X.tipSub }}</span>
+                </div>
+                <div class="fd-415"><span class="fd-416">{{ X.tipBtn }}</span></div>
+              </div>
+            </sc-if>
+            
+            
+            
+            
+          </div>
+        </div>
+
+        <div class="fd-417" style="background:{{ T.navBg }}; border-top:1px solid {{ T.navBorder }}">
+          <div class="fd-225">
+            <div sc-camel-on-click="{{ pagePrev }}" class="fd-418" style-hover="background:#F5F1E9">
+              <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.2"><path d="M9 6 L15 12 L9 18"></path></svg>
+              <span class="fd-419" style="color:{{ T.green }}">{{ X.prevPage }}</span>
+            </div>
+            <div dir="ltr" class="fd-420">
+              <div sc-camel-on-click="{{ pageFwd }}" style="{{ arrowNextSty }}"><svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ arrowStroke }}" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6 L9 12 L15 18"></path></svg></div>
+              <span class="fd-419" style="color:{{ T.sub }}">{{ readerPageTxt }}</span>
+              <div sc-camel-on-click="{{ pageBack }}" style="{{ arrowPrevSty }}"><svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ arrowStroke }}" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 L15 12 L9 18"></path></svg></div>
+            </div>
+            <div sc-camel-on-click="{{ pageNext }}" class="fd-418" style-hover="background:#F5F1E9">
+              <span class="fd-419" style="color:{{ T.green }}">{{ X.nextPage }}</span>
+              <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.2"><path d="M15 6 L9 12 L15 18"></path></svg>
+            </div>
+          </div>
+          <div class="fd-421" style="background:{{ T.soft }}">
+            <div class="fd-422" style="width:{{ readerBarW }}"></div>
+          </div>
+          <!-- <div class="fd-423">
+            <span class="fd-303" style="color:{{ T.faint }}">{{ X.wirdToday }}: {{ wirdLabel }}</span>
+            <span class="fd-303" style="color:{{ T.faint }}">{{ X.wirdAuto }}</span>
+          </div> -->
+        </div>
+
+        <!-- ورقة إعدادات القارئ -->
+        <div sc-camel-on-click="{{ closeReaderSettings }}" class="fd-424"></div>
+        <div style="{{ rsSheetSty }}">
+          <div class="fd-425" style="background:{{ T.track }}"></div>
+          <span class="fd-426" style="color:{{ T.text }}">{{ X.rsTitle }}</span>
+          <span class="fd-182" style="color:{{ T.sub }}">{{ X.rsReciter }}</span>
+          <div class="fd-427">
+            <sc-for list="{{ reciterRows }}" as="r" hint-placeholder-count="5">
+              <div sc-camel-on-click="{{ r.pick }}" style="padding:8px 13px; border-radius:999px; background:{{ r.bg }}; border:1.5px solid {{ r.border }}; cursor:pointer; transition:all .2s;">
+                <span class="fd-419" style="color:{{ r.color }}">{{ r.name }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <span class="fd-182" style="color:{{ T.sub }}">{{ X.rsTafsir }}</span>
+          <div class="fd-428">
+            <sc-for list="{{ tafsirRows }}" as="r" hint-placeholder-count="4">
+              <div sc-camel-on-click="{{ r.pick }}" style="padding:8px 13px; border-radius:999px; background:{{ r.bg }}; border:1.5px solid {{ r.border }}; cursor:pointer; transition:all .2s;">
+                <span class="fd-419" style="color:{{ r.color }}">{{ r.name }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <span class="fd-182" style="color:{{ T.sub }}">{{ X.rsTypeface }}</span>
+          <div class="fd-428">
+            <sc-for list="{{ qFontRows }}" as="f" hint-placeholder-count="4">
+              <div sc-camel-on-click="{{ f.pick }}" style="padding:7px 13px 9px; border-radius:14px; background:{{ f.bg }}; border:1.5px solid {{ f.border }}; cursor:pointer; transition:all .2s; display:flex; flex-direction:column; align-items:center; gap:2px; min-width:76px;">
+                <span dir="rtl" style="font-family:{{ f.fam }}; font-size:19px; color:{{ f.color }}; line-height:1.5;">{{ f.sample }}</span>
+                <span class="fd-164" style="color:{{ f.color }}">{{ f.name }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <span class="fd-182" style="color:{{ T.sub }}">{{ X.rsFont }}</span>
+          <div class="fd-429">
+            <span class="fd-430" style="color:{{ T.sub }}">أ</span>
+            <input type="range" min="16" max="30" step="1" value="{{ qFsVal }}" sc-camel-on-change="{{ setQFs }}" class="fd-431">
+            <span class="fd-432" style="color:{{ T.text }}">أ</span>
+            <span class="fd-433" style="color:{{ T.green }}">{{ qFsTxt }}</span>
+          </div>
+          <span class="fd-182" style="color:{{ T.sub }}">{{ X.rsLine }}</span>
+          <div class="fd-429">
+            <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.sub }}" stroke-width="2"><path d="M4 8 H20 M4 12 H20 M4 16 H20"></path></svg>
+            <input type="range" min="1.3" max="2.6" step="0.05" value="{{ qLhVal }}" sc-camel-on-change="{{ setQLh }}" class="fd-431">
+            <svg width="15" height="19" sc-camel-view-box="0 0 24 30" fill="none" stroke="{{ T.text }}" stroke-width="2"><path d="M4 4 H20 M4 15 H20 M4 26 H20"></path></svg>
+            <span class="fd-433" style="color:{{ T.green }}">{{ qLhTxt }}</span>
+          </div>
+          <div sc-camel-on-click="{{ closeReaderSettings }}" class="fd-434">
+            <span class="fd-435">{{ X.done }}</span>
+          </div>
+        </div>
+
+        <!-- ورقة تنزيل السورة -->
+        <div sc-camel-on-click="{{ closeDlSheet }}" class="fd-436"></div>
+        <div style="{{ dlSheetSty }}">
+          <div class="fd-425" style="background:{{ T.track }}"></div>
+          <span class="fd-437" style="color:{{ T.text }}">{{ X.dlTitle }}</span>
+          <span class="fd-438" style="color:{{ T.sub }}">{{ dlSurahTxt }}</span>
+          <span class="fd-182" style="color:{{ T.sub }}">{{ X.rsReciter }}</span>
+          <div class="fd-427">
+            <sc-for list="{{ reciterRows }}" as="r" hint-placeholder-count="5">
+              <div sc-camel-on-click="{{ r.pick }}" style="padding:8px 13px; border-radius:999px; background:{{ r.bg }}; border:1.5px solid {{ r.border }}; cursor:pointer; transition:all .2s;">
+                <span class="fd-419" style="color:{{ r.color }}">{{ r.name }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ dlBusy }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-439">
+              <div class="fd-440" style="background:{{ T.mint }}">
+                <div class="fd-441" style="width:{{ dlBarW }}"></div>
+              </div>
+              <span class="fd-442" style="color:{{ T.sub }}">{{ dlPctTxt }}</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ dlIdle }}" hint-placeholder-val="{{ true }}">
+            <div sc-camel-on-click="{{ startDl }}" class="fd-443" style-hover="opacity:.92">
+              <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 4 V15 M7 10.5 L12 15.5 L17 10.5 M5 19.5 H19"></path></svg>
+              <span class="fd-159">{{ X.dlBtn }}</span>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+
+      <!-- ─── الحديث ─── -->
+      <div data-screen-label="الأحاديث" dir="{{ dirA }}" style="{{ sty.hadith }}">
+        <div class="fd-444">
+          <span class="fd-148">{{ X.hadithTitle }}</span>
+          <div class="fd-445">
+            <sc-for list="{{ hBookRows }}" as="b" hint-placeholder-count="3">
+              <div sc-camel-on-click="{{ b.pick }}" class="fd-446" style="background:{{ b.bg }}">
+                <span class="fd-447" style="color:{{ b.color }}">{{ b.name }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ hIsFeatured }}" hint-placeholder-val="{{ true }}">
+            <div class="fd-448">
+              <sc-for list="{{ hadithCatRows }}" as="c" hint-placeholder-count="7">
+                <div sc-camel-on-click="{{ c.pick }}" class="fd-449" style="background:{{ c.bg }}">
+                  <span class="fd-447" style="color:{{ c.color }}">{{ c.name }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <div class="fd-450">
+          <sc-if value="{{ hIsSaved }}" hint-placeholder-val="{{ false }}">
+            <span class="fd-451" style="color:{{ T.sub }}">{{ X.savedHadithsT }} · {{ savedHCount }}</span>
+            <sc-if value="{{ savedHEmpty }}" hint-placeholder-val="{{ false }}">
+              <span class="fd-307" style="color:{{ T.faint }}">{{ X.noSavedHadiths }}</span>
+            </sc-if>
+            <sc-for list="{{ savedHadithRows }}" as="v" hint-placeholder-count="2">
+              <div class="fd-308" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+                <div sc-camel-on-click="{{ v.open }}" class="fd-309">
+                  <span class="fd-452" style="color:{{ T.text }}">« {{ v.t }} »</span>
+                  <span class="fd-88" style="color:{{ T.sub }}">{{ v.src }}</span>
+                </div>
+                <div sc-camel-on-click="{{ v.del }}" class="fd-311" style-hover="background:rgba(234,153,36,0.18)">
+                  <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="#EA9924" stroke-width="1.9"><path d="M4.5 6.5 H19.5 M9 6.5 V4.8 A1.3 1.3 0 0 1 10.3 3.5 H13.7 A1.3 1.3 0 0 1 15 4.8 V6.5 M6.3 6.5 L7 19 A1.5 1.5 0 0 0 8.5 20.5 H15.5 A1.5 1.5 0 0 0 17 19 L17.7 6.5 M10 10 V16.5 M14 10 V16.5"></path></svg>
+                </div>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ hNotSaved }}" hint-placeholder-val="{{ true }}">
+          <div class="fd-453" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.sub }}" stroke-width="2"><circle cx="11" cy="11" r="6.5"></circle><path d="M15.8 15.8 L20 20"></path></svg>
+            <input value="{{ hSearch }}" sc-camel-on-change="{{ setHSearch }}" placeholder="{{ hSearchPhTxt }}" class="fd-287" style="color:{{ T.text }}">
+            <sc-if value="{{ hHasSearch }}" hint-placeholder-val="{{ false }}">
+              <div sc-camel-on-click="{{ clearHSearch }}" class="fd-288" style="background:{{ T.soft }}" style-hover="opacity:.8">
+                <svg width="10" height="10" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.sub }}" stroke-width="2.6"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg>
+              </div>
+            </sc-if>
+          </div>
+          </sc-if>
+          <sc-if value="{{ hLoading }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-454">
+              <div style="width:30px; height:30px; border-radius:50%; border:3px solid {{ T.mint }}; border-top-color:#1589BC; animation:muznSpin .8s linear infinite;"></div>
+              <span class="fd-455" style="color:{{ T.sub }}">{{ X.hLoadingTxt }}</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ hErr }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-456">
+              <span class="fd-341" style="color:{{ T.sub }}">{{ X.hErrTxt }}</span>
+              <div sc-camel-on-click="{{ hRetryFn }}" class="fd-342" style-hover="opacity:.9">
+                <span class="fd-343">{{ X.hRetry }}</span>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ hShowSections }}" hint-placeholder-val="{{ false }}">
+            <sc-for list="{{ hSectionRows }}" as="k" hint-placeholder-count="10">
+              <div sc-camel-on-click="{{ k.open }}" class="fd-457" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-1px)">
+                <div class="fd-293">
+                  <span class="fd-458" style="color:{{ T.text }}">{{ k.name }}</span>
+                  <span class="fd-88" style="color:{{ T.sub }}">{{ k.count }}</span>
+                </div>
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2"><path d="{{ chevMore }}"></path></svg>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ hShowHadiths }}" hint-placeholder-val="{{ false }}">
+            <div sc-camel-on-click="{{ hBackToSections }}" class="fd-459" style="background:{{ T.mint }}" style-hover="opacity:.85">
+              <svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+              <span class="fd-460" style="color:{{ T.green }}">{{ X.hAllBooks }} · {{ hSecTitle }}</span>
+            </div>
+            <sc-for list="{{ hApiRows }}" as="h" hint-placeholder-count="6">
+              <div sc-camel-on-click="{{ h.open }}" class="fd-461" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-2px)">
+                <div class="fd-225">
+                  <span class="fd-462" style="background:{{ T.mint }}; color:{{ T.green }}">{{ h.numTxt }}</span>
+                  <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="{{ h.bmFill }}" stroke="#D7B36A" stroke-width="1.8"><path d="M6 3.5 H15 A3 3 0 0 1 18 6.5 V20.5 L12 17 L6 20.5 Z"></path></svg>
+                </div>
+                <span class="fd-463" style="color:{{ T.text }}">{{ h.t }}</span>
+                <div class="fd-116">
+                  <span class="fd-464" style="color:{{ T.sub }}">{{ h.src }}</span>
+                  <span class="fd-465">{{ h.grade }} ✓</span>
+                </div>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ hShowSearch }}" hint-placeholder-val="{{ false }}">
+            <span class="fd-419" style="color:{{ T.sub }}">{{ hResultTxt }}</span>
+            <sc-for list="{{ hSearchRows }}" as="h" hint-placeholder-count="4">
+              <div sc-camel-on-click="{{ h.open }}" class="fd-461" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-2px)">
+                <div class="fd-225">
+                  <div class="fd-420">
+                    <span class="fd-462" style="background:{{ T.mint }}; color:{{ T.green }}">{{ h.numTxt }}</span>
+                    <span class="fd-466">{{ h.word }}</span>
+                  </div>
+                  <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="{{ h.bmFill }}" stroke="#D7B36A" stroke-width="1.8"><path d="M6 3.5 H15 A3 3 0 0 1 18 6.5 V20.5 L12 17 L6 20.5 Z"></path></svg>
+                </div>
+                <span class="fd-463" style="color:{{ T.text }}">{{ h.t }}</span>
+                <div class="fd-116">
+                  <span class="fd-464" style="color:{{ T.sub }}">{{ h.src }}</span>
+                  <span class="fd-465">{{ h.grade }} ✓</span>
+                </div>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ hIsFeatured }}" hint-placeholder-val="{{ true }}">
+          <sc-if value="{{ hFeaturedEmpty }}" hint-placeholder-val="{{ false }}">
+            <span class="fd-289" style="color:{{ T.sub }}">{{ X.qNoResults }}</span>
+          </sc-if>
+          <sc-for list="{{ hadithRows }}" as="h" hint-placeholder-count="6">
+            <div sc-camel-on-click="{{ h.open }}" class="fd-461" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-2px)">
+              <div class="fd-225">
+                <div class="fd-420">
+                  <span class="fd-462" style="background:{{ T.mint }}; color:{{ T.green }}">{{ h.cat }}</span>
+                  <span class="fd-466" style="display:{{ h.wordDisp }}">{{ h.word }}</span>
+                </div>
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="{{ h.bmFill }}" stroke="#D7B36A" stroke-width="1.8"><path d="M6 3.5 H15 A3 3 0 0 1 18 6.5 V20.5 L12 17 L6 20.5 Z"></path></svg>
+              </div>
+              <span class="fd-467" style="color:{{ T.text }}">« {{ h.t }} »</span>
+              <div class="fd-225">
+                <span class="fd-174" style="color:{{ T.sub }}">{{ h.src }}</span>
+                <span class="fd-468">{{ h.grade }} ✓</span>
+              </div>
+            </div>
+          </sc-for>
+          </sc-if>
+        </div>
+      </div>
+
+      <!-- ─── تفاصيل الحديث ─── -->
+      <div data-screen-label="تفاصيل الحديث" dir="{{ dirA }}" style="{{ sty.hadithDetail }}">
+        <div class="fd-60">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-61" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <span class="fd-469">{{ X.hdTitle }}</span>
+          <div sc-camel-on-click="{{ playHadith }}" class="fd-470" style-hover="transform:scale(1.1)">
+            <svg width="23" height="27" sc-camel-view-box="0 0 24 24" fill="#FEFFFF" class="fd-325"><path d="M8 5.5 V18.5 L19 12 Z"></path></svg>
+          </div>
+        </div>
+        <div class="fd-471">
+          <div style="border-radius:18px; background:{{ T.paper }}; border:1px solid {{ T.paperBorder }}; padding:20px 18px; display:flex; flex-direction:column; gap:12px; box-shadow:0 4px 20px rgba(0,0,0,0.05);">
+            <span class="fd-472" style="color:{{ T.text }}">« {{ hdText }} »</span>
+            <div class="fd-473">
+              <span class="fd-296" style="color:{{ T.sub }}">{{ hdSrc }}</span>
+              <span class="fd-118">{{ hdGrade }} ✓</span>
+            </div>
+          </div>
+          <sc-if value="{{ hdHasEx }}" hint-placeholder-val="{{ true }}">
+            <div class="fd-66" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+              <span class="fd-90" style="color:{{ T.green }}">{{ X.hdExplain }}</span>
+              <span class="fd-474" style="color:{{ T.text }}">{{ hdEx }}</span>
+            </div>
+          </sc-if>
+          <div class="fd-475">
+            <div sc-camel-on-click="{{ hdToggleSave }}" class="fd-476" style="background:{{ hdSaveBg }}">
+              <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="{{ hdSaveFill }}" stroke="{{ hdSaveIconC }}" stroke-width="1.8"><path d="M6 3.5 H15 A3 3 0 0 1 18 6.5 V20.5 L12 17 L6 20.5 Z"></path></svg>
+              <span class="fd-41" style="color:{{ hdSaveColor }}">{{ hdSaveLabel }}</span>
+            </div>
+            <div sc-camel-on-click="{{ shareHadith }}" class="fd-477" style-hover="opacity:.92">
+              <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2"><path d="M7 17 L17 7 M9 7 H17 V15"></path></svg>
+              <span class="fd-478">{{ X.share }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── تبيان AI ─── -->
+      <div data-screen-label="تبيان — المساعد الذكي" dir="{{ dirA }}" style="{{ sty.tibyan }}">
+        <div class="fd-479">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-480" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <div class="fd-481">
+            <svg width="21" height="21" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="2.9" r="1" fill="#FFFFFF" stroke="none"></circle><path d="M12 4 V5.6 M9 5.6 H15 A3.2 3.2 0 0 1 18.2 8.8 V14.4 A3.2 3.2 0 0 1 15 17.6 H9 A3.2 3.2 0 0 1 5.8 14.4 V8.8 A3.2 3.2 0 0 1 9 5.6 Z M5.8 10.6 H4 M18.2 10.6 H20 M9.5 10.4 V12.4 M14.5 10.4 V12.4 M9.7 14.5 H14.3"></path></svg>
+          </div>
+          <div class="fd-163">
+            <span class="fd-482">{{ X.tibyanName }}</span>
+            <span class="fd-483">{{ X.tibyanSub }}</span>
+          </div>
+        </div>
+        <div class="fd-484" style="background:{{ T.chatBg }}">
+          <sc-for list="{{ chatRows }}" as="m" hint-placeholder-count="3">
+            <div class="fd-45" style="align-items:{{ m.align }}">
+              <div class="fd-485" style="border-radius:{{ m.radius }}; background:{{ m.bg }}">
+                <span class="fd-486" style="color:{{ m.color }}">{{ m.t }}</span>
+              </div>
+              <sc-if value="{{ m.hasSrc }}" hint-placeholder-val="{{ false }}">
+                <div class="fd-487" style="background:{{ T.hint }}">
+                  <svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="2" class="fd-488"><path d="M12 6 C10 4.6 7.2 4.1 4.8 4.5 V17.8 C7.2 17.4 10 17.9 12 19.3 C14 17.9 16.8 17.4 19.2 17.8 V4.5 C16.8 4.1 14 4.6 12 6 Z"></path></svg>
+                  <span class="fd-176" style="color:{{ T.srcText }}">{{ m.src }}</span>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+          <sc-if value="{{ thinking }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-489">
+              <span class="fd-490"></span>
+              <span class="fd-491"></span>
+              <span class="fd-492"></span>
+            </div>
+          </sc-if>
+          <div class="fd-493">
+            <sc-for list="{{ suggestionRows }}" as="s" hint-placeholder-count="3">
+              <div sc-camel-on-click="{{ s.ask }}" style="padding:7px 13px; border-radius:999px; background:{{ T.card }}; border:1px solid {{ T.border }}; cursor:pointer; transition:all .2s;" style-hover="border-color:#268CE0">
+                <span class="fd-494" style="color:{{ T.green }}">{{ s.t }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div class="fd-495" style="background:{{ T.navBg }}; border-top:1px solid {{ T.navBorder }}">
+          <input value="{{ draft }}" sc-camel-on-change="{{ setDraft }}" sc-camel-on-key-down="{{ draftKey }}" placeholder="{{ X.tibyanPh }}" style="flex:1; height:46px; border-radius:999px; border:1.5px solid {{ T.border }}; background:{{ T.input }}; padding:0 18px; font-size:13.5px; font-family:'IBM Plex Sans Arabic',sans-serif; color:{{ T.text }}; outline:none;">
+          <div sc-camel-on-click="{{ sendMsg }}" class="fd-496" style-hover="transform:scale(1.07)">
+            <svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="#FFFFFF" class="fd-497"><path d="M3 12 L21 4 L14.5 12 L21 20 Z"></path></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═════════════ المجموعة ٥ · الإنجاز والأذكار والمزيد ═════════════ -->
+  <div style="{{ grpSty }}">
+    <div style="{{ grpLbl }}">٥ · الإنجاز والأذكار والختمة والإعدادات</div>
+    <div style="{{ rowSty }}">
+
+      <!-- ─── إنجازات اليوم ─── -->
+      <div data-screen-label="إنجازات اليوم" dir="{{ dirA }}" style="{{ sty.tracker }}">
+        <div class="fd-498">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-61" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <div class="fd-62">
+            <span class="fd-63">{{ X.trTitle }}</span>
+            <span class="fd-499">{{ hijriToday }}</span>
+          </div>
+        </div>
+        <div class="fd-471">
+          <div class="fd-500">
+            <div class="fd-501">
+              <svg width="86" height="86" sc-camel-view-box="0 0 86 86" class="fd-502">
+                <circle cx="43" cy="43" r="35" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="8"></circle>
+                <circle cx="43" cy="43" r="35" fill="none" stroke="#D7B36A" stroke-width="8" stroke-linecap="round" stroke-dasharray="219.9" stroke-dashoffset="{{ trkRingOff }}" class="fd-503"></circle>
+              </svg>
+              <div class="fd-504">
+                <span dir="ltr" class="fd-505">{{ ringPct }}</span>
+              </div>
+            </div>
+            <div class="fd-45">
+              <span class="fd-506">{{ trkMotivation }}</span>
+              <span class="fd-507">{{ X.trQuote }}</span>
+            </div>
+          </div>
+
+          <div class="fd-66" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <div class="fd-138">
+              <span class="fd-67" style="color:{{ T.text }}">{{ X.trPrayers }}</span>
+              <span dir="ltr" class="fd-508" style="color:{{ T.green }}">{{ trkPray }}</span>
+            </div>
+            <div class="fd-136">
+              <sc-for list="{{ prayerCheckRows }}" as="p" hint-placeholder-count="5">
+                <div sc-camel-on-click="{{ p.toggle }}" style="flex:1; display:flex; flex-direction:column; align-items:center; gap:7px; padding:11px 4px; border-radius:13px; background:{{ p.bg }}; border:1.5px solid {{ p.border }}; cursor:pointer; transition:all .2s;" style-hover="transform:translateY(-2px)">
+                  <div style="width:26px; height:26px; border-radius:50%; background:{{ p.ckBg }}; border:2px solid {{ p.ckBorder }}; display:flex; justify-content:center; align-items:center; transition:all .2s;">
+                    <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" style="display:{{ p.ckDisp }};"><path d="M5 12.5 L10 17.5 L19 7"></path></svg>
+                  </div>
+                  <span class="fd-275" style="color:{{ p.color }}">{{ p.name }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div class="fd-509" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <div class="fd-225">
+              <span class="fd-67" style="color:{{ T.text }}">{{ X.wird }}</span>
+              <span dir="ltr" class="fd-508" style="color:{{ T.green }}">{{ trkWird }}</span>
+            </div>
+            <div class="fd-440" style="background:{{ T.mint }}">
+              <div class="fd-510" style="width:{{ wirdBarW }}"></div>
+            </div>
+            <div class="fd-136">
+              <div sc-camel-on-click="{{ wirdPlus }}" class="fd-511" style-hover="opacity:.9">
+                <span class="fd-343">{{ X.logPage }}</span>
+              </div>
+              <div sc-camel-on-click="{{ goReader }}" class="fd-512" style="background:{{ T.mint }}" style-hover="opacity:.85">
+                <span class="fd-269" style="color:{{ T.green }}">{{ X.openMushaf }}</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ─── الأذكار والمسبحة ─── -->
+      <div data-screen-label="الأذكار والمسبحة" dir="{{ dirA }}" style="{{ sty.adhkar }}">
+
+        <div class="fd-st-hdr">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-st-back">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <span class="fd-st-title">{{ X.adhTitleScr }}</span>
+        </div>
+
+        <div class="fd-adh-tabs">
+          <sc-for list="{{ adhTabs }}" as="c" hint-placeholder-count="4">
+            <div sc-camel-on-click="{{ c.pick }}" class="fd-adh-tab">
+              <span class="fd-adh-tab-t" style="color:{{ c.color }}; background:{{ c.bg }}; border-color:{{ c.border }}">{{ c.name }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div class="fd-adh-body">
+
+          <div class="fd-adh-hdr">
+            <div class="fd-adh-hdr-ico">
+              <svg data-dc-tpl="171" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle data-dc-tpl="172" cx="12.00" cy="2.10" r="0.82"></circle><circle data-dc-tpl="173" cx="14.64" cy="2.63" r="0.82"></circle><circle data-dc-tpl="174" cx="16.88" cy="4.12" r="0.82"></circle><circle data-dc-tpl="175" cx="18.37" cy="6.36" r="0.82"></circle><circle data-dc-tpl="176" cx="18.90" cy="9.00" r="0.82"></circle><circle data-dc-tpl="177" cx="18.37" cy="11.64" r="0.82"></circle><circle data-dc-tpl="178" cx="16.88" cy="13.88" r="0.82"></circle><circle data-dc-tpl="179" cx="14.64" cy="15.37" r="0.82"></circle><circle data-dc-tpl="180" cx="9.36" cy="15.37" r="0.82"></circle><circle data-dc-tpl="181" cx="7.12" cy="13.88" r="0.82"></circle><circle data-dc-tpl="182" cx="5.63" cy="11.64" r="0.82"></circle><circle data-dc-tpl="183" cx="5.10" cy="9.00" r="0.82"></circle><circle data-dc-tpl="184" cx="5.63" cy="6.36" r="0.82"></circle><circle data-dc-tpl="185" cx="7.12" cy="4.12" r="0.82"></circle><circle data-dc-tpl="186" cx="9.36" cy="2.63" r="0.82"></circle><path data-dc-tpl="187" d="M12 14.1 C13.35 15.6 13.85 16.95 13.85 17.6 L10.15 17.6 C10.15 16.95 10.65 15.6 12 14.1 Z"></path><path data-dc-tpl="188" d="M10.45 18.9 H13.55 L14.35 22.1 H9.65 Z"></path></svg>
+            </div>
+            <div class="fd-adh-hdr-t">
+              <span class="fd-adh-hdr-n">{{ adhTitle }}</span>
+              <span class="fd-adh-hdr-s">{{ X.adhBook }}</span>
+            </div>
+          </div>
+
+          <sc-if value="{{ adhEmpty }}" hint-placeholder-val="{{ false }}">
+            <span class="fd-adh-none">{{ X.adhNone }}</span>
+          </sc-if>
+
+          <sc-for list="{{ adhRows }}" as="d" hint-placeholder-count="4">
+            <div class="fd-adh-card">
+              <span class="fd-adh-txt">{{ d.text }}</span>
+              <div class="fd-adh-foot">
+                <div sc-camel-on-click="{{ d.share }}" class="fd-adh-share" style-hover="opacity:.8">
+                  <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.5" cy="6" r="2.3"></circle><circle cx="6.5" cy="12" r="2.3"></circle><circle cx="17.5" cy="18" r="2.3"></circle><path d="M8.7 10.9 L15.3 7.4 M8.7 13.1 L15.3 16.6"></path></svg>
+                </div>
+                <div class="fd-adh-cnt">
+                  <div sc-camel-on-click="{{ d.reset }}" class="fd-adh-reset" style-hover="opacity:.7">
+                    <!-- <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 A8 8 0 1 1 6.3 17.7 M4 12 V7 M4 12 H9"></path></svg> -->
+                  <svg width="20" height="20" viewBox="0 0 16.38 12.95"><g id="Layer_1-2" data-name="Layer 1"><g><g><path d="M2.71,3.72c-1.1,2.26-.72,5.06,1.14,6.94,2.11,2.13,5.4,2.34,7.74,.63" fill="none" stroke="#8c8c8c" stroke-miterlimit="10" stroke-width="1.02"/><polyline points=".36 6.09 2.69 3.74 4.74 5.81" fill="none" stroke="#8c8c8c" stroke-miterlimit="10" stroke-width="1.02"/></g><g><path d="M13.53,9.45c1.13-2.32,.74-5.19-1.17-7.12C10.17,.12,6.74-.08,4.33,1.74" fill="none" stroke="#8c8c8c" stroke-miterlimit="10" stroke-width="1.02"/><polyline points="16.02 6.94 13.54 9.43 11.32 7.19" fill="none" stroke="#8c8c8c" stroke-miterlimit="10" stroke-width="1.02"/></g></g></g></svg>
+                  </div>
+                  <div sc-camel-on-click="{{ d.tap }}" class="fd-adh-pill" style-hover="opacity:.9">
+                    <div class="fd-adh-num-container"><span class="fd-adh-num">{{ d.count }}</span></div>
+                    <span class="fd-adh-rep">{{ X.adhRep }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- ─── خطة الختمة ─── -->
+      <div data-screen-label="خطة الختمة" dir="{{ dirA }}" style="{{ sty.khatmah }}">
+        <div class="fd-60">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-61" style-hover="background:rgba(255,255,255,0.25)">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <span class="fd-63">{{ X.khPlanTitle }}</span>
+        </div>
+        <div class="fd-471">
+          <div class="fd-528">
+            <div class="fd-225">
+              <span class="fd-120">{{ X.khCurrent }}</span>
+              <span class="fd-529">{{ X.dayWord }} {{ planDayN }} {{ X.ofWord }} {{ planDaysAr }}</span>
+            </div>
+            <div class="fd-530">
+              <div class="fd-531" style="width:{{ planBarW }}"></div>
+            </div>
+            <div class="fd-423">
+              <span class="fd-532">{{ planDoneTxt }}</span>
+              <span class="fd-533">{{ planPct }}</span>
+            </div>
+          </div>
+          <div class="fd-534" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <span class="fd-67" style="color:{{ T.text }}">{{ X.khDuration }}</span>
+            <div class="fd-136">
+              <sc-for list="{{ planOptions }}" as="o" hint-placeholder-count="4">
+                <div sc-camel-on-click="{{ o.pick }}" style="flex:1; height:56px; border-radius:13px; background:{{ o.bg }}; border:1.5px solid {{ o.border }}; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:2px; cursor:pointer; transition:all .2s;">
+                  <span class="fd-535" style="color:{{ o.color }}">{{ o.n }}</span>
+                  <span class="fd-167" style="color:{{ o.sub }}">{{ o.unit }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <span class="fd-536" style="color:{{ T.sub }}">{{ planSummary }}</span>
+          </div>
+          <div class="fd-537" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <span class="fd-67" style="color:{{ T.text }}">{{ X.wirdToday }}</span>
+            <div class="fd-122">
+              <div class="fd-538" style="background:{{ T.mint }}">
+                <svg width="21" height="21" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.8">
+                  <path d="M12 6 C10 4.6 7.2 4.1 4.8 4.5 V17.8 C7.2 17.4 10 17.9 12 19.3 C14 17.9 16.8 17.4 19.2 17.8 V4.5 C16.8 4.1 14 4.6 12 6 Z"></path><path d="M12 6 V19.3"></path></svg>
+              </div>
+              <div class="fd-293">
+                <span class="fd-41" style="color:{{ T.text }}">{{ planTodayTxt }}</span>
+                <span class="fd-174" style="color:{{ T.sub }}">{{ X.doneSoFar }} {{ trkWird }}</span>
+              </div>
+              <div sc-camel-on-click="{{ goReader }}" class="fd-539" style-hover="opacity:.9">
+                <span class="fd-540">{{ X.readNow }}</span>
+              </div>
+            </div>
+          </div>
+          <div sc-camel-on-click="{{ restartPlan }}" class="fd-541" style-hover="background:rgba(234,153,36,0.06)">
+            <span class="fd-542">{{ X.khRestart }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── عن التطبيق ─── -->
+      <div data-screen-label="عن التطبيق" dir="{{ dirA }}" style="{{ sty.about }}">
+
+        <div class="fd-st-hdr">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-st-back">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <span class="fd-st-title">{{ X.stAbout2 }}</span>
+        </div>
+
+        <div class="fd-ab-body">
+
+          <div class="fd-ab-brand">
+            <img src="images/logo-fadhakkir.svg" alt="" class="fd-ab-logo">
+            <!-- <span class="fd-ab-name">ف<span class="fd-4">َ</span>ذ<span class="fd-4">َ</span>ك<span class="fd-4">ِّ</span>ر<span class="fd-4">ْ</span></span>
+            <span class="fd-ab-tag">{{ X.tagline }}</span> -->
+          </div>
+
+          <div class="fd-ab-card">
+            <span class="fd-ab-q">{{ X.abWhyT }}</span>
+            <span class="fd-ab-p">{{ X.abWhyP }}</span>
+          </div>
+
+          <sc-for list="{{ abRows }}" as="l" hint-placeholder-count="3">
+            <div sc-camel-on-click="{{ l.open }}" class="fd-ab-row" style-hover="border-color:#1589BC">
+              <div class="fd-ab-row-r">
+                <div class="fd-ab-ico">
+                  <svg width="{{ l.iconWidth }}" height="{{ l.iconHeight }}" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ l.icon }}"></path></svg>
+                </div>
+                <span class="fd-ab-row-t">{{ l.t }}</span>
+              </div>
+              <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6 L9 12 L15 18"></path></svg>
+            </div>
+          </sc-for>
+
+          <div class="fd-st-foot">
+            <span class="fd-st-dua">{{ X.stDua }}</span>
+            <span class="fd-st-ver">{{ X.stVer }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-screen-label="الإعدادات" dir="{{ dirA }}" style="{{ sty.more }}">
+
+        <div class="fd-st-hdr">
+          <div sc-camel-on-click="{{ backFn }}" class="fd-st-back">
+            <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#444444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ chevBack }}"></path></svg>
+          </div>
+          <span class="fd-st-title">{{ X.stAbout2 }}</span>
+        </div>
+
+        <div class="fd-st-body">
+
+          <!-- إعدادات الموقع -->
+          <div class="fd-st-sec">
+            <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.8"><path d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z"></path><circle cx="12" cy="10" r="2.3"></circle></svg>
+            <span class="fd-st-sec-t">{{ X.stLocSec }}</span>
+          </div>
+
+          <div class="fd-st-card">
+            <div sc-camel-on-click="{{ locAuto }}" class="fd-st-auto" style-hover="border-color:#1589BC">
+              <span class="fd-st-auto-t">{{ X.lmAutoBtn }}</span>
+              <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="#EA9924" stroke-width="1.9"><path d="M21 3 L10.5 21 L9 13.5 L1.5 12 Z"></path></svg>
+            </div>
+            <sc-if value="{{ lmAutoOn }}" hint-placeholder-val="{{ false }}">
+              <span class="fd-loc-note">{{ lmAutoText }}</span>
+            </sc-if>
+            <span class="fd-st-l">{{ X.lmCityL }}</span>
+            <div class="fd-qs-wrap">
+              <input value="{{ lmSearch }}" sc-camel-on-change="{{ setLmSearch }}" placeholder="{{ X.lmSearchPh }}" class="fd-st-inp">
+              <sc-if value="{{ lmListOn }}" hint-placeholder-val="{{ false }}">
+                <div class="fd-qs-list">
+                  <sc-for list="{{ lmResults }}" as="r" hint-placeholder-count="4">
+                    <div sc-camel-on-click="{{ r.pickNow }}" class="fd-qs-row" style="background:{{ r.bg }}" style-hover="background:#F5F8FB">
+                      <span class="fd-qs-row-t">{{ r.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+
+          <!-- إعدادات مواقيت الصلاة -->
+          <div class="fd-st-sec">
+            <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.6"></circle><path d="M12 7.2 V12 L15.4 14.3"></path></svg>
+            <span class="fd-st-sec-t">{{ X.stPraySec }}</span>
+          </div>
+
+          <div class="fd-st-card">
+            <span class="fd-st-l">{{ X.stAuthL }}</span>
+            <div class="fd-qs-wrap">
+              <div sc-camel-on-click="{{ stToggleAuth }}" class="fd-qs-trig" style-hover="border-color:#1589BC">
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2" stroke-linecap="round" style="transform:rotate({{ stAuthRot }}deg); transition:transform .25s;"><path d="M6 9 L12 15 L18 9"></path></svg>
+                <span class="fd-qs-val">{{ stAuthName }}</span>
+              </div>
+              <sc-if value="{{ stAuthOn }}" hint-placeholder-val="{{ false }}">
+                <div class="fd-qs-list">
+                  <sc-for list="{{ stAuthRows }}" as="a" hint-placeholder-count="6">
+                    <div sc-camel-on-click="{{ a.pick }}" class="fd-qs-row" style="background:{{ a.bg }}; border-inline-start-color:{{ a.bar }}" style-hover="background:#F5F8FB">
+                      <span class="fd-qs-row-t">{{ a.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+
+            <span class="fd-st-l">{{ X.stAsrL }}</span>
+            <div class="fd-st-ro"><span class="fd-st-ro-t">{{ stAsrName }}</span></div>
+
+            <div class="fd-st-tog">
+              <div class="fd-st-tog-txt">
+                <span class="fd-st-tog-t">{{ X.psHighLat }}</span>
+                <span class="fd-st-tog-s">{{ X.psHighLatSub }}</span>
+              </div>
+              <div sc-camel-on-click="{{ toggleHighLat }}" class="fd-st-sw" style="background:{{ highLatBg }}; justify-content:{{ highLatJustify }}">
+                <span class="fd-st-knob"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- إعدادات القرآن والتفسير -->
+          <div class="fd-st-sec">
+            <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="1.8" stroke-linejoin="round"><path d="M12 6.4 C10.2 5 7.6 4.5 5.2 4.9 V17.6 C7.6 17.2 10.2 17.7 12 19.1 C13.8 17.7 16.4 17.2 18.8 17.6 V4.9 C16.4 4.5 13.8 5 12 6.4 Z"></path><path d="M12 6.4 V19.1"></path></svg>
+            <span class="fd-st-sec-t">{{ X.obQuranSec }}</span>
+          </div>
+
+          <div class="fd-st-card">
+            <span class="fd-st-l">{{ X.obRecL }}</span>
+            <div class="fd-qs-wrap">
+              <div sc-camel-on-click="{{ qsToggleRec }}" class="fd-qs-trig" style-hover="border-color:#1589BC">
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2" stroke-linecap="round" style="transform:rotate({{ qsRecRot }}deg); transition:transform .25s;"><path d="M6 9 L12 15 L18 9"></path></svg>
+                <span class="fd-qs-val">{{ qsRecName }}</span>
+              </div>
+              <sc-if value="{{ qsRecOn }}" hint-placeholder-val="{{ false }}">
+                <div class="fd-qs-list">
+                  <sc-for list="{{ qsRecRows }}" as="rc2" hint-placeholder-count="5">
+                    <div sc-camel-on-click="{{ rc2.pick }}" class="fd-qs-row" style="background:{{ rc2.bg }}; border-inline-start-color:{{ rc2.bar }}" style-hover="background:#F5F8FB">
+                      <span class="fd-qs-row-t">{{ rc2.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+
+            <span class="fd-st-l">{{ X.obTafL }}</span>
+            <div class="fd-qs-wrap">
+              <div sc-camel-on-click="{{ qsToggleTaf }}" class="fd-qs-trig" style-hover="border-color:#1589BC">
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2" stroke-linecap="round" style="transform:rotate({{ qsTafRot }}deg); transition:transform .25s;"><path d="M6 9 L12 15 L18 9"></path></svg>
+                <span class="fd-qs-val">{{ qsTafName }}</span>
+              </div>
+              <sc-if value="{{ qsTafOn }}" hint-placeholder-val="{{ false }}">
+                <div class="fd-qs-list">
+                  <sc-for list="{{ qsTafRows }}" as="tf2" hint-placeholder-count="5">
+                    <div sc-camel-on-click="{{ tf2.pick }}" class="fd-qs-row" style="background:{{ tf2.bg }}; border-inline-start-color:{{ tf2.bar }}" style-hover="background:#F5F8FB">
+                      <span class="fd-qs-row-t">{{ tf2.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+
+          <!-- عن التطبيق -->
+          <div sc-camel-on-click="{{ goAbout }}" class="fd-st-about" style-hover="border-color:#1589BC">
+            <div class="fd-st-about-r">
+              <div class="fd-st-about-ico">
+                <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1589BC" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8.6"></circle><path d="M12 11.2 V16.4"></path><circle cx="12" cy="8.1" r="0.95" fill="#FFFFFF" stroke="none"></circle></svg>
+              </div>
+              <span class="fd-st-about-t">{{ X.stAbout }}</span>
+            </div>
+            <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="#9AA4AE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6 L9 12 L15 18"></path></svg>
+          </div>
+
+          <div class="fd-st-foot">
+            <span class="fd-st-dua">{{ X.stDua }}</span>
+            <span class="fd-st-ver">{{ X.stVer }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═════════════ المجموعة ٦ · النسخة الإنجليزية (LTR) ═════════════ -->
+  <div style="{{ grpSty }}">
+    <div style="{{ grpLbl }}">٦ · English versions — core screens (LTR)</div>
+    <div style="{{ rowSty }}">
+
+      <!-- ─── Home (EN) ─── -->
+      <div data-screen-label="Home (English)" dir="ltr" style="{{ sty.homeEn }}">
+        <div class="fd-573">
+          <div class="fd-574">
+            <img src="images/logo-fadhakkir-icon.svg" alt="" class="fd-575">
+            <div class="fd-62">
+              <span class="fd-576">Fadhakkir</span>
+              <div sc-camel-on-click="{{ goManualLoc }}" class="fd-577" style-hover="background:rgba(255,255,255,0.17)">
+                <svg width="11" height="11" sc-camel-view-box="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="2.4"><path d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+                <span class="fd-578">{{ cityName }}</span>
+                <svg width="10" height="10" sc-camel-view-box="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="3"><path d="M6 9 L12 15 L18 9"></path></svg>
+              </div>
+            </div>
+          </div>
+          <div class="fd-579">
+            <div sc-camel-on-click="{{ goNotifications }}" class="fd-580" style-hover="background:rgba(255,255,255,0.24)">
+              <svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.9"><path d="M12 4.5 C8.8 4.5 7.2 7 7.2 10 C7.2 14 5.5 15.5 5.5 15.5 L18.5 15.5 C18.5 15.5 16.8 14 16.8 10 C16.8 7 15.2 4.5 12 4.5 Z"></path><path d="M10.3 18.5 C10.6 19.6 11.2 20.2 12 20.2 C12.8 20.2 13.4 19.6 13.7 18.5"></path></svg>
+              <span class="fd-581" style="display:{{ notifDot }}"></span>
+            </div>          </div>
+        </div>
+        <div class="fd-582">
+          <div sc-camel-on-click="{{ goCalendar }}" class="fd-583" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-2px)">
+            <div class="fd-98">
+              <svg width="40" height="42" sc-camel-view-box="0 0 40 42" fill="none">
+                <rect x="1" y="5" width="38" height="36" rx="9" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="1.6"></rect>
+                <path d="M1 14 C1 9 5 5 10 5 H30 C35 5 39 9 39 14 V17 H1 Z" fill="{{ T.green }}"></path>
+                <rect x="11" y="1" width="4" height="9" rx="2" fill="#D7B36A"></rect>
+                <rect x="25" y="1" width="4" height="9" rx="2" fill="#D7B36A"></rect>
+              </svg>
+              <span class="fd-99" style="color:{{ T.green }}">{{ dayNum }}</span>
+            </div>
+            <div class="fd-100">
+              <span class="fd-584" style="color:{{ T.text }}">{{ hijriTodayEn }}</span>
+              <span class="fd-585" style="color:{{ T.sub }}">{{ gregTodayEn }}</span>
+            </div>
+            <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2"><path d="M9 6 L15 12 L9 18"></path></svg>
+          </div>
+
+          <dc-import name="HeroCard" variant="{{ heroVariant }}" prayer="{{ previewPrayer }}" times="{{ heroTimes }}" temp="{{ heroTemp }}" mosque-src="{{ heroMosqueSrc }}" mosque-name="{{ heroMosqueName }}" lang="en" athan-on="{{ athanOn }}" on-qibla="{{ goQibla }}" on-times="{{ goPrayerTab }}" on-athan="{{ toggleAthan }}" hint-size="363px,336px" style="width:100%; height:336px; flex-shrink:0;"></dc-import>
+
+          <div class="fd-586">
+            <div sc-camel-on-click="{{ goQibla }}" class="fd-587" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-2px)">
+              <div class="fd-588" style="background:{{ T.mint }}">
+                <svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.8"><circle cx="12" cy="12" r="9.2"></circle><path d="M15.5 8.5 L13.4 13.4 L8.5 15.5 L10.6 10.6 Z" fill="{{ T.green }}" stroke="none"></path></svg>
+              </div>
+              <span class="fd-261" style="color:{{ T.text }}">Qibla</span>
+            </div>
+            <div sc-camel-on-click="{{ goPrayerTab }}" class="fd-587" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-2px)">
+              <div class="fd-588" style="background:{{ T.mint }}">
+                <svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.8"><circle cx="12" cy="12" r="9.2"></circle><path d="M12 6.8 V12 L15.4 14.4"></path></svg>
+              </div>
+              <span class="fd-261" style="color:{{ T.text }}">All Times</span>
+            </div>
+            <div sc-camel-on-click="{{ toggleAthan }}" class="fd-589" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-2px)">
+              <div class="fd-588" style="background:{{ T.mint }}">
+                <svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="1.8"><path d="M12 4.5 C8.8 4.5 7.2 7 7.2 10 C7.2 14 5.5 15.5 5.5 15.5 L18.5 15.5 C18.5 15.5 16.8 14 16.8 10 C16.8 7 15.2 4.5 12 4.5 Z"></path><path d="M10.3 18.5 C10.6 19.6 11.2 20.2 12 20.2 C12.8 20.2 13.4 19.6 13.7 18.5"></path></svg>
+              </div>
+              <span class="fd-261" style="color:{{ T.text }}">Athan Alert</span>
+              <span class="fd-590" style="color:{{ athanStateColor }}">{{ athanStateTxtEn }}</span>
+            </div>
+          </div>
+
+          <div class="fd-108" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <div class="fd-225">
+              <div class="fd-591">
+                <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2"><path d="M12 6 C10 4.6 7.2 4.1 4.8 4.5 V17.8 C7.2 17.4 10 17.9 12 19.3 C14 17.9 16.8 17.4 19.2 17.8 V4.5 C16.8 4.1 14 4.6 12 6 Z"></path><path d="M12 6 V19.3"></path></svg>
+                <span class="fd-90" style="color:{{ T.text }}">Quran Wird</span>
+              </div>
+              <span class="fd-592" style="color:{{ T.sub }}">{{ wirdLabelEn }}</span>
+            </div>
+            <div class="fd-440" style="background:{{ T.mint }}">
+              <div class="fd-593" style="width:{{ wirdBarW }}"></div>
+            </div>
+            <div class="fd-225">
+              <span class="fd-594" style="color:{{ T.sub }}">{{ wirdPctTxtEn }}</span>
+              <div sc-camel-on-click="{{ goReader }}" class="fd-595" style-hover="opacity:.75">
+                <span class="fd-41" style="color:{{ T.green }}">Continue Reading</span>
+                <svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.2"><path d="M9 6 L15 12 L9 18"></path></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="fd-596">
+            <div class="fd-597" style="background:{{ T.cardGrad }}">
+              <span class="fd-598" style="color:{{ T.sub }}">🌿 Ayah of the Day</span>
+              <div class="fd-599">
+                <span dir="rtl" class="fd-600" style="color:{{ T.text }}">وَقُل رَّبِّ زِدْنِي عِلْمًا</span>
+                <span class="fd-601" style="color:{{ T.sub }}">"And say: My Lord, increase me in knowledge."</span>
+              </div>
+              <div class="fd-225">
+                <span class="fd-602" style="color:{{ T.sub }}">Surah Taha · 114</span>
+                <div sc-camel-on-click="{{ shareAyah }}" class="fd-603" style-hover="opacity:.7">
+                  <svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.2"><path d="M7 17 L17 7 M9 7 H17 V15"></path></svg>
+                  <span class="fd-604" style="color:{{ T.green }}">Share</span>
+                </div>
+              </div>
+            </div>
+            <div class="fd-597" style="background:{{ T.cardGrad2 }}">
+              <span class="fd-598" style="color:{{ T.sub }}">📜 Hadith of the Day</span>
+              <div class="fd-605">
+                <span class="fd-606" style="color:{{ T.text }}">"Actions are but by intentions, and every man shall have only that which he intended."</span>
+              </div>
+              <div class="fd-225">
+                <span class="fd-607" style="color:{{ T.sub }}">Sahih al-Bukhari</span>
+                <div sc-camel-on-click="{{ shareHadith }}" class="fd-603" style-hover="opacity:.7">
+                  <svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.2"><path d="M7 17 L17 7 M9 7 H17 V15"></path></svg>
+                  <span class="fd-604" style="color:{{ T.green }}">Share</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div sc-camel-on-click="{{ goTracker }}" class="fd-608" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-2px)">
+            <div class="fd-609">
+              <div class="fd-225">
+                <span class="fd-610" style="color:{{ T.text }}">Today's Progress</span>
+                <div class="fd-611">
+                  <span class="fd-419" style="color:{{ T.green }}">View all</span>
+                  <svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.green }}" stroke-width="2.4"><path d="M9 6 L15 12 L9 18"></path></svg>
+                </div>
+              </div>
+              <div class="fd-225">
+                <span class="fd-339" style="color:{{ T.sub }}">Prayers</span>
+                <span class="fd-508" style="color:{{ T.green }}">{{ trkPray }}</span>
+              </div>
+              <div class="fd-225">
+                <span class="fd-339" style="color:{{ T.sub }}">Wird</span>
+                <span class="fd-508" style="color:{{ T.green }}">{{ trkWird }}</span>
+              </div>            </div>
+            <div class="fd-612">
+              <svg width="74" height="74" sc-camel-view-box="0 0 74 74" class="fd-502">
+                <circle cx="37" cy="37" r="30" fill="none" stroke="#F1F5F9" stroke-width="7"></circle>
+                <circle cx="37" cy="37" r="30" fill="none" stroke="{{ T.green }}" stroke-width="7" stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="{{ ringOff }}" class="fd-503"></circle>
+              </svg>
+              <div class="fd-504">
+                <span class="fd-613" style="color:{{ T.green }}">{{ ringPct }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div sc-camel-on-click="{{ goTibyan }}" class="fd-614" style-hover="transform:scale(1.05)">
+          <div class="fd-615" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <span class="fd-460" style="color:{{ T.green }}">Ask Tibyan</span>
+          </div>
+          <div class="fd-616">
+            <svg width="26" height="26" sc-camel-view-box="0 0 24 24" fill="#FFFFFF"><path d="M12 3 L13.6 9 L19.5 10.5 L13.6 12 L12 18 L10.4 12 L4.5 10.5 L10.4 9 Z"></path><path d="M18.5 15.5 L19.2 18 L21.5 18.7 L19.2 19.4 L18.5 22 L17.8 19.4 L15.5 18.7 L17.8 18 Z"></path></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── Prayer (EN) ─── -->
+      <div data-screen-label="Prayer Times (English)" dir="ltr" style="{{ sty.prayerEn }}">
+        <div class="fd-617">
+          <span class="fd-618">Prayer Times</span>
+          <div class="fd-619">
+            <svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2"><path d="M12 21 C12 21 5.5 14.8 5.5 10 A6.5 6.5 0 0 1 18.5 10 C18.5 14.8 12 21 12 21 Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+            <span class="fd-399">Makkah</span>
+          </div>
+        </div>
+        <div class="fd-151">
+          <dc-import name="HeroCard" variant="{{ heroVariant }}" prayer="{{ previewPrayer }}" times="{{ heroTimes }}" temp="{{ heroTemp }}" mosque-src="{{ heroMosqueSrc }}" mosque-name="{{ heroMosqueName }}" mode="compact" lang="en" hint-size="363px,248px" style="width:100%; height:248px; flex-shrink:0;"></dc-import>
+          <div class="fd-620" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}">
+            <sc-for list="{{ timesRowsEn }}" as="r" hint-placeholder-count="6">
+              <div sc-camel-on-click="{{ r.openSheet }}" style="display:flex; flex-direction:row; align-items:center; gap:12px; padding:12px 8px; border-radius:12px; background:{{ r.bg }}; border-bottom:1px solid {{ r.sep }}; cursor:{{ r.cursor }};">
+                <div class="fd-621" style="background:{{ r.iconBg }}"><svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ r.iconC }}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="{{ r.icon }}"></path></svg></div>
+                <div class="fd-163">
+                  <span style="font-size:14.5px; font-weight:{{ r.fw }}; color:{{ T.text }};">{{ r.name }}</span>
+                  <span class="fd-164" style="color:{{ T.green }}; display:{{ r.nextDisp }}">{{ r.nextTxt }}</span>
+                </div>
+                <div class="fd-165">
+                  <span class="fd-166" style="color:{{ T.text }}">{{ r.time }}</span>
+                  <span class="fd-167" style="color:{{ T.sub }}">{{ r.ap }}</span>
+                </div>
+                <svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2" class="fd-35" style="display:{{ r.chevDisp }}"><path d="M9 6 L15 12 L9 18"></path></svg>
+              </div>
+            </sc-for>
+          </div>
+          <span class="fd-169" style="color:{{ T.faint }}">{{ X.rowHint }}</span>
+          <div class="fd-152">
+            <div sc-camel-on-click="{{ goQibla }}" class="fd-622" style-hover="transform:translateY(-2px)">
+              <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.9"><circle cx="12" cy="12" r="9.2"></circle><path d="M15.5 8.5 L13.4 13.4 L8.5 15.5 L10.6 10.6 Z" fill="#FFFFFF" stroke="none"></path></svg>
+              <span class="fd-159">Qibla</span>
+            </div>
+            <div sc-camel-on-click="{{ goMonthTable }}" class="fd-623" style="background:{{ T.mint }}" style-hover="transform:translateY(-2px)">
+              <span class="fd-624" style="color:{{ T.green }}">View Full Month</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Per-prayer settings sheet (EN) -->
+        <div sc-camel-on-click="{{ closePrayerSheet }}" style="{{ pScrimSty }}"></div>
+        <div style="{{ pSheetSty }}">
+          <div class="fd-170" style="background:{{ T.track }}"></div>
+          <span class="fd-437" style="color:{{ T.text }}">{{ pSheetTitle }}</span>
+          <span class="fd-625" style="color:{{ T.sub }}">{{ pSheetSub }}</span>
+          <sc-if value="{{ pIsFajr }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-626" style="background:{{ T.hint }}">
+              <div class="fd-62">
+                <span class="fd-90" style="color:{{ T.text }}">{{ X.sunriseAlertT }}</span>
+                <span class="fd-176" style="color:{{ T.srcText }}">{{ X.sunriseAlertSub }}</span>
+              </div>
+              <div sc-camel-on-click="{{ toggleSunrise }}" class="fd-177" style="background:{{ sunriseBg }}; justify-content:{{ sunriseJustify }}">
+                <span class="fd-77"></span>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ pIsIsha }}" hint-placeholder-val="{{ false }}">
+            <div class="fd-178" style="background:{{ T.hint }}">
+              <div class="fd-179">
+                <div class="fd-62">
+                  <span class="fd-90" style="color:{{ T.text }}">{{ X.nightTitle }}</span>
+                  <span class="fd-176" style="color:{{ T.srcText }}">{{ X.qiyamSub }}</span>
+                </div>
+                <div sc-camel-on-click="{{ toggleNight }}" class="fd-177" style="background:{{ nightBg }}; justify-content:{{ qiyamJustify }}">
+                  <span class="fd-77"></span>
+                </div>
+              </div>
+              <sc-if value="{{ nightOn }}" hint-placeholder-val="{{ false }}">
+                <div class="fd-180">
+                  <sc-for list="{{ qiyamRows }}" as="q" hint-placeholder-count="5">
+                    <div sc-camel-on-click="{{ q.pick }}" style="padding:7px 12px; border-radius:999px; background:{{ q.bg }}; border:1.5px solid {{ q.border }}; cursor:pointer; transition:all .2s;">
+                      <span dir="ltr" class="fd-181" style="color:{{ q.color }}">{{ q.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </sc-if>
+          <span class="fd-182" style="color:{{ T.sub }}">{{ X.muezzinPick }}</span>
+          <sc-for list="{{ pSoundRows }}" as="r" hint-placeholder-count="5">
+            <div sc-camel-on-click="{{ r.pick }}" class="fd-183" style="background:{{ r.bg }}" style-hover="">
+              <div class="fd-184" style="background:{{ T.mint }}">
+                <svg width="13" height="13" sc-camel-view-box="0 0 27.3 39.56" fill="{{ T.green }}">
+                  <!-- <path d="M8 5.5 V18.5 L19 12 Z"></path> -->
+                  <path data-dc-tpl="666" d="M1,6.49v26.58c0,4.2,4.52,6.84,8.17,4.78l23.34-13.16c3.7-2.09,3.72-7.41,.04-9.53L9.21,1.74C5.56-.36,1,2.27,1,6.49Z"></path>
+                </svg>
+              </div>
+              <span class="fd-185" style="color:{{ T.text }}">{{ r.name }}</span>
+              <span style="width:20px; height:20px; border-radius:50%; border:2px solid {{ r.ring }}; display:flex; justify-content:center; align-items:center;"><span class="fd-186" style="background:{{ r.dot }}"></span></span>
+            </div>
+          </sc-for>
+          <div sc-camel-on-click="{{ closePrayerSheet }}" class="fd-627">
+            <span class="fd-435">{{ X.done }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── More (EN) ─── -->
+      <div data-screen-label="Settings (English)" dir="ltr" style="{{ sty.moreEn }}">
+        <div class="fd-628">
+          <img src="images/logo-fadhakkir-icon.svg" alt="" class="fd-569">
+          <div class="fd-62">
+            <span class="fd-134">Settings</span>
+            <span class="fd-499">App settings &amp; extra tools</span>
+          </div>
+        </div>
+        <div class="fd-571">
+          <sc-for list="{{ moreRowsEn }}" as="m" hint-placeholder-count="9">
+            <div sc-camel-on-click="{{ m.open }}" class="fd-629" style="background:{{ T.card }}; box-shadow:{{ T.shadow }}" style-hover="transform:translateY(-1px)">
+              <div class="fd-563" style="background:{{ m.iconBg }}">
+                <svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ m.iconC }}" stroke-width="1.9"><path d="{{ m.icon }}"></path></svg>
+              </div>
+              <div class="fd-163">
+                <span class="fd-33" style="color:{{ T.text }}">{{ m.t }}</span>
+                <span class="fd-88" style="color:{{ T.faint }}">{{ m.s }}</span>
+              </div>
+              <sc-if value="{{ m.isToggle }}" hint-placeholder-val="{{ false }}">
+                <div class="fd-572" style="background:{{ m.tgBg }}; justify-content:{{ m.tgJustify }}">
+                  <span class="fd-77"></span>
+                </div>
+              </sc-if>
+              <sc-if value="{{ m.isChevron }}" hint-placeholder-val="{{ true }}">
+                <svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{ T.faint }}" stroke-width="2"><path d="M9 6 L15 12 L9 18"></path></svg>
+              </sc-if>
+            </div>
+          </sc-for>
+          <span class="fd-630" style="color:{{ T.faint }}">Muzn · Beta 1.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ::S:: -->
+</div>
+</x-dc>
+
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;view&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;app&quot;, &quot;board&quot;], &quot;default&quot;: &quot;app&quot;, &quot;tsType&quot;: &quot;\&quot;app\&quot; | \&quot;board\&quot;&quot;, &quot;section&quot;: &quot;العرض&quot; },
+  &quot;heroVariant&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;horizon&quot;, &quot;skyline&quot;, &quot;mihrab&quot;], &quot;default&quot;: &quot;horizon&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;الهيرو&quot; },
+  &quot;previewPrayer&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;auto&quot;, &quot;fajr&quot;, &quot;sunrise&quot;, &quot;dhuhr&quot;, &quot;asr&quot;, &quot;maghrib&quot;, &quot;isha&quot;], &quot;default&quot;: &quot;auto&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;الهيرو&quot; },
+  &quot;ornamentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#D7B36A&quot;, &quot;#1589BC&quot;, &quot;#8C6B3F&quot;, &quot;#1F6F63&quot;], &quot;default&quot;: &quot;#D7B36A&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;زخارف المصحف&quot; }
+}">
+const Component = window.MuznApp(DCLogic, React);
+</script>
+
+</body>
+</html>

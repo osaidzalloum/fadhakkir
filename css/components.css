@@ -1,0 +1,6631 @@
+/* ─────────────────────────────────────────────────────────────
+   أصناف التصميم — مولّدة من الأنماط الثابتة التي كانت داخل style=
+   لا تغيّر أي قيمة هنا إلا وأنت تقصد تغيير الشكل.
+   الأنماط التي تعتمد على بيانات ({{ … }}) بقيت inline كما هي.
+   ───────────────────────────────────────────────────────────── */
+
+/* ══ شاشة الترحيب ══ */
+.fd-1 {
+  width: 266px;
+  height: 266px;
+  animation: muznFadeUp .8s ease both;
+}
+
+.fd-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 26px;
+  animation: muznFadeUp .8s .15s ease both;
+}
+
+.fd-3 {
+  font-size: 46px;
+  font-weight: 700;
+  color: #1589BC;
+  line-height: 1;
+}
+
+/* ×8 */
+.fd-4 {
+  color: #EA9924;
+}
+
+.fd-5 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #EA9924;
+  letter-spacing: 3px;
+  margin-top: 8px;
+  animation: muznFadeUp .8s .25s ease both;
+}
+
+.fd-6 {
+  font-size: 17px;
+  font-weight: 400;
+  color: #1589BC;
+  margin-top: 18px;
+  animation: muznFadeUp .8s .35s ease both;
+}
+
+.fd-7 {
+  flex: 0 0 56px;
+}
+
+.fd-8 {
+  align-self: stretch;
+  height: 52px;
+  border-radius: 14px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(21,137,188,0.26);
+  animation: muznFadeUp .8s .5s ease both;
+  transition: transform .2s;
+}
+
+.fd-9 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.fd-10 {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 5px dashed #EA9924;
+  margin-top: 34px;
+  opacity: .85;
+  animation: muznSpin 9s linear infinite;
+}
+
+
+/* ══ اختيار اللغة ══ */
+.fd-11 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 44px;
+}
+
+.fd-12 {
+  width: 130px;
+  height: 130px;
+}
+
+.fd-13 {
+  font-size: 29px;
+  font-weight: 600;
+  color: #1589BC;
+  margin-top: 34px;
+}
+
+.fd-14 {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.fd-15 {
+  align-self: stretch;
+  height: 50px;
+  border-radius: 13px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 36px;
+  box-shadow: 0 8px 20px rgba(21,137,188,0.22);
+  transition: transform .2s;
+}
+
+/* ×4 */
+.fd-16 {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.fd-17 {
+  align-self: stretch;
+  height: 50px;
+  border-radius: 13px;
+  border: 1.5px solid #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: transform .2s;
+}
+
+.fd-18 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1589BC;
+}
+
+
+/* ══ السماح بالموقع ══ */
+.fd-19 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 40px;
+}
+
+.fd-20 {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e0e6ed;
+}
+
+.fd-21 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+
+.fd-22 {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.9;
+  margin-top: 12px;
+}
+
+.fd-23 {
+  align-self: stretch;
+  height: 50px;
+  border-radius: 13px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 38px;
+  box-shadow: 0 8px 20px rgba(21,137,188,0.22);
+  transition: transform .2s;
+}
+
+.fd-24 {
+  align-self: stretch;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.fd-25 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #EA9924;
+}
+
+
+/* ══ اختيار الموقع يدوياً ══ */
+/* الهوية */
+.fd-26 {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 34px 4px;
+}
+
+/* الهوية */
+.fd-27 {
+  width: 200px;
+  height: 200px;
+  animation: muznFadeUp .8s ease both;
+}
+
+/* الهوية */
+.fd-28 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1589BC;
+  line-height: 1;
+  margin-top: 14px;
+  animation: muznFadeUp .8s .15s ease both;
+}
+
+/* الهوية */
+.fd-29 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #1589BC;
+  margin-top: 14px;
+  animation: muznFadeUp .8s .35s ease both;
+}
+
+/* المحتوى */
+.fd-30 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* عنوان القسم */
+.fd-31 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 0 2px 8px;
+}
+
+/* عنوان القسم — ×5 */
+.fd-32 {
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+/* تحديد تلقائي — ×6 */
+.fd-33 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* تحديد تلقائي */
+.fd-34 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+/* تحديد تلقائي — ×10 */
+.fd-35 {
+  flex-shrink: 0;
+}
+
+/* تحديد تلقائي */
+.fd-36 {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #1589BC;
+  line-height: 1.6;
+}
+
+/* المدينة */
+.fd-37 {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 0 2px;
+  margin-top: 14px;
+}
+
+/* المدينة — ×2 */
+.fd-38 {
+  position: relative;
+  margin-top: 7px;
+}
+
+/* المدينة */
+.fd-39 {
+  max-height: 216px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* المدينة — ×4 */
+.fd-40 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  cursor: pointer;
+}
+
+/* المدينة — ×5 */
+.fd-41 {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+/* المدينة */
+.fd-42 {
+  display: block;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* طريقة حساب وقت العصر */
+.fd-43 {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 0 2px;
+  margin-top: 16px;
+}
+
+/* طريقة حساب وقت العصر */
+.fd-44 {
+  transition: transform .25s;
+}
+
+/* خطوط العرض العليا — ×4 */
+.fd-45 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* خطوط العرض العليا — ×7 */
+.fd-46 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* خطوط العرض العليا — ×3 */
+.fd-47 {
+  font-size: 11.5px;
+  line-height: 1.7;
+}
+
+/* خطوط العرض العليا */
+.fd-48 {
+  width: 45px;
+  height: 26px;
+  border-radius: 999px;
+  padding: 3px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background .25s;
+  flex-shrink: 0;
+}
+
+/* خطوط العرض العليا */
+.fd-49 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+/* زر البدء */
+.fd-50 {
+  flex-shrink: 0;
+  padding: 12px 20px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* زر البدء */
+.fd-51 {
+  height: 52px;
+  border-radius: 14px;
+  background: #1589BC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(21,137,188,0.28);
+  transition: transform .2s;
+}
+
+/* زر البدء */
+.fd-52 {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* زر البدء */
+.fd-53 {
+  position: absolute;
+  inset: 0;
+  z-index: 70;
+  background: rgba(19,35,33,0.52);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+}
+
+/* زر البدء */
+.fd-54 {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.32);
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  animation: muznFadeUp .3s ease;
+}
+
+/* زر البدء */
+.fd-55 {
+  font-size: 15.5px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* زر البدء */
+.fd-56 {
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* زر البدء */
+.fd-57 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* زر البدء */
+.fd-58 {
+  flex: 1;
+  height: 46px;
+  border-radius: 12px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* زر البدء */
+.fd-59 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+
+/* ══ إعدادات مواقيت الصلاة ══ */
+/* ×7 */
+.fd-60 {
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 30px 20px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ×11 */
+.fd-61 {
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ×10 */
+.fd-62 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+/* ×10 */
+.fd-63 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #444444;
+}
+
+.fd-64 {
+  font-size: 11.5px;
+  color: #444444;
+}
+
+/* ×2 */
+.fd-65 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 20px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ×4 */
+.fd-66 {
+  border-radius: 16px;
+  padding: 16px;
+}
+
+/* ×10 */
+.fd-67 {
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.fd-68 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.fd-69 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.fd-70 {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.fd-71 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.fd-72 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* ×11 */
+.fd-73 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.fd-74 {
+  display: block;
+  font-size: 11.5px;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+.fd-75 {
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.fd-76 {
+  width: 45px;
+  height: 20px;
+  border-radius: 999px;
+  padding: 3px;
+  display: flex;
+  cursor: pointer;
+  transition: background .25s;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+/* ×7 */
+.fd-77 {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+.fd-78 {
+  height: 52px;
+  border-radius: 14px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 8px 20px rgba(21,137,188,0.22);
+  transition: transform .2s;
+}
+
+
+/* ══ إعداد خطة الختمة ══ */
+.fd-79 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 36px;
+}
+
+.fd-80 {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fd-81 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 26px;
+}
+
+.fd-82 {
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.9;
+  margin-top: 10px;
+}
+
+.fd-83 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 26px;
+}
+
+.fd-84 {
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.fd-85 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.fd-86 {
+  align-self: stretch;
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+.fd-87 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+/* ×8 */
+.fd-88 {
+  font-size: 11px;
+}
+
+.fd-89 {
+  align-self: stretch;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ×9 */
+.fd-90 {
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.fd-91 {
+  align-self: stretch;
+  height: 52px;
+  border-radius: 14px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 26px;
+  box-shadow: 0 8px 20px rgba(21,137,188,0.22);
+  transition: transform .2s;
+}
+
+.fd-92 {
+  padding: 14px;
+  cursor: pointer;
+}
+
+
+/* ══ الصفحة الرئيسية ══ */
+/* الهيدر */
+.fd-93 {
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 30px 20px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+}
+
+/* الهيدر */
+.fd-94 {
+  width: 86px;
+  height: 37px;
+}
+
+/* الهيدر */
+.fd-95 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #444444;
+  line-height: 1;
+}
+
+/* المحتوى */
+.fd-96 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 20px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+/* المحتوى */
+.fd-97 {
+  border-radius: 20px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform .2s;
+  border: 1px solid #E2E8F0;
+}
+
+/* المحتوى — ×2 */
+.fd-98 {
+  position: relative;
+  width: 40px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+/* المحتوى — ×2 */
+.fd-99 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
+  text-align: center;
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* المحتوى — ×3 */
+.fd-100 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* المحتوى */
+.fd-101 {
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* المحتوى — ×2 */
+.fd-102 {
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* متابعة القراءة */
+.fd-103 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* متابعة القراءة */
+.fd-104 {
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 0 2px;
+}
+
+/* متابعة القراءة */
+.fd-105 {
+  border-radius: 10px;
+  padding: 9px 11px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform .2s;
+  border: 1px solid #E2E8F0;
+}
+
+/* متابعة القراءة */
+.fd-106 {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* متابعة القراءة */
+.fd-107 {
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* خطة ختمة القرآن — ×2 */
+.fd-108 {
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+  border: 1px solid #E2E8F0;
+}
+
+/* خطة ختمة القرآن */
+.fd-109 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+}
+
+/* خطة ختمة القرآن */
+.fd-110 {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #F6ECD9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* خطة ختمة القرآن */
+.fd-111 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* خطة ختمة القرآن */
+.fd-112 {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* خطة ختمة القرآن */
+.fd-113 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* خطة ختمة القرآن */
+.fd-114 {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1589BC;
+  text-align: start;
+  margin-top: 2px;
+}
+
+/* خطة ختمة القرآن */
+.fd-115 {
+  align-self: stretch;
+  cursor: pointer;
+  accent-color: #1589BC;
+}
+
+/* خطة ختمة القرآن — ×4 */
+.fd-116 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+/* خطة ختمة القرآن — ×2 */
+.fd-117 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #EA9924;
+}
+
+/* خطة ختمة القرآن — ×2 */
+.fd-118 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1589BC;
+}
+
+/* متابعة الورد */
+.fd-119 {
+  height: 40px;
+  border-radius: 10px;
+  background: #1589BC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform .2s;
+}
+
+/* متابعة الورد — ×2 */
+.fd-120 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+
+/* ══ الإشعارات ══ */
+.fd-121 {
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 30px 20px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ×3 */
+.fd-122 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.fd-123 {
+  cursor: pointer;
+}
+
+.fd-124 {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+
+.fd-125 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 20px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fd-126 {
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.fd-127 {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ×2 */
+.fd-128 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fd-129 {
+  font-size: 13.8px;
+  font-weight: 700;
+}
+
+.fd-130 {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.fd-131 {
+  font-size: 10.5px;
+  flex-shrink: 0;
+}
+
+
+/* ══ الرزنامة ══ */
+.fd-132 {
+  border-radius: 16px;
+  background: linear-gradient(150deg,#06698C,#1589BC);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 8px 24px rgba(21,137,188,0.22);
+}
+
+.fd-133 {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* ×2 */
+.fd-134 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.fd-135 {
+  font-size: 13px;
+  color: rgba(255,255,255,0.82);
+}
+
+/* ×6 */
+.fd-136 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.fd-137 {
+  border-radius: 20px;
+  padding: 16px;
+}
+
+/* ×2 */
+.fd-138 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.fd-139 {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-140 {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-141 {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.fd-142 {
+  text-align: center;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.fd-143 {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  gap: 2px;
+}
+
+.fd-144 {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.fd-145 {
+  font-size: 9px;
+  line-height: 1;
+}
+
+.fd-146 {
+  font-size: 11.5px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+
+/* ══ أوقات الصلاة ══ */
+.fd-147 {
+  gap: 12px;
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 30px 20px 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ×4 */
+.fd-148 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #444444;
+}
+
+.fd-149 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(47,118,158,0.13);
+  cursor: pointer;
+}
+
+/* ×2 */
+.fd-150 {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #444444;
+}
+
+/* ×2 */
+.fd-151 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 20px 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+/* ×2 */
+.fd-152 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ×2 */
+.fd-153 {
+  flex: 1;
+  height: 32px;
+  border-radius: 999px;
+  background: #FEFFFF;
+  border: 1px solid #CFE6F2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform .2s;
+  /* pointer-events: none; */
+}
+
+/* ×2 */
+.fd-154 {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #4A5568;
+  white-space: nowrap;
+}
+
+.fd-155 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-shrink: 0;
+  background: #FEFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 10px 10px;
+  align-items: center;
+}
+
+.fd-156 {
+  flex: 1.3;
+  gap: 7px;
+  height: 33px;
+  border-radius: 8px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform .2s;
+  border: 1px solid rgb(224, 230, 237);
+}
+
+.fd-157 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.fd-158 {
+  flex: 0.6;
+  height: 33px;
+  border-radius: 8px;
+  background: #06698C;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+/* ×3 */
+.fd-159 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.fd-160 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444444;
+  padding: 0 10px;
+}
+
+.fd-161 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 8px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 20px;
+  margin-bottom: 10px;
+  border: 1px solid #E2E8F0;
+}
+
+.fd-162 {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background: #F1F5F9;
+}
+
+/* ×6 */
+.fd-163 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ×3 */
+.fd-164 {
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+/* ×2 */
+.fd-165 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 4px;
+}
+
+/* ×2 */
+.fd-166 {
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 15.5px;
+  font-weight: 600;
+}
+
+/* ×3 */
+.fd-167 {
+  font-size: 10px;
+}
+
+.fd-168 {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+/* ×2 */
+.fd-169 {
+  font-size: 11.5px;
+  text-align: center;
+  line-height: 1.7;
+  flex-shrink: 0;
+}
+
+/* ورقة إعدادات كل صلاة — ×2 */
+.fd-170 {
+  width: 44px;
+  height: 5px;
+  border-radius: 999px;
+  align-self: center;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+/* ورقة إعدادات كل صلاة */
+.fd-171 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+/* ورقة إعدادات كل صلاة */
+.fd-172 {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #F1F5F9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ورقة إعدادات كل صلاة */
+.fd-173 {
+  font-size: 15.5px;
+  font-weight: 700;
+}
+
+/* ورقة إعدادات كل صلاة — ×5 */
+.fd-174 {
+  font-size: 11.5px;
+}
+
+/* ورقة إعدادات كل صلاة */
+.fd-175 {
+  border-radius: 13px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #2F769E;
+}
+
+/* ورقة إعدادات كل صلاة — ×6 */
+.fd-176 {
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* ورقة إعدادات كل صلاة — ×4 */
+.fd-177 {
+  width: 47px;
+  height: 21px;
+  border-radius: 999px;
+  padding: 3px;
+  display: flex;
+  cursor: pointer;
+  transition: background .25s;
+  flex-shrink: 0;
+}
+
+/* ورقة إعدادات كل صلاة — ×2 */
+.fd-178 {
+  border-radius: 10px;
+  padding: 2px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #2F769E;
+}
+
+/* ورقة إعدادات كل صلاة — ×2 */
+.fd-179 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ورقة إعدادات كل صلاة — ×2 */
+.fd-180 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+/* ورقة إعدادات كل صلاة — ×2 */
+.fd-181 {
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ورقة إعدادات كل صلاة — ×8 */
+.fd-182 {
+  font-size: 12.5px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* ورقة إعدادات كل صلاة — ×2 */
+.fd-183 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+/* ورقة إعدادات كل صلاة — ×2 */
+.fd-184 {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ورقة إعدادات كل صلاة — ×2 */
+.fd-185 {
+  flex: 1;
+  font-size: 13.8px;
+  font-weight: 600;
+}
+
+/* ورقة إعدادات كل صلاة — ×2 */
+.fd-186 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* ورقة إعدادات كل صلاة */
+.fd-187 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 14px;
+  flex-shrink: 0;
+}
+
+/* ورقة إعدادات كل صلاة */
+.fd-188 {
+  flex: 1;
+  height: 39px;
+  border-radius: 13px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+/* ورقة إعدادات كل صلاة */
+.fd-189 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ورقة إعدادات كل صلاة */
+.fd-190 {
+  width: 92px;
+  height: 37px;
+  border-radius: 13px;
+  background: #F1F5F9;
+  border: 1px solid #F1F5F9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+
+/* ══ جدول مواقيت الشهر ══ */
+.fd-191 {
+  border-radius: 50%;
+  background: #FEFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-192 {
+  font-size: 11.5px;
+  color: rgba(68,68,68,1);
+}
+
+.fd-193 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 14px 120px;
+}
+
+.fd-194 {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.fd-195 {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 11px 10px;
+  background: #1589BC;
+}
+
+.fd-196 {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ×5 */
+.fd-197 {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.fd-198 {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 9px 10px;
+  align-items: center;
+}
+
+/* ×5 */
+.fd-199 {
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 10.5px;
+  text-align: center;
+}
+
+
+/* ══ اتجاه القبلة ══ */
+.fd-200 {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 24px 120px;
+}
+
+.fd-201 {
+  width: 89%;
+  border-radius: 14px;
+  background: #FEFFFF;
+  padding: 12px 18px;
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #E2E8F0;
+}
+
+/* ×2 */
+.fd-202 {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.fd-203 {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+}
+
+.fd-204 {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  font-weight: 700;
+  color: #EA9924;
+}
+
+.fd-205 {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.fd-206 {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.fd-207 {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.fd-208 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: muznWobble 5s ease-in-out infinite;
+}
+
+.fd-209 {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.fd-210 {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.fd-211 {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  background: #132321;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.fd-212 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9px;
+  height: 7px;
+  background: #D7B36A;
+}
+
+.fd-213 {
+  position: absolute;
+  left: 50%;
+  top: 64px;
+  bottom: 26px;
+  width: 3.5px;
+  transform: translateX(-50%);
+  background: linear-gradient(#EA9924, #F1F5F9);
+  border-radius: 999px;
+}
+
+.fd-214 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #1589BC;
+  border: 4px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.fd-215 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.fd-216 {
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.fd-217 {
+  font-size: 12.5px;
+  margin-top: 8px;
+}
+
+.fd-218 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+
+/* ══ المصحف ══ */
+.fd-219 {
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 30px 20px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.fd-220 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-221 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.fd-222 {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+.fd-223 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 14px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* شريط الأدوات */
+.fd-224 {
+  border-radius: 14px;
+  background: #FEFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+  padding: 11px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  flex-shrink: 0;
+}
+
+/* شريط الأدوات — ×17 */
+.fd-225 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+  height: 24px;
+}
+
+/* شريط الأدوات — ×7 */
+.fd-226 {
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* شريط الأدوات */
+.fd-227 {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 9px;
+  height: 40px;
+  border-radius: 11px;
+  background: #FEFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 0 12px;
+}
+
+/* شريط الأدوات */
+.fd-228 {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12.5px;
+}
+
+/* الصفحة — ×3 */
+.fd-229 {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* الصفحة */
+.fd-230 {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+/* الصفحة */
+.fd-231 {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* الصفحة — ×4 */
+.fd-232 {
+  position: absolute;
+  inset: 0;
+}
+
+/* الصفحة */
+.fd-233 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 360px;
+  border-radius: 12px;
+  background: #FEFFFF;
+  border: 1px dashed #CBD5E1;
+}
+
+/* الصفحة */
+.fd-234 {
+  font-size: 12.5px;
+  text-align: center;
+  line-height: 1.8;
+  padding: 0 24px;
+}
+
+/* الصفحة */
+.fd-235 {
+  position: absolute;
+  top: 0px;
+  inset-inline-end: 16px;
+}
+
+/* الصفحة — ×2 */
+.fd-236 {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  /* background: rgba(19,35,33,0.42); */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: flex-end; */
+  top: -67px;
+  /* bottom: 0; */
+  /* height: 100%; */
+  width: 100%;
+}
+
+/* الصفحة — ×2 */
+.fd-237 {
+  flex: 0 0 34px;
+  cursor: pointer;
+}
+
+/* الصفحة — ×2 */
+.fd-238 {
+  flex: 1;
+  min-height: 0;
+  background: #FFFFFF;
+  border-radius: 22px;
+  box-shadow: 0 -12px 40px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: muznFadeUp .28s ease;
+  height: 100%;
+}
+
+/* الصفحة — ×2 */
+.fd-239 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px 14px;
+  flex-shrink: 0;
+}
+
+/* الصفحة — ×2 */
+.fd-240 {
+  flex: 1;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+/* الصفحة — ×4 */
+.fd-241 {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* الصفحة — ×2 */
+.fd-242 {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 20px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* الصفحة — ×2 */
+.fd-243 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 0 2px 10px;
+}
+
+/* الصفحة — ×4 */
+.fd-244 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1589BC;
+}
+
+/* الصفحة — ×2 */
+.fd-245 {
+  height: 46px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+/* الصفحة — ×2 */
+.fd-246 {
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* الصفحة — ×2 */
+.fd-247 {
+  flex-shrink: 0;
+  transition: transform .25s;
+}
+
+/* الصفحة — ×2 */
+.fd-248 {
+  position: absolute;
+  top: calc(100% + 6px);
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  z-index: 12;
+  border-radius: 14px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: muznFadeUp .2s ease;
+}
+
+/* الصفحة — ×2 */
+.fd-249 {
+  margin-top: 14px;
+  border-radius: 14px;
+  background: #FCFBFA;
+  border: 1px solid #E5BD83;
+  padding: 15px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fd-249 .fd-244{
+  color: #393B3D;
+  border-bottom: 1px solid #E5BD83;
+  line-height: 28px;
+}
+
+/* الصفحة — ×2 */
+.fd-250 {
+  font-size: 13.5px;
+  line-height: 2.1;
+}
+
+/* الصفحة — ×2 */
+.fd-251 {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  border-radius: 16px;
+  background: transparent;
+}
+
+/* الصفحة — ×2 */
+.fd-252 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+}
+
+/* الصفحة — ×2 */
+.fd-253 {
+  flex: 1;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+/* الصفحة — ×2 */
+.fd-254 {
+  padding: 9px 13px 11px;
+}
+
+/* الصفحة — ×2 */
+.fd-255 {
+  font-family: 'Amiri',serif;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* الصفحة — ×2 */
+.fd-256 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* الصفحة — ×12 */
+.fd-257 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  cursor: pointer;
+  border-top: 1px solid #E2E8F0 !important;
+}
+
+/* الصفحة — ×12 */
+.fd-258 {
+  flex: 1;
+  font-size: 12.3px;
+  font-weight: 600;
+}
+
+/* الصفحة — ×2 */
+.fd-259 {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 11px 13px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* الصفحة — ×6 */
+.fd-260 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* الصفحة — ×9 */
+.fd-261 {
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+/* الصفحة — ×2 */
+.fd-262 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* الصفحة — ×2 */
+.fd-263 {
+  flex: 1;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* الصفحة — ×2 */
+.fd-264 {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 14px;
+}
+
+/* الصفحة — ×2 */
+.fd-265 {
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+/* الصفحة — ×2 */
+.fd-266 {
+  flex: 1;
+  height: 42px;
+  border-radius: 12px;
+  background: #1589BC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+/* الصفحة — ×2 */
+.fd-267 {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* الصفحة — ×2 */
+.fd-268 {
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* الصفحة — ×6 */
+.fd-269 {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* الصفحة — ×4 */
+.fd-270 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 11px 13px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* الصفحة — ×3 */
+.fd-271 {
+  font-size: 12.5px;
+  line-height: 1.9;
+}
+
+/* الصفحة — ×6 */
+.fd-272 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-radius: 12px;
+  padding: 9px 11px;
+}
+
+/* الصفحة — ×6 */
+.fd-273 {
+  font-family: 'Amiri',serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* الصفحة — ×6 */
+.fd-274 {
+  font-size: 12.5px;
+  line-height: 1.95;
+}
+
+/* الصفحة — ×7 */
+.fd-275 {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* الصفحة — ×3 */
+.fd-276 {
+  font-size: 10.5px;
+  line-height: 1.7;
+}
+
+/* الصفحة — ×2 */
+.fd-277 {
+  font-size: 13px;
+  line-height: 2;
+}
+
+/* رقم الصفحة */
+.fd-278 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* رقم الصفحة — ×2 */
+.fd-279 {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FEFFFF;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* رقم الصفحة */
+.fd-280 {
+  width: 52px;
+  height: 30px;
+  text-align: center;
+  border-radius: 8px;
+  background: #FEFFFF;
+  border: 1px solid #E2E8F0;
+  outline: none;
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+
+/* ══ فهرس القرآن ══ */
+.fd-281 {
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 30px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.fd-282 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(47,118,158,0.13);
+  cursor: pointer;
+}
+
+/* ×2 */
+.fd-283 {
+  display: flex;
+  flex-direction: row;
+  gap: 22px;
+}
+
+/* ×6 */
+.fd-284 {
+  padding-bottom: 11px;
+  cursor: pointer;
+}
+
+.fd-285 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fd-286 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  height: 53px;
+  border-radius: 10px;
+  background: #F7F9FB;
+  border: 1px solid #E6ECF2;
+  padding: 0 13px;
+  margin-bottom: 0;
+}
+
+/* ×2 */
+.fd-287 {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13px;
+  min-width: 0;
+  height: 36px;
+}
+
+/* ×2 */
+.fd-288 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ×2 */
+.fd-289 {
+  font-size: 12.5px;
+  text-align: center;
+  padding: 18px 0;
+}
+
+.fd-290 {
+  border-radius: 10px;
+  background: #FFFFFF;
+  border: 1px solid #E8EDF2;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+
+.fd-291 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #1589BC;
+}
+
+.fd-292 {
+  position: absolute;
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ×4 */
+.fd-293 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fd-294 {
+  font-family: 'Amiri',serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.fd-295 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 4px;
+}
+
+/* ×3 */
+.fd-296 {
+  font-size: 12px;
+}
+
+.fd-297 {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 2px 0;
+}
+
+.fd-298 {
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  cursor: pointer;
+  transition: transform .15s;
+}
+
+.fd-299 {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #F6ECD9;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #8A6A23;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.fd-300 {
+  font-family: 'Uthman Taha','Amiri Quran','Amiri',serif;
+  font-size: 16.5px;
+  line-height: 1.9;
+}
+
+.fd-301 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.fd-302 {
+  border-radius: 14px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: transform .15s;
+}
+
+/* ×4 */
+.fd-303 {
+  font-size: 10.5px;
+}
+
+.fd-304 {
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+}
+
+/* ×2 */
+.fd-305 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.fd-306 {
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 10px 2px 2px;
+}
+
+/* ×2 */
+.fd-307 {
+  font-size: 12px;
+  padding: 2px 2px 6px;
+}
+
+/* ×2 */
+.fd-308 {
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+/* ×2 */
+.fd-309 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.fd-310 {
+  font-family: 'Uthman Taha','Amiri Quran','Amiri',serif;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ×3 */
+.fd-311 {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: rgba(234,153,36,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.fd-312 {
+  border-radius: 13px;
+  padding: 11px 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.fd-313 {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.fd-314 {
+  font-size: 11.5px;
+  line-height: 1.8;
+}
+
+.fd-315 {
+  font-size: 12px;
+  text-align: center;
+  padding: 22px 0;
+  line-height: 1.9;
+}
+
+.fd-316 {
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.fd-317 {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.fd-318 {
+  font-family: 'Amiri',serif;
+  font-size: 16.5px;
+  font-weight: 700;
+}
+
+.fd-319 {
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+
+/* ══ قارئ المصحف ══ */
+.fd-320 {
+  background: #FEFFFF;
+  padding: 30px 18px 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+}
+
+.fd-321 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.fd-322 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.fd-323 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #444444;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fd-324 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.22);
+  transition: transform .2s;
+}
+
+/* ×2 */
+.fd-325 {
+  margin-left: 0px;
+}
+
+/* ×3 */
+.fd-326 {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-327 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(68,68,68,1);
+  padding: 0 13px;
+  flex-shrink: 0;
+}
+
+.fd-328 {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12.5px;
+  color: #444444;
+}
+
+.fd-329 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.22);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.fd-330 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  padding: 14px;
+}
+
+.fd-331 {
+  font-size: 12px;
+  padding: 16px 14px;
+}
+
+.fd-332 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 11px 14px;
+  cursor: pointer;
+}
+
+.fd-333 {
+  font-family: 'Amiri',serif;
+  font-size: 13.5px;
+  line-height: 1.9;
+}
+
+.fd-334 {
+  flex: 1;
+  padding: 12px 14px 122px;
+  background: url(image/bg.png) no-repeat center;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.fd-335 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.fd-336 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* ×2 */
+.fd-337 {
+  height: 1px;
+  width: 44px;
+  background: #D7B36A;
+}
+
+.fd-338 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 30px 0 22px;
+}
+
+/* ×3 */
+.fd-339 {
+  font-size: 12.5px;
+}
+
+.fd-340 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 26px 0 20px;
+}
+
+/* ×2 */
+.fd-341 {
+  font-size: 12.5px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* ×2 */
+.fd-342 {
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: #1589BC;
+  cursor: pointer;
+}
+
+/* ×4 */
+.fd-343 {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+/* ×3 */
+.fd-344 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  line-height: 0;
+}
+
+/* ×3 */
+.fd-345 {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.fd-346 {
+  position: absolute;
+  top: 30.2%;
+  left: 32.9%;
+  width: 35%;
+  height: 4.64%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-347 {
+  position: absolute;
+  top: 36.1%;
+  left: 26.7%;
+  width: 46.8%;
+  height: 4.19%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-348 {
+  position: absolute;
+  top: 42.3%;
+  left: 53.3%;
+  width: 26.1%;
+  height: 4.38%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-349 {
+  position: absolute;
+  top: 42.3%;
+  left: 20.4%;
+  width: 32.6%;
+  height: 4.38%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-350 {
+  position: absolute;
+  top: 48.8%;
+  left: 32.2%;
+  width: 48.1%;
+  height: 3.74%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-351 {
+  position: absolute;
+  top: 48.8%;
+  left: 19.9%;
+  width: 11.9%;
+  height: 3.74%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-352 {
+  position: absolute;
+  top: 54.5%;
+  left: 47.6%;
+  width: 31%;
+  height: 4.38%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-353 {
+  position: absolute;
+  top: 54.5%;
+  left: 21.4%;
+  width: 25.8%;
+  height: 4.38%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-354 {
+  position: absolute;
+  top: 60.6%;
+  left: 27.7%;
+  width: 44.8%;
+  height: 4.83%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-355 {
+  position: absolute;
+  top: 66.8%;
+  left: 36.4%;
+  width: 27.4%;
+  height: 3.99%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-356 {
+  position: absolute;
+  top: 35.7%;
+  left: 62.2%;
+  width: 11.1%;
+  height: 4.25%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-357 {
+  position: absolute;
+  top: 35.7%;
+  left: 26.5%;
+  width: 35.3%;
+  height: 4.25%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-358 {
+  position: absolute;
+  top: 41.7%;
+  left: 64.2%;
+  width: 15%;
+  height: 4.57%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-359 {
+  position: absolute;
+  top: 41.7%;
+  left: 20.7%;
+  width: 43.2%;
+  height: 4.57%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-360 {
+  position: absolute;
+  top: 47.7%;
+  left: 48.3%;
+  width: 31.7%;
+  height: 4.7%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-361 {
+  position: absolute;
+  top: 47.7%;
+  left: 20.3%;
+  width: 27.8%;
+  height: 4.7%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-362 {
+  position: absolute;
+  top: 53.9%;
+  left: 20.7%;
+  width: 58.4%;
+  height: 4.7%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-363 {
+  position: absolute;
+  top: 59.7%;
+  left: 27.7%;
+  width: 45.1%;
+  height: 5.03%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-364 {
+  position: absolute;
+  top: 66.2%;
+  left: 36.2%;
+  width: 27.9%;
+  height: 3.99%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-365 {
+  position: absolute;
+  top: 8.51%;
+  left: 11.58%;
+  width: 77.59%;
+  height: 4.9%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-366 {
+  position: absolute;
+  top: 14.43%;
+  left: 70.78%;
+  width: 17.79%;
+  height: 5.03%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-367 {
+  position: absolute;
+  top: 14.43%;
+  left: 11.48%;
+  width: 59.3%;
+  height: 5.03%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-368 {
+  position: absolute;
+  top: 20.04%;
+  left: 30.55%;
+  width: 58.12%;
+  height: 4.57%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-369 {
+  position: absolute;
+  top: 20.04%;
+  left: 12.27%;
+  width: 18.29%;
+  height: 4.57%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-370 {
+  position: absolute;
+  top: 25.58%;
+  left: 11.48%;
+  width: 77.29%;
+  height: 4.64%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-371 {
+  position: absolute;
+  top: 30.54%;
+  left: 11.87%;
+  width: 76.9%;
+  height: 4.83%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-372 {
+  position: absolute;
+  top: 36.53%;
+  left: 66.53%;
+  width: 21.94%;
+  height: 4.9%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-373 {
+  position: absolute;
+  top: 36.53%;
+  left: 11.78%;
+  width: 54.76%;
+  height: 4.9%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-374 {
+  position: absolute;
+  top: 42.14%;
+  left: 27.98%;
+  width: 60.49%;
+  height: 4.64%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-375 {
+  position: absolute;
+  top: 42.14%;
+  left: 11.38%;
+  width: 16.61%;
+  height: 4.64%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-376 {
+  position: absolute;
+  top: 47.55%;
+  left: 23.73%;
+  width: 64.64%;
+  height: 4.77%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-377 {
+  position: absolute;
+  top: 47.55%;
+  left: 11.38%;
+  width: 12.35%;
+  height: 4.77%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-378 {
+  position: absolute;
+  top: 53.03%;
+  left: 30.75%;
+  width: 57.43%;
+  height: 4.9%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-379 {
+  position: absolute;
+  top: 53.03%;
+  left: 11.48%;
+  width: 19.27%;
+  height: 4.9%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-380 {
+  position: absolute;
+  top: 58.18%;
+  left: 11.48%;
+  width: 76.9%;
+  height: 5.15%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-381 {
+  position: absolute;
+  top: 64.24%;
+  left: 22.65%;
+  width: 66.12%;
+  height: 4.83%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-382 {
+  position: absolute;
+  top: 64.24%;
+  left: 11.28%;
+  width: 11.37%;
+  height: 4.83%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-383 {
+  position: absolute;
+  top: 69.91%;
+  left: 11.97%;
+  width: 76.7%;
+  height: 4.64%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-384 {
+  position: absolute;
+  top: 75.97%;
+  left: 46.86%;
+  width: 41.61%;
+  height: 4.57%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-385 {
+  position: absolute;
+  top: 75.97%;
+  left: 11.18%;
+  width: 35.68%;
+  height: 4.57%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-386 {
+  position: absolute;
+  top: 81.12%;
+  left: 54.77%;
+  width: 33.8%;
+  height: 4.9%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-387 {
+  position: absolute;
+  top: 81.12%;
+  left: 11.38%;
+  width: 43.39%;
+  height: 4.9%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-388 {
+  position: absolute;
+  top: 87.18%;
+  left: 11.38%;
+  width: 77.59%;
+  height: 4.25%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-389 {
+  text-align: justify;
+  text-align-last: center;
+}
+
+.fd-390 {
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-391 {
+  font-family: 'Amiri',serif;
+  font-size: 0.72em;
+  color: #D7B36A;
+}
+
+.fd-392 {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.fd-393 {
+  font-size: 13.5px;
+  line-height: 2;
+}
+
+/* ×2 */
+.fd-394 {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* ×2 */
+.fd-395 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ×2 */
+.fd-396 {
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.fd-397 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fd-398 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #1589BC;
+  cursor: pointer;
+}
+
+/* ×2 */
+.fd-399 {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+/* ×2 */
+.fd-400 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ×3 */
+.fd-401 {
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.fd-402 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.fd-403 {
+  font-family: 'Amiri',serif;
+  font-size: 13.5px;
+}
+
+.fd-404 {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  z-index: 16;
+  width: 26px;
+  height: 52px;
+  cursor: pointer;
+  background: linear-gradient(180deg,#E5352A 0%,#B4231A 100%);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.26);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+  transition: transform .2s;
+}
+
+.fd-405 {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  border-radius: 16px;
+  background: rgba(13,31,28,0.66);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  animation: muznFadeUp .4s ease;
+}
+
+.fd-406 {
+  position: relative;
+  width: 156px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fd-407 {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -10px;
+}
+
+.fd-408 {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -10px;
+}
+
+.fd-409 {
+  width: 88px;
+  height: 116px;
+  border-radius: 9px;
+  background: #FBF6EA;
+  border: 1px solid #D9CFBA;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 13px 11px;
+  box-sizing: border-box;
+  animation: muznTipSlide 2.9s ease-in-out infinite;
+}
+
+/* ×4 */
+.fd-410 {
+  height: 4px;
+  border-radius: 3px;
+  background: #D8CBAC;
+}
+
+.fd-411 {
+  height: 4px;
+  border-radius: 3px;
+  background: #D8CBAC;
+  width: 60%;
+}
+
+.fd-412 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 0 30px;
+}
+
+.fd-413 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.fd-414 {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.88);
+  text-align: center;
+  line-height: 1.95;
+}
+
+.fd-415 {
+  padding: 10px 28px;
+  border-radius: 999px;
+  background: #D7B36A;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+
+.fd-416 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1589BC;
+}
+
+.fd-417 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  padding: 12px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ×2 */
+.fd-418 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+/* ×8 */
+.fd-419 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ×3 */
+.fd-420 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.fd-421 {
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fd-422 {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgb(6, 105, 140), rgb(21, 137, 188));
+  transition: width .4s;
+}
+
+/* ×2 */
+.fd-423 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* ورقة إعدادات القارئ */
+.fd-424 {
+  left: -3px;
+  top: 44px;
+  position: absolute;
+}
+
+/* ورقة إعدادات القارئ — ×2 */
+.fd-425 {
+  width: 44px;
+  height: 5px;
+  border-radius: 999px;
+  align-self: center;
+  margin-bottom: 14px;
+}
+
+/* ورقة إعدادات القارئ */
+.fd-426 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+/* ورقة إعدادات القارئ — ×2 */
+.fd-427 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* ورقة إعدادات القارئ — ×2 */
+.fd-428 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+/* ورقة إعدادات القارئ — ×2 */
+.fd-429 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+/* ورقة إعدادات القارئ */
+.fd-430 {
+  font-family: 'Uthman Taha','Amiri Quran','Amiri',serif;
+  font-size: 14px;
+}
+
+/* ورقة إعدادات القارئ — ×2 */
+.fd-431 {
+  flex: 1;
+  accent-color: #1589BC;
+  cursor: pointer;
+}
+
+/* ورقة إعدادات القارئ */
+.fd-432 {
+  font-family: 'Uthman Taha','Amiri Quran','Amiri',serif;
+  font-size: 24px;
+}
+
+/* ورقة إعدادات القارئ — ×2 */
+.fd-433 {
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 34px;
+  text-align: center;
+}
+
+/* ورقة إعدادات القارئ */
+.fd-434 {
+  height: 48px;
+  border-radius: 13px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ورقة إعدادات القارئ — ×2 */
+.fd-435 {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+/* ورقة تنزيل السورة */
+.fd-436 {
+  left: 119px;
+  top: 102px;
+  position: absolute;
+}
+
+/* ورقة تنزيل السورة — ×2 */
+.fd-437 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+/* ورقة تنزيل السورة */
+.fd-438 {
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+/* ورقة تنزيل السورة */
+.fd-439 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 0 10px;
+}
+
+/* ورقة تنزيل السورة — ×3 */
+.fd-440 {
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* ورقة تنزيل السورة */
+.fd-441 {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#D7B36A,#C89A3F);
+  transition: width .15s;
+}
+
+/* ورقة تنزيل السورة */
+.fd-442 {
+  font-size: 11.5px;
+  text-align: center;
+}
+
+/* ورقة تنزيل السورة */
+.fd-443 {
+  height: 48px;
+  border-radius: 13px;
+  background: #1589BC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+
+/* ══ الأحاديث ══ */
+.fd-444 {
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 30px 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  flex-shrink: 0;
+}
+
+.fd-445 {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  overflow-x: auto;
+  margin: 0 -20px;
+  padding: 0 20px 2px;
+}
+
+.fd-446 {
+  padding: 7px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all .2s;
+  border: 1px solid #9ECBDF;
+}
+
+/* ×2 */
+.fd-447 {
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.fd-448 {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  overflow-x: auto;
+  margin: 0 -20px;
+  padding: 0 20px 4px;
+}
+
+.fd-449 {
+  padding: 7px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all .2s;
+}
+
+.fd-450 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.fd-451 {
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 4px 2px 0;
+}
+
+.fd-452 {
+  font-family: 'Amiri',serif;
+  font-size: 15.5px;
+  line-height: 1.9;
+}
+
+.fd-453 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  border-radius: 13px;
+  padding: 11px 14px;
+  margin-bottom: 2px;
+}
+
+.fd-454 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 36px 0;
+}
+
+.fd-455 {
+  font-size: 12.5px;
+  text-align: center;
+}
+
+.fd-456 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 30px 0;
+}
+
+.fd-457 {
+  border-radius: 14px;
+  padding: 13px 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform .15s;
+}
+
+.fd-458 {
+  font-family: 'Amiri',serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.fd-459 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  padding: 7px 13px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ×2 */
+.fd-460 {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ×3 */
+.fd-461 {
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform .15s;
+}
+
+/* ×3 */
+.fd-462 {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+/* ×2 */
+.fd-463 {
+  font-family: 'Amiri',serif;
+  font-size: 16.5px;
+  line-height: 1.95;
+}
+
+/* ×2 */
+.fd-464 {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ×2 */
+.fd-465 {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1589BC;
+  flex-shrink: 0;
+}
+
+/* ×2 */
+.fd-466 {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #F6ECD9;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #8A6A23;
+}
+
+.fd-467 {
+  font-family: 'Amiri',serif;
+  font-size: 17.5px;
+  line-height: 1.95;
+}
+
+.fd-468 {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1589BC;
+}
+
+
+/* ══ تفاصيل الحديث ══ */
+.fd-469 {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 700;
+  color: #444444;
+}
+
+.fd-470 {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.22);
+  transition: transform .2s;
+}
+
+/* ×4 */
+.fd-471 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 20px 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fd-472 {
+  font-family: 'Amiri',serif;
+  font-size: 21px;
+  line-height: 2.05;
+  text-align: center;
+}
+
+.fd-473 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 14px;
+}
+
+.fd-474 {
+  display: block;
+  font-size: 14px;
+  line-height: 2.05;
+  margin-top: 8px;
+}
+
+.fd-475 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.fd-476 {
+  flex: 1;
+  height: 46px;
+  border-radius: 13px;
+  border: 1.5px solid #1589BC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.fd-477 {
+  flex: 1;
+  height: 46px;
+  border-radius: 13px;
+  background: #1589BC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.fd-478 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+
+/* ══ تبيان — المساعد الذكي ══ */
+.fd-479 {
+  background: #1589BC;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 56px 20px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.fd-480 {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-481 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#4BCDB7 25%,#268CE0 105%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fd-482 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ×2 */
+.fd-483 {
+  font-size: 11px;
+  color: rgba(255,255,255,0.75);
+}
+
+.fd-484 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fd-485 {
+  max-width: 82%;
+  padding: 12px 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.fd-486 {
+  font-size: 13.8px;
+  line-height: 1.95;
+}
+
+.fd-487 {
+  max-width: 82%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 11px;
+  border-inline-start: 3px solid #1589BC;
+}
+
+.fd-488 {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.fd-489 {
+  align-self: flex-start;
+  border-radius: 16px 16px 16px 4px;
+  background: #FFFFFF;
+  padding: 14px 18px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.fd-490 {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #268CE0;
+  animation: muznDots 1.2s 0s infinite;
+}
+
+.fd-491 {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #268CE0;
+  animation: muznDots 1.2s .2s infinite;
+}
+
+.fd-492 {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #268CE0;
+  animation: muznDots 1.2s .4s infinite;
+}
+
+.fd-493 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 2px;
+}
+
+.fd-494 {
+  font-size: 11.8px;
+  font-weight: 500;
+}
+
+.fd-495 {
+  padding: 12px 16px 22px;
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+  align-items: center;
+}
+
+.fd-496 {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#4BCDB7 25%,#268CE0 105%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(38,140,224,0.3);
+  transition: transform .2s;
+}
+
+.fd-497 {
+  transform: rotate(180deg);
+}
+
+
+/* ══ إنجازات اليوم ══ */
+.fd-498 {
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 56px 20px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ×2 */
+.fd-499 {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.72);
+}
+
+.fd-500 {
+  border-radius: 20px;
+  background: linear-gradient(150deg,#06698C,#1589BC);
+  padding: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 10px 28px rgba(21,137,188,0.25);
+}
+
+.fd-501 {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  flex-shrink: 0;
+}
+
+/* ×2 */
+.fd-502 {
+  transform: rotate(-90deg);
+}
+
+/* ×2 */
+.fd-503 {
+  transition: stroke-dashoffset .6s;
+}
+
+/* ×2 */
+.fd-504 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fd-505 {
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 17px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.fd-506 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.fd-507 {
+  font-size: 12px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+}
+
+/* ×4 */
+.fd-508 {
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.fd-509 {
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fd-510 {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#D7B36A,#C89A3F);
+  transition: width .5s;
+}
+
+.fd-511 {
+  flex: 1;
+  height: 40px;
+  border-radius: 11px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-512 {
+  flex: 1;
+  height: 40px;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+/* ══ الأذكار والمسبحة ══ */
+.fd-513 {
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 30px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.fd-514 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.fd-515 {
+  border-radius: 20px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.fd-516 {
+  font-family: 'Amiri',serif;
+  font-size: 19.5px;
+  line-height: 2.05;
+  text-align: center;
+}
+
+.fd-517 {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.fd-518 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(150deg,#06698C,#1589BC);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(21,137,188,0.35);
+  transition: transform .12s;
+  user-select: none;
+}
+
+.fd-519 {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+
+.fd-520 {
+  transition: stroke-dashoffset .25s;
+}
+
+.fd-521 {
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 40px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.fd-522 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.fd-523 {
+  flex: 1;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.fd-524 {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-525 {
+  flex: 1;
+  height: 42px;
+  border-radius: 12px;
+  background: #1589BC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.fd-526 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+
+.fd-527 {
+  height: 7px;
+  border-radius: 999px;
+  transition: all .3s;
+}
+
+
+/* ══ خطة الختمة ══ */
+.fd-528 {
+  border-radius: 20px;
+  background: linear-gradient(150deg,#06698C,#1589BC);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  box-shadow: 0 10px 28px rgba(21,137,188,0.25);
+}
+
+.fd-529 {
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgba(215,179,106,0.22);
+  font-size: 11px;
+  font-weight: 700;
+  color: #F3E3BC;
+}
+
+.fd-530 {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  overflow: hidden;
+}
+
+.fd-531 {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#D7B36A,#F3E3BC);
+}
+
+.fd-532 {
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+}
+
+.fd-533 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #F3E3BC;
+}
+
+.fd-534 {
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fd-535 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.fd-536 {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.fd-537 {
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fd-538 {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fd-539 {
+  padding: 9px 15px;
+  border-radius: 11px;
+  background: #1589BC;
+  cursor: pointer;
+}
+
+.fd-540 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.fd-541 {
+  height: 46px;
+  border-radius: 13px;
+  border: 1.5px solid #EA9924;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-542 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #EA9924;
+}
+
+
+/* ══ عن التطبيق ══ */
+.fd-543 {
+  border-radius: 22px;
+  background: linear-gradient(155deg,#06698C 0%,#1589BC 62%,#0C4C42 100%);
+  padding: 26px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  box-shadow: 0 12px 30px rgba(21,137,188,0.26);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.fd-544 {
+  position: absolute;
+  top: -52px;
+  inset-inline-end: -38px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(215,179,106,0.13);
+}
+
+.fd-545 {
+  position: absolute;
+  bottom: -64px;
+  inset-inline-start: -30px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+}
+
+.fd-546 {
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+
+.fd-547 {
+  font-size: 27px;
+  font-weight: 700;
+  color: #FFFFFF;
+  position: relative;
+}
+
+.fd-548 {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  line-height: 1.7;
+  position: relative;
+}
+
+.fd-549 {
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(215,179,106,0.22);
+  border: 1px solid rgba(243,227,188,0.28);
+  font-size: 11px;
+  font-weight: 700;
+  color: #F3E3BC;
+  position: relative;
+}
+
+.fd-550 {
+  border-radius: 16px;
+  padding: 17px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.fd-551 {
+  font-size: 12.8px;
+  line-height: 2.1;
+  text-wrap: pretty;
+}
+
+/* ×2 */
+.fd-552 {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+/* ×2 */
+.fd-553 {
+  font-size: 13px;
+  font-weight: 700;
+  padding-inline-start: 3px;
+}
+
+.fd-554 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.fd-555 {
+  border-radius: 15px;
+  padding: 14px 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fd-556 {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fd-557 {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.fd-558 {
+  border-radius: 16px;
+  padding: 6px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fd-559 {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 0 4px;
+}
+
+.fd-560 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 11px 0;
+}
+
+.fd-561 {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #D7B36A;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* ×2 */
+.fd-562 {
+  border-radius: 15px;
+  padding: 13px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+  transition: transform .15s;
+}
+
+/* ×3 */
+.fd-563 {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.fd-564 {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.fd-565 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 10px 4px;
+}
+
+.fd-566 {
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 2;
+}
+
+.fd-567 {
+  width: 34px;
+  height: 1px;
+  margin: 4px 0;
+}
+
+
+/* ══ الإعدادات ══ */
+.fd-568 {
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 30px 20px 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+}
+
+/* ×2 */
+.fd-569 {
+  width: 44px;
+  height: 44px;
+}
+
+.fd-570 {
+  font-size: 11.5px;
+  color: rgba(68,68,68,0.72);
+}
+
+/* ×2 */
+.fd-571 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ×2 */
+.fd-572 {
+  width: 47px;
+  height: 22px;
+  border-radius: 999px;
+  padding: 3px;
+  display: flex;
+  transition: background .25s;
+}
+
+
+/* ══ Home (English) ══ */
+.fd-573 {
+  background: #1589BC;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 56px 20px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.fd-574 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+}
+
+.fd-575 {
+  width: 40px;
+  height: 40px;
+}
+
+.fd-576 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.fd-577 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  margin-inline-start: -8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.fd-578 {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+}
+
+.fd-579 {
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+}
+
+.fd-580 {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.13);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-581 {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F44336;
+  border: 1.5px solid #1589BC;
+}
+
+.fd-582 {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 20px 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.fd-583 {
+  border-radius: 20px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.fd-584 {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.fd-585 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.fd-586 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-top: -5px;
+}
+
+/* ×2 */
+.fd-587 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 6px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+/* ×3 */
+.fd-588 {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fd-589 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 6px 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.fd-590 {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.fd-591 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+}
+
+.fd-592 {
+  font-size: 12.3px;
+}
+
+.fd-593 {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#06698C,#1589BC);
+  transition: width .5s;
+}
+
+.fd-594 {
+  font-size: 13px;
+}
+
+.fd-595 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.fd-596 {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  overflow-x: auto;
+  margin: 0 -20px;
+  padding: 4px 20px 8px;
+  flex-shrink: 0;
+}
+
+/* ×2 */
+.fd-597 {
+  width: 280px;
+  flex-shrink: 0;
+  height: 160px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* ×2 */
+.fd-598 {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.fd-599 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.fd-600 {
+  font-family: 'Uthman Taha','Amiri Quran','Amiri',serif;
+  font-size: 19px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.fd-601 {
+  font-size: 11.5px;
+  text-align: center;
+  font-style: italic;
+}
+
+.fd-602 {
+  font-size: 11.8px;
+}
+
+/* ×2 */
+.fd-603 {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ×2 */
+.fd-604 {
+  font-size: 11.1px;
+  font-weight: 600;
+}
+
+.fd-605 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.fd-606 {
+  font-size: 14px;
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.fd-607 {
+  font-size: 11.6px;
+}
+
+.fd-608 {
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.fd-609 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.fd-610 {
+  font-size: 15.1px;
+  font-weight: 700;
+}
+
+.fd-611 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.fd-612 {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  flex-shrink: 0;
+}
+
+.fd-613 {
+  font-family: 'IBM Plex Mono',monospace;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.fd-614 {
+  position: absolute;
+  right: 18px;
+  bottom: 104px;
+  z-index: 30;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.fd-615 {
+  padding: 7px 12px;
+  border-radius: 999px;
+}
+
+.fd-616 {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#4BCDB7 25%,#268CE0 105%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 22px rgba(38,140,224,0.35);
+  animation: muznPulseRing 2.6s infinite;
+}
+
+
+/* ══ Prayer Times (English) ══ */
+.fd-617 {
+  background: #1589BC;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 56px 20px 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.fd-618 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.fd-619 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.13);
+}
+
+.fd-620 {
+  border-radius: 20px;
+  padding: 8px 16px;
+  flex-shrink: 0;
+}
+
+.fd-621 {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.fd-622 {
+  flex: 1;
+  height: 48px;
+  border-radius: 14px;
+  background: #1589BC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(21,137,188,0.2);
+}
+
+.fd-623 {
+  flex: 1.3;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fd-624 {
+  font-size: 14.1px;
+  font-weight: 600;
+}
+
+/* Per-prayer settings sheet (EN) */
+.fd-625 {
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+/* Per-prayer settings sheet (EN) */
+.fd-626 {
+  border-radius: 13px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #2F769E;
+}
+
+/* Per-prayer settings sheet (EN) */
+.fd-627 {
+  height: 48px;
+  border-radius: 13px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 10px;
+  flex-shrink: 0;
+}
+
+
+/* ══ Settings (English) ══ */
+.fd-628 {
+  background: #1589BC;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 56px 20px 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+}
+
+.fd-629 {
+  border-radius: 15px;
+  padding: 13px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+}
+
+.fd-630 {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+/* ══ نافذة الاستماع للآية ══ */
+/* الطبقة تغطّي الإطار كاملاً بما فيه شريط التنقل السفلي */
+.fd-ls-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 58;
+  background: rgba(19,35,33,0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.fd-ls-gap {
+  flex: 1;
+  cursor: pointer;
+}
+.fd-ls-card {
+  flex-shrink: 0;
+  margin: 0 14px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  animation: muznFadeUp .25s ease;
+}
+.fd-ls-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.fd-ls-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.fd-ls-ico { flex-shrink: 0; }
+.fd-ls-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D3436;
+}
+.fd-ls-x {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background .2s;
+}
+.fd-ls-msg {
+  font-size: 13.5px;
+  color: #4A5560;
+  line-height: 2;
+  text-align: center;
+  margin: 18px 0 20px;
+}
+.fd-ls-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+}
+.fd-ls-yes {
+  flex: 0 0 116px;
+  height: 44px;
+  border-radius: 10px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.fd-ls-yes-t {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.fd-ls-no {
+  flex: 0 0 106px;
+  height: 44px;
+  border-radius: 10px;
+  background: #F1F3F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background .2s;
+}
+.fd-ls-no-t {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #4A5560;
+}
+
+/* ══ ورقة تفسير الآية ══ */
+/* الطبقة تغطّي الإطار حتى أعلى شريط التنقل فيبقى الشريط ظاهرًا */
+.fd-tf-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 84px;
+  z-index: 58;
+  background: rgba(19,35,33,0.32);
+  /* توسيط البطاقة رأسيًّا مهما كان ارتفاعها */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.fd-tf-gap {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+.fd-tf-card {
+  position: relative;
+  flex: 0 1 auto;
+  margin: 0 14px;
+  max-height: calc(100% - 28px);
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: muznFadeUp .25s ease;
+}
+.fd-tf-head {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px 10px;
+}
+.fd-tf-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.fd-tf-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D3436;
+}
+.fd-tf-book {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #4A5560;
+}
+.fd-tf-x {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+/* نص التفسير */
+.fd-tf-body {
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 6px 18px 12px;
+}
+.fd-tf-text {
+  display: block;
+  font-size: 13px;
+  color: #3B4148;
+  line-height: 2.1;
+  text-align: justify;
+}
+/* زر المشاركة */
+.fd-tf-foot {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 10px 14px 14px;
+}
+.fd-tf-share {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 9px;
+  /* background: #F1F3F5; */
+  border-radius: 10px;
+  padding: 9px 13px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.fd-tf-share-t {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4A5560;
+}
+.fd-tf-share-btn{
+      display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    align-items: center;
+    border-radius: 8px;
+    background: #E7F3F7;
+}
+
+/* عنوان قائمة السور */
+.fd-qlist-h {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D3436;
+  padding: 2px 2px 2px;
+}
+
+/* ══ قائمة المحفوظات ══ */
+.fd-sv-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 59;
+  background: rgba(19,35,33,0.32);
+  display: flex;
+  flex-direction: column;
+}
+.fd-sv-gap {flex: 0 0 330px;cursor: pointer;}
+.fd-sv-gap2 { flex: 1; cursor: pointer; }
+.fd-sv-card {
+  flex-shrink: 0;
+  margin: 0 14px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  animation: muznFadeUp .25s ease;
+}
+.fd-sv-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.fd-sv-htxt {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 8px;
+}
+.fd-sv-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #2D3436;
+}
+.fd-sv-x {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background .2s;
+}
+.fd-sv-none {
+  font-size: 12.5px;
+  color: #9AA4AE;
+  text-align: center;
+  padding: 18px 0 10px;
+}
+.fd-sv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* صفّ مع زر حذف مخفي خلفه */
+.fd-sv-wrap-container{
+  border: 1px solid #E8EDF2;
+  border-radius: 12px;
+}
+.fd-sv-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.fd-sv-del {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 56px;
+  background: #E05A54;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity .2s;
+  border-radius: 0 15px 15px 0;
+}
+.fd-sv-del-t {
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.fd-sv-row {
+  position: relative;
+  background: #FFFFFF;
+  
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform .25s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+.fd-sv-ico {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.fd-sv-txt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.fd-sv-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D3436;
+}
+.fd-sv-page {
+  font-size: 11.5px;
+  color: #9AA4AE;
+}
+.fd-sv-chev { flex-shrink: 0; }
+
+/* أيقونات الصلوات الملوّنة */
+.fd-pr-ico {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ══ شريط تشغيل تلاوة الآية ══ */
+.fd-ay-bar {
+  position: absolute;
+  inset-inline-start: 7%;
+  inset-inline-end: 7%;
+  z-index: 14;
+  height: 34px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0px;
+  padding: 0 14px;
+  animation: muznFadeUp .2s ease;
+}
+.fd-ay-btn {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity .2s;
+}
+.fd-ay-track {
+  position: relative;
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+  background: #E2E8F0;
+}
+.fd-ay-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: 0;
+  border-radius: 999px;
+  background: #1589BC;
+  transition: width .15s linear;
+}
+.fd-ay-dot {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  margin-inline-start: -5px;
+  border-radius: 50%;
+  background: #1589BC;
+  transition: inset-inline-start .15s linear;
+}
+
+/* زر التشغيل في قائمة السور المنزّلة */
+.fd-dl-play {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ══ إعدادات القرآن والتفسير ══ */
+.fd-qs-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 59;
+  background: rgba(19,35,33,0.32);
+  display: flex;
+  flex-direction: column;
+}
+.fd-qs-gap {flex: 0 0 330px;cursor: pointer;}
+.fd-qs-gap2 { flex: 1; cursor: pointer; }
+.fd-qs-card {
+  flex-shrink: 0;
+  margin: 0 14px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+  padding: 16px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  animation: muznFadeUp .25s ease;
+}
+.fd-qs-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.fd-qs-htxt {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 8px;
+}
+.fd-qs-x {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+.fd-qs-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D3436;
+}
+.fd-qs-l {
+  font-size: 12.5px;
+  color: #9AA4AE;
+  padding: 0 2px 7px;
+}
+.fd-qs-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+/* زرّ المنسدلة */
+.fd-qs-trig {
+  height: 44px;
+  border-radius: 10px;
+  background: #FCFCFD;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 0 14px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.fd-qs-val {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #2D3436;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* القائمة */
+.fd-qs-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  z-index: 57;
+  max-height: 252px;
+  overflow-y: auto;
+  border-radius: 10px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+  display: flex;
+  flex-direction: column;
+}
+.fd-qs-row {
+  padding: 11px 14px;
+  border-bottom: 1px solid #EEF2F6;
+  border-inline-start: 3px solid transparent;
+  cursor: pointer;
+  transition: background .2s;
+}
+.fd-qs-row-t {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2D3436;
+}
+
+/* ══ نافذة الاستماع من شريط الأدوات ══ */
+.fd-ln-sub {
+  font-size: 12.5px;
+  color: #9AA4AE;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.fd-ln-btn {
+  height: 48px;
+  border-radius: 10px;
+  background: #1589BC;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.fd-ln-btn-t {
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ══ شاشة الإعدادات ══ */
+.fd-st-hdr {
+  background: #FEFFFF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  padding: 30px 20px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.fd-st-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.fd-st-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #444444;
+}
+.fd-st-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 16px 130px;
+  display: flex;
+  flex-direction: column;
+}
+/* عنوان القسم */
+.fd-st-sec {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  padding: 0 2px 9px;
+}
+.fd-st-sec-t {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4A5560;
+}
+.fd-st-card {
+  background: #FFFFFF;
+  border-radius: 14px;
+  border: 1px solid #E8EDF2;
+  padding: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+/* تحديد الموقع تلقائياً */
+.fd-st-auto {
+  height: 44px;
+  border-radius: 10px;
+  background: #F4FAFD;
+  border: 1px solid #DCEAF3;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.fd-st-auto-t {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2D3436;
+}
+.fd-st-l {
+  font-size: 12.5px;
+  color: #9AA4AE;
+  padding: 0 2px 7px;
+  margin-top: 14px;
+}
+.fd-st-inp {
+  width: 100%;
+  box-sizing: border-box;
+  height: 44px;
+  border-radius: 10px;
+  background: #FAFBFC;
+  border: 1px solid #E8EDF2;
+  outline: none;
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #2D3436;
+}
+/* حقل للعرض فقط */
+.fd-st-ro {
+  height: 44px;
+  border-radius: 10px;
+  background: #EDF0F3;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+}
+.fd-st-ro-t {
+  font-size: 13px;
+  font-weight: 600;
+  color: #9AA4AE;
+}
+/* مفتاح خطوط العرض العليا */
+.fd-st-tog {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  background: #FFFFFF;
+  border: 1px solid #E8EDF2;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.fd-st-tog-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.fd-st-tog-t {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #2D3436;
+}
+.fd-st-tog-s {
+  font-size: 11.5px;
+  color: #9AA4AE;
+  line-height: 1.7;
+}
+.fd-st-sw {
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  padding: 3px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .25s;
+}
+.fd-st-knob {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+/* عن التطبيق */
+.fd-st-about {
+  background: #FFFFFF;
+  border-radius: 14px;
+  border: 1px solid #E8EDF2;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.fd-st-about-r {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+}
+.fd-st-about-ico {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: #E7F3F7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.fd-st-about-t {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #2D3436;
+}
+/* الذيل */
+.fd-st-foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+.fd-st-dua {
+  font-family: 'Amiri', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4A5560;
+  text-align: center;
+}
+.fd-st-ver {
+  font-size: 11.5px;
+  color: #9AA4AE;
+}
+
+/* ══ شاشة عن التطبيق ══ */
+.fd-ab-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 16px 130px;
+  display: flex;
+  flex-direction: column;
+}
+.fd-ab-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.fd-ab-logo {
+  width: 150px;
+  height: 150px;
+}
+.fd-ab-name {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1589BC;
+  line-height: 1;
+  margin-top: 8px;
+}
+.fd-ab-tag {
+  font-size: 13.5px;
+  color: #1589BC;
+  margin-top: 14px;
+}
+/* بطاقة لماذا فذكّر */
+.fd-ab-card {
+  background: #FFFFFF;
+  border-radius: 14px;
+  border: 1px solid #E8EDF2;
+  padding: 15px 16px 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.fd-ab-q {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #2D3436;
+}
+.fd-ab-p {
+  font-size: 12.5px;
+  color: #9AA4AE;
+  line-height: 2.1;
+  text-align: justify;
+}
+/* الروابط */
+.fd-ab-row {
+  background: #FFFFFF;
+  border-radius: 14px;
+  border: 1px solid #E8EDF2;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.fd-ab-row-r {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+}
+.fd-ab-ico {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.fd-ab-row-t {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #2D3436;
+}
+
+/* ══ شاشة الأذكار ══ */
+.fd-adh-tabs {
+  flex-shrink: 0;
+  margin: 14px 14px 0;
+  background: #FFFFFF;
+  border: 1px solid #E8EDF2;
+  border-radius: 12px;
+  padding: 7px 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.fd-adh-tab {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.fd-adh-tab-t {
+  font-size: 11.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 7px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: color .2s, background .2s, border-color .2s;
+}
+.fd-adh-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 14px 130px;
+  display: flex;
+  flex-direction: column;
+}
+/* ترويسة القسم */
+.fd-adh-hdr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+  padding: 0 4px 12px;
+}
+.fd-adh-hdr-ico {
+  width: 37px;
+  height: 37px;
+  border-radius: 5px;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.fd-adh-hdr-t {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.fd-adh-hdr-n {
+  font-size: 12px;
+  font-weight: 700;
+  color: #2D3436;
+}
+.fd-adh-hdr-s {
+  font-size: 10px;
+  color: #8C8C8C;
+}
+.fd-adh-none {
+  font-size: 12.5px;
+  color: #9AA4AE;
+  text-align: center;
+  padding: 30px 0;
+}
+/* بطاقة الذكر */
+.fd-adh-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E8EDF2;
+  padding: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.fd-adh-txt {
+  font-size: 12.5px;
+  color: #8C8C8C;
+  line-height: 2.2;
+  text-align: justify;
+}
+.fd-adh-foot {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.fd-adh-share {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #EAF3F9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.fd-adh-cnt {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+}
+.fd-adh-reset {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.fd-adh-pill {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  border-radius: 8px;
+  background: #1589BC;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.fd-adh-num-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 43px;
+  height: 16px;
+  background: #187799;
+  border-radius: 3px;
+  justify-content: center;
+}
+.fd-adh-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.fd-adh-rep {
+  font-size: 12px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+/* ══ قائمة الآية — بطاقة بنفس شكل نوافذ الإعدادات ══ */
+.fd-am2-card {
+  flex-shrink: 0;
+  margin: 0 14px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: muznFadeUp .25s ease;
+}
+
+/* طبقة قائمة الآية — شفّافة حتى تبقى الآية المظلَّلة ظاهرة */
+.fd-am2-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 59;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+.fd-am2-gap { flex: 0 0 330px; cursor: pointer; }
+.fd-am2-gap2 { flex: 1; cursor: pointer; }
+
+/* بطاقة قائمة الآية — تتبع موضع الآية داخل الصفحة */
+.fd-am2-wrap {
+  position: absolute;
+  inset-inline-start: 5%;
+  inset-inline-end: 5%;
+  z-index: 30;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 16px 42px rgba(0,0,0,0.22);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: muznFadeUp .2s ease;
+}
+
+/* ══ نافذة الموقع من الرئيسية ══ */
+.fd-loc-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 59;
+  background: rgba(19,35,33,0.32);
+  display: flex;
+  flex-direction: column;
+}
+.fd-loc-gap { flex: 0 0 150px; cursor: pointer; }
+.fd-loc-gap2 { flex: 1; cursor: pointer; }
+.fd-loc-card {
+  flex-shrink: 0;
+  margin: 0 14px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+  padding: 14px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  animation: muznFadeUp .25s ease;
+}
+.fd-loc-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.fd-loc-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #2D3436;
+}
+.fd-loc-auto {
+  height: 44px;
+  border-radius: 10px;
+  background: #F4FAFD;
+  border: 1px solid #DCEAF3;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.fd-loc-auto-t {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2D3436;
+}
+.fd-loc-note {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #1589BC;
+  text-align: center;
+  line-height: 1.7;
+  margin-top: 9px;
+}
+.fd-loc-l {
+  font-size: 12.5px;
+  color: #9AA4AE;
+  padding: 0 2px 7px;
+  margin-top: 14px;
+}
+.fd-loc-inp {
+  width: 100%;
+  box-sizing: border-box;
+  height: 44px;
+  border-radius: 10px;
+  background: #FAFBFC;
+  border: 1px solid #E8EDF2;
+  outline: none;
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #2D3436;
+}
+
+/* عنوان نافذة الموقع مع أيقونته */
+.fd-loc-htxt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* نقاط خطوات شاشة البداية */
+.fd-ob-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+.fd-ob-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  transition: background .25s;
+}
+
+/* بطاقة الأذكار في الرئيسية */
+.fd-ha-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.fd-ha-ico {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #1589BC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.fd-ha-txt {
+  display: block;
+  font-size: 12.5px;
+  color: #3B4148;
+  line-height: 2.1;
+  text-align: justify;
+  margin: 12px 0 14px;
+}

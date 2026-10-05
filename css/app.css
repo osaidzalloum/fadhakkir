@@ -1,0 +1,29 @@
+/* أنماط التطبيق العامة والحركات */
+@font-face {
+      font-family: 'Uthman Taha';
+      font-display: swap;
+      src: local('KFGQPC Uthmanic Script HAFS'), local('KFGQPC HAFS Uthmanic Script'), local('KFGQPC Uthman Taha Naskh'),
+        url("../fonts/uthman-taha.woff2") format('woff2'),
+        url("../fonts/uthman-taha-2.woff2") format('woff2'),
+        url("../fonts/uthman-taha.ttf") format('truetype');
+    }
+    @font-face {
+      font-family: 'Uthman Naskh';
+      font-display: swap;
+      src: local('KFGQPC Uthman Taha Naskh'),
+        url("../fonts/uthman-naskh.woff2") format('woff2');
+    }
+    body { margin: 0; background: #ECE6DD; }
+    @keyframes muznSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes mzFlipFwd { 0% { transform: rotateZ(0deg) rotateY(0deg); } 42% { transform: rotateZ(9deg) rotateY(42deg); } 72% { transform: rotateZ(7deg) rotateY(74deg); } 100% { transform: rotateZ(0deg) rotateY(104deg); } }
+    @keyframes mzFlipBack { 0% { transform: rotateZ(0deg) rotateY(96deg); } 34% { transform: rotateZ(7deg) rotateY(70deg); } 62% { transform: rotateZ(9deg) rotateY(38deg); } 100% { transform: rotateZ(0deg) rotateY(0deg); } }
+    @keyframes muznFadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes muznPulseRing { 0% { box-shadow: 0 0 0 0 rgba(75,205,183,0.45); } 70% { box-shadow: 0 0 0 12px rgba(75,205,183,0); } 100% { box-shadow: 0 0 0 0 rgba(75,205,183,0); } }
+    @keyframes muznDots { 0%,80%,100% { opacity: 0.25; } 40% { opacity: 1; } }
+    @keyframes muznWobble { 0%,100% { transform: rotate(19deg); } 50% { transform: rotate(23deg); } }
+    @keyframes muznTipSlide { 0%, 12% { transform: translateX(0); opacity: 1; } 40% { transform: translateX(54px); opacity: 0; } 41% { transform: translateX(-54px); opacity: 0; } 62%, 100% { transform: translateX(0); opacity: 1; } }
+    @keyframes muznTipHand { 0%, 10% { transform: translateX(-34px); opacity: 0; } 18% { opacity: 1; } 52%, 64% { transform: translateX(34px); opacity: 1; } 74% { opacity: 0; } 100% { transform: translateX(-34px); opacity: 0; } }
+    input[type="range"] { accent-color: #1589BC; }
+    #mzRSearch::placeholder { color: rgba(68,68,68,0.6); }
+    #mzRSearch{border-color: rgba(68,68,68,1);}
+    ::-webkit-scrollbar { width: 0; height: 0; }

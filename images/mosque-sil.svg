@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 250" width="560" height="250">
+  <defs>
+    <linearGradient id="ivory" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF7EC"></stop><stop offset="0.65" stop-color="#F3EBD8"></stop><stop offset="1" stop-color="#E7DBC0"></stop>
+    </linearGradient>
+    <linearGradient id="ivoryV" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E5D9BE"></stop><stop offset="0.42" stop-color="#FBF7EC"></stop><stop offset="1" stop-color="#DBCCAC"></stop>
+    </linearGradient>
+    <radialGradient id="goldC" cx="0.36" cy="0.24" r="1">
+      <stop offset="0" stop-color="#FBE3A0"></stop><stop offset="0.48" stop-color="#E2A93E"></stop><stop offset="1" stop-color="#A97316"></stop>
+    </radialGradient>
+    <linearGradient id="goldB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F0CE7E"></stop><stop offset="1" stop-color="#B98430"></stop>
+    </linearGradient>
+  </defs>
+
+  
+  <ellipse cx="280" cy="242" rx="245" ry="7" fill="#D9CBAB" opacity="0.5"></ellipse>
+
+  
+  <g>
+    <rect x="53.5" y="88" width="13" height="146" fill="url(#ivoryV)"></rect>
+    <rect x="49" y="118" width="22" height="5" rx="2.5" fill="url(#goldB)"></rect>
+    <rect x="49" y="156" width="22" height="5" rx="2.5" fill="url(#goldB)"></rect>
+    <rect x="50" y="74" width="20" height="14" fill="url(#ivory)"></rect>
+    <path d="M48.0 74.0 C45.8 63.1 51.4 57.9 55.2 54.2 C57.8 51.6 59.0 50.6 60 48 C61.0 50.6 62.2 51.6 64.8 54.2 C68.6 57.9 74.2 63.1 72.0 74.0 Z" fill="url(#goldC)"></path>
+    <rect x="58.9" y="38" width="2.2" height="12" fill="url(#goldB)"></rect>
+    <path d="M60 31.5 A3.5 3.5 0 1 0 63.325 34.825 A2.6 2.6 0 1 1 60 31.5 Z" fill="#D7A63C"></path>
+    <rect x="493.5" y="88" width="13" height="146" fill="url(#ivoryV)"></rect>
+    <rect x="489" y="118" width="22" height="5" rx="2.5" fill="url(#goldB)"></rect>
+    <rect x="489" y="156" width="22" height="5" rx="2.5" fill="url(#goldB)"></rect>
+    <rect x="490" y="74" width="20" height="14" fill="url(#ivory)"></rect>
+    <path d="M488.0 74.0 C485.8 63.1 491.4 57.9 495.2 54.2 C497.8 51.6 499.0 50.6 500 48 C501.0 50.6 502.2 51.6 504.8 54.2 C508.6 57.9 514.2 63.1 512.0 74.0 Z" fill="url(#goldC)"></path>
+    <rect x="498.9" y="38" width="2.2" height="12" fill="url(#goldB)"></rect>
+    <path d="M500 31.5 A3.5 3.5 0 1 0 503.325 34.825 A2.6 2.6 0 1 1 500 31.5 Z" fill="#D7A63C"></path>
+  </g>
+
+  
+  <rect x="110" y="193" width="340" height="3" fill="url(#goldB)"></rect>
+  <rect x="110" y="196" width="340" height="38" fill="url(#ivory)"></rect>
+  <path d="M122 226 V210.1 Q122 202 131 202 Q140 202 140 210.1 V226 Z M150 226 V210.1 Q150 202 159 202 Q168 202 168 210.1 V226 Z M178 226 V210.1 Q178 202 187 202 Q196 202 196 210.1 V226 Z M206 226 V210.1 Q206 202 215 202 Q224 202 224 210.1 V226 Z M336 226 V210.1 Q336 202 345 202 Q354 202 354 210.1 V226 Z M364 226 V210.1 Q364 202 373 202 Q382 202 382 210.1 V226 Z M392 226 V210.1 Q392 202 401 202 Q410 202 410 210.1 V226 Z M420 226 V210.1 Q420 202 429 202 Q438 202 438 210.1 V226 Z" fill="#DEC9A0"></path>
+
+  
+  <rect x="168" y="163" width="72" height="4" rx="2" fill="url(#goldB)"></rect>
+  <rect x="168" y="167" width="72" height="67" fill="url(#ivory)"></rect>
+  <rect x="320" y="163" width="72" height="4" rx="2" fill="url(#goldB)"></rect>
+  <rect x="320" y="167" width="72" height="67" fill="url(#ivory)"></rect>
+  <path d="M196 202 V185.2 Q196 178 204 178 Q212 178 212 185.2 V202 Z M348 202 V185.2 Q348 178 356 178 Q364 178 364 185.2 V202 Z" fill="#DEC9A0"></path>
+  <path d="M177.0 163.0 C172.1 142.8 184.6 133.2 193.2 126.5 C199.1 121.7 201.8 119.8 204 115 C206.2 119.8 208.9 121.7 214.8 126.5 C223.4 133.2 235.9 142.8 231.0 163.0 Z" fill="url(#goldC)"></path>
+  <circle cx="204" cy="111" r="2.6" fill="#D7A63C"></circle>
+  <path d="M329.0 163.0 C324.1 142.8 336.6 133.2 345.2 126.5 C351.1 121.7 353.8 119.8 356 115 C358.2 119.8 360.9 121.7 366.8 126.5 C375.4 133.2 387.9 142.8 383.0 163.0 Z" fill="url(#goldC)"></path>
+  <circle cx="356" cy="111" r="2.6" fill="#D7A63C"></circle>
+
+  
+  <rect x="250" y="108" width="60" height="28" fill="url(#ivoryV)"></rect>
+  <rect x="234" y="131" width="92" height="5" rx="2.5" fill="url(#goldB)"></rect>
+  <rect x="236" y="136" width="88" height="98" fill="url(#ivory)"></rect>
+  <path d="M252 234 V166 Q252 150 280 146 Q308 150 308 166 V234 Z" fill="#D9B583"></path>
+  <path d="M252 234 V166 Q252 150 280 146 Q308 150 308 166 V234 Z" fill="none" stroke="url(#goldB)" stroke-width="2.4"></path>
+  <path d="M262 234 V172 Q262 162 280 159 Q298 162 298 172 V234 Z" fill="#BC9264"></path>
+  <path d="M280 159 V234 M271 163 V234 M289 163 V234" stroke="#A87F53" stroke-width="1.4"></path>
+
+  
+  <path d="M232.0 110.0 C223.4 78.9 245.4 64.1 260.8 53.8 C271.4 46.4 276.2 43.4 280 36 C283.8 43.4 288.6 46.4 299.2 53.8 C314.6 64.1 336.6 78.9 328.0 110.0 Z" fill="url(#goldC)"></path>
+  <path d="M254 72 C258 56 268 44 278 38 C266 50 260 62 258 76 Z" fill="rgba(255,250,232,0.5)"></path>
+  <rect x="278.8" y="22" width="2.4" height="16" fill="url(#goldB)"></rect>
+  <path d="M280 13 A5 5 0 1 0 284.75 17.75 A3.7 3.7 0 1 1 280 13 Z" fill="#D7A63C"></path>
+
+  
+  <path d="M57.5 98 h5 v11 h-5 Z M497.5 98 h5 v11 h-5 Z M57.5 132 h5 v11 h-5 Z M497.5 132 h5 v11 h-5 Z" fill="#DEC9A0"></path>
+  <rect x="90" y="234" width="380" height="6" fill="#EBDFC6"></rect>
+</svg>

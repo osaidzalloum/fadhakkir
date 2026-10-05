@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69.65 58.93">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <line x1="2.86" y1="56.93" x2="67.65" y2="56.93" fill="none" stroke="#fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <path d="M20.51,49.12c0-8.14,6.6-14.74,14.74-14.74s14.74,6.6,14.74,14.74" fill="#f29e49"/>
+      <line x1="57.71" y1="46.37" x2="67.65" y2="46.37" fill="none" stroke="#fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <g>
+        <line x1="35.25" x2="35.25" y2="21.33" fill="none" stroke="#fa0" stroke-miterlimit="10" stroke-width="4"/>
+        <polygon points="20.2 9.13 22.9 6.62 35.25 19.91 47.61 6.62 50.3 9.13 35.25 25.32 20.2 9.13" fill="#fa0"/>
+      </g>
+      <line x1="2" y1="46.37" x2="11.94" y2="46.37" fill="none" stroke="#fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="10.72" y1="24.16" x2="17.65" y2="31.29" fill="none" stroke="#fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="56.8" y1="24.1" x2="50" y2="31.35" fill="none" stroke="#fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+  </g>
+</svg>
