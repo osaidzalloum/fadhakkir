@@ -2,7 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="فذَكِّر">
+<meta name="theme-color" content="#1589BC">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <title>فذَكِّر</title>
 
 <link rel="stylesheet" href="css/fonts.css">
@@ -16,12 +22,13 @@
 <script src="components/HeroCard.offline.js"></script>
 <script src="js/muzn-data.js"></script>
 <script src="js/app.js"></script>
+<script src="js/responsive.js"></script>
 <script src="js/dc-runtime.js"></script>
 </head>
 <body>
 
 <x-dc>
-<div dir="rtl" style="{{ rootStyle }}; font-family:'IBM Plex Sans Arabic','Segoe UI',sans-serif; -webkit-font-smoothing:antialiased;">
+<div dir="rtl" class="fd-frame" style="{{ rootStyle }}; font-family:'IBM Plex Sans Arabic','Segoe UI',sans-serif; -webkit-font-smoothing:antialiased;">
 
   <!-- ═════════════ المجموعة ١ · التهيئة والإعداد ═════════════ -->
   <div style="{{ grpSty }}">
