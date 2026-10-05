@@ -1931,7 +1931,7 @@ window.MuznApp = function (DCLogic, React) {
             if (!ex) this.set({ downloads: [...(this.state.downloads || []), { si: idx, r: this.state.reciter, mb: 1, n: n3 }] });
             this.setState({ ayDl: false });
             this.showToast(t("تم تنزيل السورة بنجاح", "Surah downloaded successfully"));
-            this.startAyahPlay(n3, false);
+            this.startAyahPlay(n3, true);
           }, 1800);
         },
         amShare: () => { this.showToast(t("تم نسخ الآية للمشاركة", "Ayah copied for sharing")); this.setState({ ayahMenu: null, ayahSel: null }); },
@@ -2482,10 +2482,12 @@ window.MuznApp = function (DCLogic, React) {
             // ── نافذة الاستماع (من شريط الأدوات) ──
             // زر التشغيل: يفتح النافذة، وأثناء التلاوة يصير إيقافًا مؤقّتًا
             lnPlaying: s.ayPlay != null,
-            lnPauseIcon: s.ayPlay != null && !s.ayPaused,
-            lnPlayIcon: !(s.ayPlay != null && !s.ayPaused),
+            lnPauseIcon: s.ayPlay != null && !s.ayPaused && !s.ayBar,
+            lnPlayIcon: !(s.ayPlay != null && !s.ayPaused && !s.ayBar),
             lnToolbarTap: () => {
-              if (this.state.ayPlay != null) { this.setState({ ayPaused: !this.state.ayPaused }); return; }
+              if (this.state.ayPlay != null && !this.state.ayBar) {
+                this.setState({ ayPaused: !this.state.ayPaused }); return;
+              }
               this.setState({ tbActive: "listen", lnOpen: true, lnDrop: false });
             },
             openListen: () => this.setState({ lnOpen: true, lnDrop: false }),
