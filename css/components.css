@@ -6629,3 +6629,29 @@
   text-align: justify;
   margin: 12px 0 14px;
 }
+
+/* ══ الاستجابة: تحجيم الإطار ليلائم أي شاشة بلا تغيير في التخطيط ══ */
+/* --fd-scale يضبطها js/responsive.js عند كل تغيّر في حجم النافذة */
+@media (max-width: 860px), (max-height: 900px) {
+  html, body {
+    overflow: hidden;
+    background: #ECE6DD;
+  }
+  .fd-frame {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    margin: 0 !important;
+    transform: translate(-50%, -50%) scale(var(--fd-scale, 1));
+    transform-origin: center center;
+  }
+}
+/* على الشاشات الصغيرة جدًّا نُخفي هيئة الجهاز */
+@media (max-width: 520px) {
+  .fd-frame {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+/* منع تكبير الصفحة بالنقر المزدوج على iOS */
+html, body { -webkit-text-size-adjust: 100%; touch-action: manipulation; }
